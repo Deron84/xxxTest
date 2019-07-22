@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblCtlCardInf"
+		table="tbl_ctl_card_inf"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="SA_CARD_NO"
+			length="19"
+		>
+			<generator class="assigned"/>
+		</id><!-- 卡号 -->
+		<property
+			name="SaLimitAmt"
+			column="SA_LIMIT_AMT"
+			type="string"
+			not-null="true"
+			length="12"
+		/><!-- 受控金额 -->
+		<property
+			name="SaAction"
+			column="SA_ACTION"
+			type="string"
+			not-null="true"
+			length="1"
+		/><!-- 受控动作 -->
+		<property
+			name="SaInitZoneNo"
+			column="SA_INIT_ZONE_NO"
+			type="string"
+			not-null="true"
+			length="6"
+		/><!-- 创建分行 -->
+		<property
+			name="SaInitOprId"
+			column="SA_INIT_OPR_ID"
+			type="string"
+			not-null="true"
+			length="40"
+		/><!-- 创建人ID -->
+		<property
+			name="SaInitTime"
+			column="SA_INIT_TIME"
+			type="string"
+			not-null="true"
+			length="14"
+		/><!-- 创建时间 -->
+		<property
+			name="SaModiZoneNo"
+			column="SA_MODI_ZONE_NO"
+			type="string"
+			not-null="false"
+			length="6"
+		/><!-- 修改分行 -->
+		<property
+			name="SaModiOprId"
+			column="SA_MODI_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!-- 修改人ID -->
+		<property
+			name="SaModiTime"
+			column="SA_MODI_TIME"
+			type="string"
+			not-null="false"
+			length="14"
+		/><!-- 修改时间 -->
+	</class>	
+</hibernate-mapping>

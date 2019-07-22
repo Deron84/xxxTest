@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="risk" extends="struts-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		<!-- 风险交易后续处理 -->
+		<action name="T40101Action" 
+		class="com.huateng.struts.risk.action.T40101Action" />
+		<!-- 风险控制移机后续处理 -->
+		<action name="T40102Action" 
+		class="com.huateng.struts.risk.action.T40102Action" />
+		<!-- 添加卡黑名单信息-->
+		<action name="T40201Action" class="com.huateng.struts.risk.action.T40201Action" />
+		<!-- 添加商户黑名单信息-->
+		<action name="T40202Action" class="com.huateng.struts.risk.action.T40202Action" />
+		<!-- 卡黑名单历史交易表-->
+		<action name="T40203Action" class="com.huateng.struts.risk.action.T40203Action" />
+		<!-- 商户黑名单历史交易表-->
+		<action name="T40204Action" class="com.huateng.struts.risk.action.T40204Action" />
+		
+		<!-- 单户交易监测报表-->
+		<action name="T40301Action" class="com.huateng.struts.risk.action.T40301Action" />
+		
+		<!-- 单笔信用卡交易监测-->
+		<action name="T40302Action" class="com.huateng.struts.risk.action.T40302Action" />
+
+		<!-- 单月单户信用卡交易监测-->
+		<action name="T40303Action" class="com.huateng.struts.risk.action.T40303Action" />
+		
+		<!-- 信用卡整数类交易监测-->
+		<action name="T40304Action" class="com.huateng.struts.risk.action.T40304Action" />
+		
+		<!-- 单户同一卡号监控-->
+		<action name="T40305Action" class="com.huateng.struts.risk.action.T40305Action" />
+		
+		<!-- 单户同卡号相同金额交易监测-->
+		<action name="T40306Action" class="com.huateng.struts.risk.action.T40306Action" />
+		
+		<!-- 预留相同信息监测-->
+		<action name="T40307Action" class="com.huateng.struts.risk.action.T40307Action" />
+		
+		<!-- 单户交易被拒情况监测-->
+		<action name="T40308Action" class="com.huateng.struts.risk.action.T40308Action" />
+		
+		<!-- 单户退货情况监测-->
+		<action name="T40309Action" class="com.huateng.struts.risk.action.T40309Action" />
+		
+		<!-- 财务POS交易监测-->
+		<action name="T40310Action" class="com.huateng.struts.risk.action.T40310Action" />
+	</package>
+</struts>

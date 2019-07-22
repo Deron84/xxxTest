@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblTxnCfg"
+		table="TBL_TXN_CFG"
+	>
+		<meta attribute="sync-DAO">true</meta>
+		<composite-id name="id" class="TblTxnCfgPK">
+			<key-property
+				name="termTxnCode"
+				column="TERM_TXN_CODE"
+				type="string"
+			/>
+			<key-property
+				name="usageKey"
+				column="USAGE_KEY"
+				type="string"
+			/>
+			<key-property
+				name="cmdIdx"
+				column="CMD_IDX"
+				type="integer"
+			/>
+		</composite-id>
+
+		<property
+			name="cmdId"
+			column="CMD_ID"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="pptId"
+			column="PPT_ID"
+			type="integer"
+			not-null="false"
+			length="22"
+		/>
+		<property
+			name="encMod"
+			column="ENC_MOD"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="cmdType"
+			column="CMD_TYPE"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="brhId"
+			column="BRH_ID"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="dsp"
+			column="DSP"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="crtDate"
+			column="CRT_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="updDate"
+			column="UPD_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

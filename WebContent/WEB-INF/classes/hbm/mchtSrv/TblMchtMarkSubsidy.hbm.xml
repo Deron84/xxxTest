@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TblMchtMarkSubsidy" table="TBL_MCHT_MARKSUBSIDY">
+		<meta attribute="sync-DAO">false</meta>
+		<meta attribute="sync-VO">false</meta>
+		<id name="ruleID" column="RULE_ID" type="string">
+			<generator class="assigned" />
+		</id>
+		<property name="ruleName" column="RULE_NAME" type="string"
+			not-null="false" length="50" />
+		<property name="subsidyType" column="SUBSIDY_TYPE" type="string"
+			not-null="false" length="2" />
+		<property name="subsidyRule" column="SUBSIDY_RULE" type="string"
+			not-null="false" length="24" />
+		<property name="openType" column="OPEN_TYPE" type="string"
+			not-null="false" length="2" />
+		<property name="cardBin" column="CARD_BIN" type="string"
+			not-null="false" length="700" />
+		<property name="cardLimit" column="CARD_LIMIT" type="string"
+			not-null="false" length="4" />
+		<property name="termLimit" column="TERM_LIMIT" type="string"
+			not-null="false" length="4" />
+		<property name="mchtLimit" column="MCHT_LIMIT" type="string"
+			not-null="false" length="4" />
+		<property name="startTime" column="START_TIME" type="string"
+			not-null="false" length="14" />
+		<property name="endTime" column="END_TIME" type="string"
+			not-null="false" length="14" />
+		<property name="addTime" column="ADD_TIME" type="string"
+			not-null="false" length="14" />
+		<property name="modifyTime" column="MODIFY_TIME" type="string"
+			not-null="false" length="14" />
+		<property name="remark" column="REMARK" type="string"
+			not-null="false" length="100" />
+	</class>
+</hibernate-mapping>

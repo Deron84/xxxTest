@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchtSrv">
+	<class name="TblPaperOptInf" table="TBL_PAPER_OPT_INF">
+
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="TblPaperOptInfPK">
+			<key-property name="paperId" column="PAPER_ID" type="string" />
+			<key-property name="quesId" column="QUES_ID" type="string" />
+			<key-property name="optId" column="OPT_ID" type="string" />
+		</composite-id>
+		<property name="opt" column="OPT" type="string" not-null="false"
+			length="180" />
+		<property name="point" column="POINT" type="integer"
+			not-null="false" length="22" />
+		<property name="reserve" column="RESERVE" type="string"
+			not-null="false" length="60" />
+
+
+	</class>
+</hibernate-mapping>

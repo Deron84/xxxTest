@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TMsMerchnt" table="T_MS_MERCHNT">
+		<meta attribute="sync-DAO">false</meta>
+			
+		<composite-id name="tMsMerchntPK" class="TMsMerchntPK">
+			<key-property name="outMchntId" column="OUTMCHNTID" type="string" />
+		</composite-id>
+		
+		<property name="txnSeq" column="TXNSEQ" type="string"
+			not-null="true" length="32" />
+		<property name="operId" column="OPERID" type="string"
+			not-null="true" length="20" />
+		<property name="mchntName" column="MCHNTNAME" type="string"
+			not-null="true" length="100"/>
+		<property name="mchntFullName" column="MCHNTFULLNAME" type="string"
+		not-null="true" length="200" />
+		<property name="devType" column="DEVTYPE" type="string"
+		not-null="true" length="1" />
+		<property name="acdCode" column="ACDCODE" type="string"
+		not-null="true" length="10" />
+		<property name="province" column="PROVINCE" type="string"
+		not-null="true" length="20" />
+		<property name="city" column="CITY" type="string"
+		not-null="true" length="20" />
+		<property name="address" column="ADDRESS" type="string"
+		not-null="true" length="80" />
+		<property name="isCert" column="ISCERT" type="string"
+		not-null="true" length="1" />
+		<property name="licId" column="LICID" type="string"
+		not-null="true" length="30" />
+		<property name="idTCard" column="IDTCARD" type="string"
+		not-null="true" length="20" />
+		<property name="corpName" column="CORPNAME" type="string"
+		not-null="true" length="60" />
+		<property name="telephone" column="TELEPHONE" type="string"
+		not-null="true" length="11" />
+		<property name="autoSettle" column="AUTOSETTLE" type="string"
+		not-null="false" length="1" />
+		<property name="status" column="STATUS" type="string"
+		not-null="false" length="2" />
+		<property name="cmbcMchntId" column="CMBCMCHNTID" type="string"
+		not-null="false" length="21" />
+		<property name="createTime" column="CREATE_TIME" type="string"
+		not-null="false" length="19" />
+		<property name="modifyTime" column="MODIFY_TIME" type="string"
+		not-null="false" length="19" />
+		<property name="code" column="CODE" type="string"
+		not-null="false" length="10" />
+		<property name="message" column="MESSAGE" type="string"
+		not-null="false" length="100" />
+	</class>
+</hibernate-mapping>

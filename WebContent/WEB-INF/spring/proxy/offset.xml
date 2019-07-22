@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="t60101bo" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.offset.T60101BO</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<value>t60101botarget</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="t60101botarget" class="com.huateng.bo.impl.offset.T60101BOTarget">
+		<property name="sqlDao" ref="sqlDao" />
+	</bean>
+	<bean id="t601bo" class="com.huateng.bo.impl.offset.T601BOTarget">
+		<property name="sqlDao" ref="sqlDao" />
+	</bean>
+	<bean id="t60101Action" class="com.huateng.struts.offset.action.T60101Action"
+		singleton="false">
+		<property name="t60101bo" ref="t60101bo" />
+	</bean>
+	<bean id="t601Action" class="com.huateng.struts.offset.action.T601Action"
+		singleton="false">
+		<property name="bo" ref="t601bo" />
+	</bean>
+
+</beans>

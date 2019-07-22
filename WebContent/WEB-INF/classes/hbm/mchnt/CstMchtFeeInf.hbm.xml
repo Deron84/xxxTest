@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="CstMchtFeeInf"
+		table="cst_mcht_fee_inf"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		
+		<composite-id name="Id" class="CstMchtFeeInfPK">
+			<key-property name="MchtCd" column="mcht_cd" type="string" />
+			<key-property name="TxnNum" column="txn_num" type="string" />
+			<key-property name="CardType" column="card_type" type="string" />
+		</composite-id>
+		
+		<property
+			name="Channel"
+			column="channel"
+			type="string"
+			not-null="true"
+			length="1"
+		/>
+		<property
+			name="DayNum"
+			column="day_num"
+			type="string"
+			not-null="true"
+			length="5"
+		/>
+		<property
+			name="DayAmt"
+			column="day_amt"
+			type="java.lang.Float"
+			not-null="true"
+			length="17"
+		/>
+		<property
+			name="DaySingle"
+			column="day_single"
+			type="java.lang.Float"
+			not-null="true"
+			length="17"
+		/>
+		<property
+			name="MonNum"
+			column="mon_num"
+			type="string"
+			not-null="true"
+			length="6"
+		/>
+		<property
+			name="MonAmt"
+			column="mon_amt"
+			type="java.lang.Float"
+			not-null="true"
+			length="17"
+		/>
+		<property
+			name="Reserved"
+			column="reserved"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="RecCrtTs"
+			column="rec_crt_ts"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="RecUpdTs"
+			column="rec_upd_ts"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

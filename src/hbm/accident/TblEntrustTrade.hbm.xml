@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.accident">
+	<class
+		name="TblEntrustTrade"
+		table="TBL_ENTRUST_TRADE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="TRADE_ID"
+		>
+			<generator class="assigned"/>
+		</id>
+
+		<property
+			name="Status"
+			column="STATUS"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="Pan"
+			column="PAN"
+			type="string"
+			not-null="false"
+			length="19"
+		/>
+		<property
+			name="CardAccpId"
+			column="CARD_ACCP_ID"
+			type="string"
+			not-null="false"
+			length="15"
+		/>
+		<property
+			name="AmtTrans"
+			column="AMT_TRANS"
+			type="string"
+			not-null="false"
+			length="12"
+		/>
+		<property
+			name="CountDay"
+			column="COUNT_DAY"
+			type="string"
+			not-null="false"
+			length="3"
+		/>
+		<property
+			name="DeferDay"
+			column="DEFER_DAY"
+			type="string"
+			not-null="false"
+			length="3"
+		/>
+		<property
+			name="CrtTs"
+			column="CRT_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="CrtOprId"
+			column="CRT_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="AuditTs"
+			column="AUDIT_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="AuditOprId"
+			column="AUDIT_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="Reserved"
+			column="RESERVED"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

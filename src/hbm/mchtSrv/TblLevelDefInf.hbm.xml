@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchtSrv">
+	<class
+		name="TblLevelDefInf"
+		table="TBL_LEVEL_DEF_INF"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<meta attribute="sync-VO">false</meta>
+		<id
+			name="levelId"
+			column="LEVEL_ID"
+			type="string"
+		>
+			<generator class="assigned" />
+		</id>
+		<property
+			name="levelName"
+			column="LEVEL_NAME"
+			type="string"
+			not-null="false"
+			length="120"
+		/>
+		<property
+			name="minPoint"
+			column="MIN_POINT"
+			type="integer"
+			not-null="false"
+			length="22"
+		/>
+		<property
+			name="remarks"
+			column="REMARKS"
+			type="string"
+			not-null="false"
+			length="240"
+		/>
+		<property
+			name="reserve1"
+			column="RESERVE1"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="reserve2"
+			column="RESERVE2"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="crtUser"
+			column="CRT_USER"
+			type="string"
+			not-null="false"
+			length="12"
+		/>
+		<property
+			name="crtTime"
+			column="CRT_TIME"
+			type="string"
+			not-null="false"
+			length="12"
+		/>
+		<property
+			name="updUser"
+			column="UPD_USER"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="updTime"
+			column="UPD_TIME"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

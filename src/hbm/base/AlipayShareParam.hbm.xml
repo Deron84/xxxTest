@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="AlipayShareParam"
+		table="TBL_ALIPAY_SHARE_PARAM"
+	>
+        <id name="share_ruleid" type="string" column="SHARE_RULEID">
+			<generator class="assigned" />
+		</id>
+		<property
+			name="brhId"
+			column="BRH_ID"
+			type="string"
+			length="50"
+		/> 
+		<property
+			name="shareStandardTotal"
+			column="SHARE_STANDARD_TOTAL"
+			type="int"
+		/>
+		<property
+			name="singleShareMoney"
+			column="SINGLE_SHARE_MONEY"
+			type="float"
+		/>
+		<property
+			name="shareThreshold"
+			column="SHARE_THRESHOLD"
+			type="float"
+		/>
+		<!-- 
+		<property
+			name="share_ruleid"
+			column="SHARE_RULEID"
+			type="string"
+		/>
+		-->
+		<property
+			name="share_rulename"
+			column="SHARE_RULENAME"
+			type="string"
+		/>
+		
+		<property
+			name="freeratio"
+			column="FREERATIO"
+			type="string"
+		/>
+		
+		<property
+			name="sharetype"
+			column="SHARETYPE"
+			type="string"
+		/>
+		
+		<property
+			name="mcht_shareval"
+			column="MCHT_SHAREVAL"
+			type="string"
+		/>
+		
+		<property
+			name="orgshareval_first"
+			column="ORGSHAREVAL_FIRST"
+			type="string"
+		/>
+		
+		<property
+			name="orgshareval_second"
+			column="ORGSHAREVAL_SECOND"
+			type="string"
+		/>
+		
+		<property
+			name="orgshareval_three"
+			column="ORGSHAREVAL_THREE"
+			type="string"
+		/>
+		
+		<property
+			name="share_rulestatus"
+			column="SHARE_RULESTATUS"
+			type="string"
+		/>
+	</class>	
+</hibernate-mapping>

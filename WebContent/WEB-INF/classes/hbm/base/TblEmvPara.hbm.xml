@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.base">
+	<class
+		name="TblEmvPara"
+		table="TBL_EMV_PARA"
+	>
+        <meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblEmvParaPK">
+			<key-property
+				name="UsageKey"
+				column="USAGE_KEY"
+				type="string"
+			/>
+			<key-property
+				name="ParaIdx"
+				column="PARA_IDX"
+				type="string"
+			/>
+		</composite-id>
+
+		<property
+			name="ParaOrg"
+			column="PARA_ORG"
+			type="string"
+			not-null="false"
+			length="3"
+		/>
+		<property
+			name="ParaId"
+			column="PARA_ID"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="ParaSta"
+			column="PARA_STA"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="ParaLen"
+			column="PARA_LEN"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="ParaVal"
+			column="PARA_VAL"
+			type="string"
+			not-null="false"
+			length="1024"
+		/>
+		<property
+			name="GenFlag"
+			column="GEN_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="RecOprId"
+			column="REC_OPR_ID"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="RecUpdOpr"
+			column="REC_UPD_OPR"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="RecCrtTs"
+			column="REC_CRT_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="RecUpdTs"
+			column="REC_UPD_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+
+	</class>		
+</hibernate-mapping>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblFirstPage"
+		table="TBL_FIRST_PAGE"
+	>
+		<meta attribute="sync-DAO">true</meta>
+		<meta attribute="sync-VO">true</meta>
+		<id
+			name="brhId"
+			column="BRH_ID"
+			type="string"
+		>
+			<generator class="assigned" />
+		</id>
+		<property
+			name="pptMsg"
+			column="PPT_MSG"
+			type="string"
+			not-null="false"
+			length="128"
+		/>
+		<property
+			name="crtOpr"
+			column="CRT_OPR"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="updOpr"
+			column="UPD_OPR"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="crtDate"
+			column="CRT_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="updDate"
+			column="UPD_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+	</class>	
+</hibernate-mapping>

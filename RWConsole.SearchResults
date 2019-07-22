@@ -1,0 +1,64 @@
+---- toolMaterial Matches (65 in 19 files) ----
+GridConfig.xml (webcontent\web-inf\xml):			<![CDATA[whseName,toolName,rfid,toolType,toolMaterial,toolUnit,location,examPeriod,lastExam,toolExpiration,addDate,toolStatus,inWhse,note2id]]>
+GridConfig.xml (webcontent\web-inf\xml):		<!-- 	<![CDATA[toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,toolStatus,toolExpiration,inWhse,lastExam,addDates,whseCode,location,purchaseDept,purchaseUser,id]]> -->
+GridConfig.xml (webcontent\web-inf\xml):			<![CDATA[whseName,toolName,rfid,toolType,toolMaterial,toolUnit,location,examPeriod,lastExam,toolExpiration,addDate,toolStatus,inWhse,note2,purchaseDept,purchaseUser,mfrsOrg,id]]>
+RailToolInfo.hbm.xml (src\hbm\rail\tool):        <property name="toolMaterial" type="string">
+RailToolInfo.java (src\com\rail\po\tool):	private String toolMaterial;
+RailToolInfo.java (src\com\rail\po\tool):		return toolMaterial;
+RailToolInfo.java (src\com\rail\po\tool):	public void setToolMaterial(String toolMaterial) {
+RailToolInfo.java (src\com\rail\po\tool):		this.toolMaterial = toolMaterial;
+RailToolInfo.java (src\com\rail\po\tool):			String toolMaterial, String stand, String floor, String position, String whseName, String modelName) {
+RailToolInfo.java (src\com\rail\po\tool):		this.toolMaterial = toolMaterial;
+RailToolModel.hbm.xml (src\hbm\rail\tool):        <property name="toolMaterial" type="string">
+RailToolModel.java (src\com\rail\po\tool):	private String toolMaterial;
+RailToolModel.java (src\com\rail\po\tool):	public RailToolModel(long id, String modelCode, String modelName, long toolName, long toolUnit, String toolMaterial,
+RailToolModel.java (src\com\rail\po\tool):		this.toolMaterial = toolMaterial;
+RailToolModel.java (src\com\rail\po\tool):		return this.toolMaterial;
+RailToolModel.java (src\com\rail\po\tool):	public void setToolMaterial(String toolMaterial) {
+RailToolModel.java (src\com\rail\po\tool):		this.toolMaterial = toolMaterial;
+T110100.js (webcontent\ui\tools):					id: 'toolMaterial',
+T110100.js (webcontent\ui\tools):					name: 'toolMaterial'
+T110100Action.java (src\com\rail\struts\tools\action):	private String toolMaterial;
+T110100Action.java (src\com\rail\struts\tools\action):        railToolInfo.setToolMaterial(toolMaterial);
+T110100Action.java (src\com\rail\struts\tools\action):        railToolInfo.setToolMaterial(toolMaterial);
+T110100Action.java (src\com\rail\struts\tools\action):		return toolMaterial;
+T110100Action.java (src\com\rail\struts\tools\action):	public void setToolMaterial(String toolMaterial) {
+T110100Action.java (src\com\rail\struts\tools\action):		this.toolMaterial = toolMaterial;
+T110101.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},
+T110101.js (webcontent\ui\tools):	//whseName,toolName,rfid,toolType,toolMaterial,toolUnit,location,examPeriod,lastExam,
+T110101.js (webcontent\ui\tools):		{header: '材质',dataIndex: 'toolMaterial',/*renderer: brhLvlRender,*/sortable: true,width: 90},
+T110102.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},
+T110102.js (webcontent\ui\tools):		{header: '材质',dataIndex: 'toolMaterial',/*renderer: brhLvlRender,*/sortable: true,width: 90},
+T110103.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},
+T110103.js (webcontent\ui\tools):		{header: '材质',dataIndex: 'toolMaterial',/*renderer: brhLvlRender,*/sortable: true,width: 90},
+T110103.js (webcontent\ui\tools):			            Ext.getCmp('toolMaterial').setValue(rspObj.info.toolMaterial);
+T110103.js (webcontent\ui\tools):			id: 'toolMaterial',
+T110103.js (webcontent\ui\tools):			name: 'toolMaterial',
+T110201.js (webcontent\ui\tools):	//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,toolStatus,toolExpiration,inWhse,lastExam
+T110201.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},
+T110201.js (webcontent\ui\tools):		//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,toolStatus,toolExpiration,inWhse,lastExam
+T110201.js (webcontent\ui\tools):		{header: '材质',dataIndex: 'toolMaterial',sortable: true,width: 80/*,renderer: formatDt*/},
+T110301.js (webcontent\ui\tools):					id: 'toolMaterial',
+T110301.js (webcontent\ui\tools):					name: 'toolMaterial'
+T110402.js (webcontent\ui\tools):	//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,toolStatus,toolExpiration,inWhse,lastExam
+T110402.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},
+T110402.js (webcontent\ui\tools):		//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,toolStatus,toolExpiration,inWhse,lastExam
+T110402.js (webcontent\ui\tools):		{header: '材质',dataIndex: 'toolMaterial',sortable: true,width: 80/*,renderer: formatDt*/},
+T110403.js (webcontent\ui\tools):	//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,verifyMsg,infoSign,verifyUser,verifyDate]]>
+T110403.js (webcontent\ui\tools):	//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,verifyMsg,infoSign,verifyUser,verifyDate]]>
+T110403.js (webcontent\ui\tools):		//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,verifyMsg,infoSign,verifyUser,verifyDate]]>
+T110501.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},
+T110501.js (webcontent\ui\tools):		{header: '材质',dataIndex: 'toolMaterial',/*renderer: brhLvlRender,*/sortable: true,width: 90},
+T110501.js (webcontent\ui\tools):			            Ext.getCmp('toolMaterial').setValue(rspObj.info.toolMaterial);
+T110501.js (webcontent\ui\tools):			id: 'toolMaterial',
+T110501.js (webcontent\ui\tools):			name: 'toolMaterial',
+T110602.js (webcontent\ui\tools):	//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,verifyMsg,infoSign,verifyUser,verifyDate]]>
+T110602.js (webcontent\ui\tools):	//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,verifyMsg,infoSign,verifyUser,verifyDate]]>
+T110602.js (webcontent\ui\tools):		//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,verifyMsg,infoSign,verifyUser,verifyDate]]>
+T110603.js (webcontent\ui\tools):	//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,toolStatus,toolExpiration,inWhse,lastExam
+T110603.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},
+T110603.js (webcontent\ui\tools):		//toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,toolStatus,toolExpiration,inWhse,lastExam
+T110603.js (webcontent\ui\tools):		{header: '材质',dataIndex: 'toolMaterial',sortable: true,width: 80/*,renderer: formatDt*/},
+T110701.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},
+T110701.js (webcontent\ui\tools):		{header: '材质',dataIndex: 'toolMaterial',/*renderer: brhLvlRender,*/sortable: true,width: 90},
+T110802.js (webcontent\ui\tools):			{name: 'toolMaterial',mapping: 'toolMaterial'},

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class name="TblMchntDiscountRule" table="TBL_MCHNT_DISCOUNTRULE">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="discountId" type="string" column="DISCOUNT_ID">
+			<generator class="assigned" />
+		</id>
+		<property name="discountCode" column="DISCOUNT_CODE"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="discountType" column="DISCOUNT_TYPE"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="discountCard" column="DISCOUNT_CARD"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="discountValue" column="DISCOUNT_VALUE"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="discountValueInfo" column="DISCOUNT_VALUE_INFO"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="createTime" column="CREATE_TIME"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="createPerson" column="CREATE_PERSON"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="startTimeEff" column="START_TIME"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="endTimeEff" column="END_TIME"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="status" column="STATUS"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="isDownload" column="IS_DOWNLOAD"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="openLian" column="OPEN_LIAN"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="openType" column="OPEN_TYPE"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="acquirersType" column="ACQUIRERS_TYPE"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="remark" column="REMARK"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="issuedContent" column="ISSUED_CONTENT"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="acquirersId" column="ACQUIRERS_ID"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="sumcount0" column="SUMCOUNT0"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="sumcount1" column="SUMCOUNT1"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="sumcount0l" column="SUMCOUNT0L"
+			type="com.huateng.hibernate.dataType.TrimString" />
+		<property name="sumcount1l" column="SUMCOUNT1L"
+			type="com.huateng.hibernate.dataType.TrimString" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblMerRoleFuncMap"
+		table="TBL_MER_ROLE_FUNC"
+	>
+	
+	<composite-id name="Id" class="TblMerRoleFuncMapId">
+		<key-property
+			name="KeyId"
+			column="KEY_ID"
+			type="string"
+		/>
+		<key-property
+			name="ValueId"
+			column="VALUE_ID"
+			type="string"
+		/>
+	</composite-id>
+	<property
+		name="RecUpdUsr" 
+		type="string"
+		column="REC_UPD_OPR"
+		length="40"
+	/>
+	<property
+		name="RowCrtTs" 
+		type="string"
+		column="REC_CRT_TS"
+		length="14" 
+	/>
+	<property
+		name="RecUpdTs"
+		type="string"
+		column="REC_UPD_TS"
+		length="14"
+	/>
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 商户问卷及评分 -->
+	<bean id="TblPaperService" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.impl.mchtSrv.TblPaperService</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<value>TblPaperServiceTarget</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- TARGETS -->
+	<bean id="TblPaperServiceTarget" class="com.huateng.bo.impl.mchtSrv.TblPaperServiceImpl">
+		<property name="tblPaperDefInfDAO">
+			<ref bean="tblPaperDefInfDAO" />
+		</property>
+		<property name="tblPaperOptInfDAO">
+			<ref bean="tblPaperOptInfDAO" />
+		</property>
+		<property name="tblPaperSelInfDAO">
+			<ref bean="tblPaperSelInfDAO" />
+		</property>
+	</bean>
+	
+	
+	<!-- 专业服务机构 -->
+	<bean id="professionalOrganSrv" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.impl.mchtSrv.ProfessionalOrgan</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<value>tblProfessionalOrganTarget</value>
+			</list>
+		</property>
+	</bean>
+	<!-- TARGETS -->
+	<bean id="tblProfessionalOrganTarget" class="com.huateng.bo.impl.mchtSrv.ProfessionalOrganImpl">
+		<property name="tblProfessionalOrganDAO">
+			<ref bean="tblProfessionalOrganDAO" />
+		</property>
+	</bean>
+	
+	<!-- 专业服务机构 -->
+	<bean id="marketActSrv" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.impl.mchtSrv.MarketActSrv</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<value>marketActSrvTarget</value>
+			</list>
+		</property>
+	</bean>
+	<!-- TARGETS -->
+	<bean id="marketActSrvTarget" class="com.huateng.bo.impl.mchtSrv.MarketActSrvImpl">
+		<property name="tblMarketActDAO">
+			<ref bean="tblMarketActDAO" />
+		</property>
+		<property name="commQueryDAO">
+            <ref bean="CommQueryDAO"/>
+        </property>  
+		<property name="tblMarketActReviewDAO">
+			<ref bean="tblMarketActReviewDAO" />
+		</property>
+		<property name="tblMchntParticipatDAO">
+			<ref bean="tblMchntParticipatDAO" />
+		</property>
+		<property name="tblMchntParticipatReviewDAO">
+			<ref bean="tblMchntParticipatReviewDAO" />
+		</property>
+	</bean>
+	
+	<!-- DAOS -->
+	<bean id="tblPaperDefInfDAO" class="com.huateng.dao.impl.mchtSrv.TblPaperDefInfDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblPaperOptInfDAO" class="com.huateng.dao.impl.mchtSrv.TblPaperOptInfDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblPaperSelInfDAO" class="com.huateng.dao.impl.mchtSrv.TblPaperSelInfDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblProfessionalOrganDAO" class="com.huateng.dao.impl.mchtSrv.TblProfessionalOrganDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblMarketActDAO" class="com.huateng.dao.impl.mchtSrv.TblMarketActDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblMarketActReviewDAO" class="com.huateng.dao.impl.mchtSrv.TblMarketActReviewDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblMchntParticipatDAO" class="com.huateng.dao.impl.mchtSrv.TblMchntParticipatDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblMchntParticipatReviewDAO" class="com.huateng.dao.impl.mchtSrv.TblMchntParticipatReviewDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+</beans>

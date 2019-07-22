@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblUnitPersonBind"
+		table="TBL_UNIT_PERSON_BIND"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="TblUnitPersonBindPK">
+			<key-property
+				name="mchtNo"
+				column="MCHT_NO"
+				type="string"
+			/>
+			<key-property
+				name="cardNo"
+				column="CARD_NO"
+				type="string"
+			/>
+			<key-property
+				name="cardFlag"
+				column="CARD_FLAG"
+				type="string"
+			/>
+		</composite-id>
+		<property
+			name="initOprId"
+			column="INIT_OPR_ID"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="modiOprId"
+			column="MODI_OPR_ID"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="initTime"
+			column="INIT_TIME"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="modiTime"
+			column="MODI_TIME"
+			type="string"
+			not-null="true"
+			length="14"
+		/>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblCupBcMap"
+		table="TBL_CUP_BC_MAP"
+	>
+		<meta attribute="sync-DAO">true</meta>
+		<id
+			name="id"
+			type="string"
+			column="CUP_ID"
+		>
+			<generator class="org.hibernate.id.Assigned"/>
+		</id>
+
+		<property
+			name="bcId"
+			column="BC_ID"
+			type="string"
+			not-null="true"
+			length="12"
+		/>
+		<property
+			name="bankName"
+			column="BANK_NAME"
+			type="string"
+			not-null="false"
+			length="80"
+		/>
+		<property
+			name="createDate"
+			column="CREATE_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="updateDate"
+			column="UPDATE_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblCtlMchtInf"
+		table="tbl_ctl_mcht_inf"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="SA_MER_NO"
+			length="15"
+		>
+			<generator class="assigned"/>
+		</id><!-- 商户号 -->
+		<property
+			name="SaMerChName"
+			column="SA_MER_CH_NAME"
+			type="string"
+			not-null="true"
+			length="50"
+		/><!-- 中文名称 -->
+		<property
+			name="SaMerEnName"
+			column="SA_MER_EN_NAME"
+			type="string"
+			not-null="true"
+			length="50"
+		/><!-- 英文名称 -->
+		<property
+			name="SaZoneNo"
+			column="SA_ZONE_NO"
+			type="string"
+			not-null="true"
+			length="6"
+		/><!-- 分行号 -->
+		<property
+			name="SaAdmiBranNo"
+			column="SA_ADMI_BRAN_NO"
+			type="string"
+			not-null="true"
+			length="6"
+		/><!-- 主管分行号 -->
+		<property
+			name="SaConnOr"
+			column="SA_CONN_OR"
+			type="string"
+			not-null="true"
+			length="20"
+		/><!-- 联系人 -->
+		<property
+			name="SaConnTel"
+			column="SA_CONN_TEL"
+			type="string"
+			not-null="true"
+			length="22"
+		/><!-- 联系电话 -->
+		<property
+			name="SaLimitAmt"
+			column="SA_LIMIT_AMT"
+			type="string"
+			not-null="true"
+			length="12"
+		/><!-- 受控金额 -->
+		<property
+			name="SaAction"
+			column="SA_ACTION"
+			type="string"
+			not-null="true"
+			length="1"
+		/><!-- 受控动作 -->
+		<property
+			name="SaInitZoneNo"
+			column="SA_INIT_ZONE_NO"
+			type="string"
+			not-null="true"
+			length="6"
+		/><!-- 创建分行 -->
+		<property
+			name="SaInitOprId"
+			column="SA_INIT_OPR_ID"
+			type="string"
+			not-null="true"
+			length="40"
+		/><!-- 创建人ID -->	
+		<property
+			name="SaModiZoneNo"
+			column="SA_MODI_ZONE_NO"
+			type="string"
+			not-null="false"
+			length="6"
+		/><!-- 修改分行 -->
+		<property
+			name="SaModiOprId"
+			column="SA_MODI_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!-- 修改人ID -->
+		<property
+			name="SaInitTime"
+			column="SA_INIT_TIME"
+			type="string"
+			not-null="true"
+			length="14"
+		/><!-- 创建时间 -->
+		<property
+			name="SaModiTime"
+			column="SA_MODI_TIME"
+			type="string"
+			not-null="false"
+			length="14"
+		/><!-- 修改时间 -->
+	</class>	
+</hibernate-mapping>

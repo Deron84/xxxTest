@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="mchnt" extends="json-default">
+		
+		<!-- 系统拦截器 -->
+		<interceptors>
+			<interceptor name="logInter" class="com.huateng.interceptor.LogInter"></interceptor>
+			<interceptor-stack name="SystemInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="logInter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results> 
+		
+		<!--
+			商户间联信息导出EXCEL，非模板形式
+			@auther hanyongqing 
+		  -->
+		<action name="T20105Action_download2" 
+			class="com.huateng.struts.query.action.T20105Action" method="download2">
+		</action>
+		
+		<!-- 商户 -->
+		<action name="T2*_*" class="com.huateng.struts.mchnt.action.T2{1}" method="{2}">
+			<interceptor-ref name="SystemInterceptor"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+			<result name="error" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+		
+		<!-- 授权验证 -->
+		<action name="AuthoriseAction" class="com.huateng.struts.system.action.AuthoriseAction" method="authorise">
+			<result name="success" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+			<result name="error" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+		<!-- 直联商户导出-->
+	    <action name="T20106Action" class="com.huateng.struts.mchnt.action.T20106Action" />
+	    
+		<!-- 商户组别维护 -->
+		<action name="T20302Action" 
+			class="com.huateng.struts.mchnt.action.T20302Action" />
+			<action name="T20303Action" 
+			class="com.huateng.struts.mchnt.action.T20303Action" />
+		<!-- 商户入网信息维护 -->
+		<action name="T20401Action" 
+			class="com.huateng.struts.mchnt.action.T20401Action" />
+		
+		<!-- 商户权限信息维护 -->
+	    <action name="T20301Action" class="com.huateng.struts.mchnt.action.T20301Action" />
+		<!-- 商户限额维护 -->
+	    <action name="T20304Action" class="com.huateng.struts.mchnt.action.T20304Action" />
+		<!-- 商店维护 -->
+	    <action name="T20601Action" class="com.huateng.struts.mchnt.action.T20601Action" />
+		
+		<!-- 商户信息审核 -->
+		<action name="T20201Action" 
+			class="com.huateng.struts.mchnt.action.T20201Action" />
+		<!-- 查看商户详细信息 -->
+		<action name="MchntDetailAction" class="com.huateng.struts.mchnt.action.MchntDetailAction">
+			<result type="redirect">/page/mchnt/MchntDetail.jsp</result>
+		</action>
+		
+		<!-- 查看商户入网详细信息 -->
+		<action name="MchntNetDetailAction" class="com.huateng.struts.mchnt.action.MchntNetDetailAction">
+			<result type="redirect">/page/mchnt/MchntNetDetail.jsp</result>
+		</action>
+		
+		<!-- 下载指定文件 -->
+		<action name="ajaxDownLoad" class="com.huateng.system.util.AjaxDownLoad">
+			<result type="redirect"></result>
+		</action>
+		
+		<!-- 商户巡检信息 -->
+		<action name="T20801Action" class="com.huateng.struts.mchnt.action.T20801Action" />
+		<action name="T2080201Action" class="com.huateng.struts.mchnt.action.T2080201Action" />
+		<action name="T20802Action" class="com.huateng.struts.mchnt.action.T20802Action" />
+		
+		<!-- 商户转入转出卡管理 -->
+		<action name="T21100Action" class="com.huateng.struts.mchnt.action.T21100Action" />
+		<!-- 商户签约账户维护 -->
+		<action name="TT21200Action" class="com.huateng.struts.mchnt.action.T21200Action" />
+		<!-- 商户映射列表 -->
+		<action name="T21401Action" class="com.huateng.struts.mchnt.action.T21401Action" />
+		<!-- 商户业务申请列表 -->
+		<action name="T21400Action" class="com.huateng.struts.mchnt.action.T21400Action" />
+		<!-- 优惠规则列表 -->
+		<action name="T21402Action" class="com.huateng.struts.mchnt.action.T21402Action" />
+		<!-- 优惠规则绑定列表 -->
+		<action name="T21403Action" class="com.huateng.struts.mchnt.action.T21403Action" />
+		
+		<!-- 扫码支付商户维护 -->
+		<action name="T20107Action" class="com.sdses.struts.mchnt.action.T20107Action" />
+		<!-- 民生商户信息维护-->
+		<action name="mchntMSAction" class="com.sdses.struts.mchnt.action.mchntMSAction" />
+		<!-- 民生支付渠道信息维护-->
+		<action name="payChannelAction" class="com.sdses.struts.mchnt.action.payChannelAction" />
+		<!-- 电子资料上传-->
+		<action name="dataUploadAction" class="com.sdses.struts.mchnt.action.dataUploadAction" />
+		<!-- 微信、支付宝渠道维护-->
+		<action name="T20111Action" class="com.sdses.struts.mchnt.action.T20111Action" />
+	</package>
+</struts>

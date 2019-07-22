@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="tools" extends="struts-default,json-default">
+		<!-- 系统拦截器 -->
+		<interceptors>
+			<interceptor name="logInter" class="com.huateng.interceptor.LogInter"></interceptor>
+			<interceptor-stack name="SystemInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="logInter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+	 	<default-interceptor-ref name="SystemInterceptor"/>
+	
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="contentType">text/html</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		
+		<!-- 工具信息维护 -->
+		
+		<!-- 工具新增  -->
+		<action name="T110100Action" class="com.rail.struts.tools.action.T110100Action" method="add">
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<!--  获取单个工具 -->
+		<action name="T110101Action_get" class="com.rail.struts.tools.action.T110100Action" method="get">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110101Action_getByToolCode" class="com.rail.struts.tools.action.T110100Action" method="getByToolCode">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110101Action_getToolInfoData" class="com.rail.struts.tools.action.T110100Action" method="getToolInfoData">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 工具更新 -->
+		<action name="T110101Action_update" class="com.rail.struts.tools.action.T110100Action" method="update">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110101Action_updateWhse" class="com.rail.struts.tools.action.T110100Action" method="updateWhse">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110101Action_updateAll" class="com.rail.struts.tools.action.T110100Action" method="updateAll">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110100Action_listMap" class="com.rail.struts.tools.action.T110100Action" method="listMap">
+			<result name='success' type='json'>
+				<param name="root">list</param>
+			</result>
+		</action>
+		<!-- 新增 -->
+		<action name="T110100Action_add" class="com.rail.struts.tools.action.T110100Action" method="add">
+			<result name='success' type='json'>
+				<param name="root">i</param>
+			</result>
+		</action>
+		<!-- 删除  -->
+		<action name="T110100Action_del" class="com.rail.struts.tools.action.T110100Action" method="del">
+			<result name='success' type='json'>
+				<param name="root">i</param>
+			</result>
+		</action>
+		<!--   停用 -->
+		<action name="T110100Action_stop" class="com.rail.struts.tools.action.T110100Action" method="stop">
+			<result name='success' type='json'>
+				<param name="root">i</param>
+			</result>
+		</action>
+		<!--  更新 -->
+		<action name="T110100Action_update" class="com.rail.struts.tools.action.T110100Action" method="update">
+			<result name='success' type='json'>
+				<param name="root">i</param>
+			</result>
+		</action>
+		
+		
+		
+		<!-- 新增工具维修  -->
+		<action name="T110801Action_add" class="com.rail.struts.tools.action.T110801Action" method="add">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110701Action_check" class="com.rail.struts.tools.action.T110701Action" method="check">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!--  新增报废申请 -->
+		<action name="T110601Action_add" class="com.rail.struts.tools.action.T110601Action" method="add">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 审核报废 -->
+		<action name="T110601Action_update" class="com.rail.struts.tools.action.T110601Action" method="update">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110601Action_get" class="com.rail.struts.tools.action.T110601Action" method="get">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!--  新增维修申请 -->
+		<action name="T110401Action_add" class="com.rail.struts.tools.action.T110401Action" method="add">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110401Action_get" class="com.rail.struts.tools.action.T110401Action" method="get">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 审核维修 -->
+		<action name="T110401Action_update" class="com.rail.struts.tools.action.T110401Action" method="update">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="T110104Action_updateComplete" class="com.rail.struts.tools.action.T110401Action" method="updateComplete">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!--  excel导出 -->
+		<action name="T11010x_excel" class="com.rail.struts.tools.action.T11000ExcelExportAction" method="exportExcelT1101" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT1102" class="com.rail.struts.tools.action.T11000ExcelExportAction" method="exportExcelT1102" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT1103" class="com.rail.struts.tools.action.T11000ExcelExportAction" method="exportExcelT1103" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT1104" class="com.rail.struts.tools.action.T11000ExcelExportAction" method="exportExcelT1104" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT1105" class="com.rail.struts.tools.action.T11000ExcelExportAction" method="exportExcelT1105" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT1106" class="com.rail.struts.tools.action.T11000ExcelExportAction" method="exportExcelT1106" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT1107" class="com.rail.struts.tools.action.T11000ExcelExportAction" method="exportExcelT1107" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT1108" class="com.rail.struts.tools.action.T11000ExcelExportAction" method="exportExcelT1108" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		
+		<!-- 机构信息维护 -->
+		<action name="T110200Action" class="com.huateng.struts.base.action.T10101Action" />
+		<!-- 清算凭证 -->
+		<action name="T110300Action" class="com.huateng.struts.base.action.T10102Action" />
+		<!-- 地区码信息维护 -->
+		<action name="T110400Action" class="com.huateng.struts.base.action.T10201Action" />
+	</package>
+</struts>

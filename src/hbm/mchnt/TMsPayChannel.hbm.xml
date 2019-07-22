@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TMsPayChannel" table="T_MS_PAYCHANNEL">
+		<meta attribute="sync-DAO">false</meta>
+			
+		<composite-id name="tMsPayChannelPK" class="TMsPayChannelPK">
+			<key-property name="outMchntId" column="OUTMCHNTID" type="string" />
+			<key-property name="cmbcMchntId" column="CMBCMCHNTID" type="string" />
+		</composite-id>
+		
+		<property name="txnSeq" column="TXNSEQ" type="string"
+			not-null="true" length="32" />
+		<property name="operId" column="OPERID" type="string"
+			not-null="true" length="20" />
+		<property name="apiCode" column="APICODE" type="string"
+			not-null="true" length="4"/>
+		<property name="industryId" column="INDUSTRYID" type="string"
+		not-null="true" length="64" />
+		<property name="operateType" column="OPERATETYPE" type="string"
+		not-null="true" length="1" />
+		<property name="dayLimit" column="DAYLIMIT" type="string"
+		not-null="true" length="12" />
+		<property name="monthLimit" column="MONTHLIMIT" type="string"
+		not-null="true" length="12" />
+		<property name="rateFlag" column="RATEFLAG" type="string"
+		not-null="true" length="1" />
+		<property name="feeRate" column="FEERATE" type="string"
+		not-null="true" length="100" />
+		<property name="account" column="ACCOUNT" type="string"
+		not-null="true" length="32" />
+		<property name="pbcBankId" column="PBCBANKID" type="string"
+		not-null="true" length="12" />
+		<property name="acctName" column="ACCTNAME" type="string"
+		not-null="true" length="20" />
+		<property name="acctType" column="ACCTTYPE" type="string"
+		not-null="true" length="1" />
+		<property name="cmbcSignId" column="CMBCSIGNID" type="string"
+		not-null="true" length="21" />
+		<property name="createTime" column="CREATE_TIME" type="string"
+		not-null="false" length="19" />
+		<property name="modifyTime" column="MODIFY_TIME" type="string"
+		not-null="false" length="19" />
+		<property name="code" column="CODE" type="string"
+		not-null="false" length="10" />
+		<property name="message" column="MESSAGE" type="string"
+		not-null="false" length="100" />
+	</class>
+</hibernate-mapping>

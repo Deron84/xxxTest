@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblTxnCfgDsp"
+		table="TBL_TXN_CFG_DSP"
+	>
+		<meta attribute="sync-DAO">true</meta>
+		<composite-id name="id" class="TblTxnCfgDspPK">
+			<key-property
+				name="termTxnCode"
+				column="TERM_TXN_CODE"
+				type="string"
+			/>
+			<key-property
+				name="usageKey"
+				column="USAGE_KEY"
+				type="string"
+			/>
+		</composite-id>
+
+		<property
+			name="brhId"
+			column="BRH_ID"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="dsp"
+			column="DSP"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

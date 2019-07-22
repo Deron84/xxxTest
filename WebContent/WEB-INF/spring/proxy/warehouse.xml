@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 仓库信息维护 -->
+	<bean id="T100101BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.warehouse.T100101BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T100101BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T100101BOTarget" class="com.rail.bo.impl.warehouse.T100101BOTarget">
+		<property name="railWhseInfoDao">
+			<ref bean="RailWhseInfoDao" />
+		</property>
+	</bean>
+	<!-- 新增仓库页面 -->
+	<bean id="T100100BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.warehouse.T100100BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T100100BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T100100BOTarget" class="com.rail.bo.impl.warehouse.T100100BOTarget">
+		<property name="railWhseInfoDao">
+			<ref bean="RailWhseInfoDao" />
+		</property>
+	</bean>
+	<!-- 仓库相关DAO层 -->
+	<bean id="RailWhseInfoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.warehouse.RailWhseInfoDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailWhseInfoDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailWhseInfoDaoTarget" class="com.rail.dao.impl.warehouse.RailWhseInfoDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	<!-- 门禁终端类型页面 -->
+	<bean id="T100300BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.warehouse.T100300BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T100300BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T100300BOTarget" class="com.rail.bo.impl.warehouse.T100300BOTarget">
+		<property name="railWhseToolWarnDao">
+			<ref bean="RailWhseToolWarnDao" />
+		</property>
+	</bean>
+	<!-- 门禁终端类型DAO层 -->
+	<bean id="RailWhseToolWarnDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.warehouse.RailWhseToolWarnDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailWhseToolWarnDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailWhseToolWarnDaoTarget" class="com.rail.dao.impl.warehouse.RailWhseToolWarnDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

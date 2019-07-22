@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblMenuMsg"
+		table="TBL_MENU_MSG"
+	>
+		<meta attribute="sync-DAO">true</meta>
+		<composite-id name="Id" class="TblMenuMsgPK">
+		<key-property
+			name="UsageKey"
+			column="USAGE_KEY"
+			type="string"
+			length="1"
+		/>
+		<key-property
+			name="BrhId"
+			column="BRH_ID"
+			type="string"
+			length="10"
+		/>
+		<key-property
+			name="MenuId"
+			column="MENU_ID"
+			type="string"
+			length="2"
+		/>
+		<key-property
+			name="MenuLevel"
+			column="MENU_LEVEL"
+			type="string"
+			length="1"
+		/>
+		<key-property
+			name="MenuPreId1"
+			column="MENU_PRE_ID1"
+			type="string"
+			length="2"
+		/>
+		<key-property
+			name="MenuPreId2"
+			column="MENU_PRE_ID2"
+			type="string"
+			length="2"
+		/>
+		<key-property
+			name="VerId"
+			column="VER_ID"
+			type="string"
+			length="4"
+		/>
+		</composite-id>
+		
+		<property
+			name="MenuMsg"
+			column="MENU_MSG"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		
+		<property
+			name="TxnCode"
+			column="TXN_CODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="ConFlag"
+			column="CON_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="PptId"
+			column="PPT_ID"
+			type="integer"
+			not-null="false"
+			length="22"
+		/>
+		<property
+			name="OprId"
+			column="OPR_ID"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="CrtDate"
+			column="CRT_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="UpdDate"
+			column="UPD_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

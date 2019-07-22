@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblMchtSignAccInf"
+		table="TBL_MCHT_SIGN_ACC_INF"
+	>
+<!--		<meta attribute="sync-DAO">true</meta>-->
+		<composite-id name="id" class="TblMchtSignAccInfPK">
+			<key-property
+				name="mchntId"
+				column="MCHT_NO"
+				type="com.huateng.hibernate.dataType.TrimString"
+			/>
+			<key-property
+				name="signAcct"
+				column="SIGN_ACCT"
+				type="com.huateng.hibernate.dataType.TrimString"
+			/>
+		</composite-id>
+		
+		
+		<!-- 签约类型 0商户收款帐户 1付款转入帐户 -->
+		<property
+			name="signType"
+			column="SIGN_TYPE"
+			type="com.huateng.hibernate.dataType.TrimString"
+			not-null="false"
+			length="1"
+		/>
+		<!-- 签约状态 0正常    1未启用 -->
+		<property
+			name="signStatus"
+			column="SIGN_STATUS"
+			type="com.huateng.hibernate.dataType.TrimString"
+			not-null="false"
+			length="1"
+		/>
+		<!-- 签约卡所属行行号-->
+		<property
+			name="rcvBankId"
+			column="RCV_BANK_ID"
+			type="com.huateng.hibernate.dataType.TrimString"
+			not-null="false"
+			length="12"
+		/>
+		<!-- 签约卡所属行名称 -->
+		<property
+			name="rcvBankNo"
+			column="RCV_BANK_NO"
+			type="com.huateng.hibernate.dataType.TrimString"
+			not-null="false"
+			length="62"
+		/>
+		<!-- 创建记录操作员 -->
+		<property
+			name="crtOprId"
+			column="crt_opr_id"
+			type="com.huateng.hibernate.dataType.TrimString"
+			length="40"
+		/>
+		<!-- 创建记录操作员 -->
+		<property
+			name="updOprId"
+			column="upd_opr_id"
+			type="com.huateng.hibernate.dataType.TrimString"
+			length="40"
+		/>
+		<!-- 记录修改时间 -->
+		<property
+			name="recUpdTs"
+			column="REC_UPD_TS"
+			type="com.huateng.hibernate.dataType.TrimString"
+			length="14"
+		/><!-- 记录创建时间 -->
+				<property
+			name="recCrtTs"
+			column="REC_CRT_TS"
+			type="com.huateng.hibernate.dataType.TrimString"
+			length="14"
+		/>
+		<!-- 操作员银行号 -->
+		<property
+			name="bankNo"
+			column="BANK_NO"
+			type="com.huateng.hibernate.dataType.TrimString"
+			length="21"
+		/>
+		<!-- 操作员银行名称 -->
+		<property
+			name="bankName"
+			column="BANK_NAME"
+			type="com.huateng.hibernate.dataType.TrimString"
+			length="81"
+		/>
+		<!-- 操作员银行地址 -->
+		<property
+			name="bankAddr"
+			column="BANK_ADDR"
+			type="com.huateng.hibernate.dataType.TrimString"
+			length="201"
+		/>
+		<!-- 签约名称 -->
+		<property
+			name="acctName"
+			column="ACCT_NAME"
+			type="com.huateng.hibernate.dataType.TrimString"
+			length="81"
+		/>
+	</class>	
+</hibernate-mapping>

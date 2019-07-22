@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="T50206" language="groovy" pageWidth="1684" pageHeight="1190" orientation="Landscape" columnWidth="830" leftMargin="6" rightMargin="6" topMargin="6" bottomMargin="6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="OPR_ID" class="java.lang.String"/>
+	<parameter name="PRINT_DATE" class="java.lang.String"/>
+	<parameter name="startDate" class="java.lang.String"/>
+	<parameter name="endDate" class="java.lang.String"/>
+	<parameter name="BRH_ID" class="java.lang.String"/>
+	<parameter name="BRH_NAME" class="java.lang.String"/>
+	<field name="field1" class="java.lang.String"/>
+	<field name="field2" class="java.lang.String"/>
+	<field name="field3" class="java.lang.String"/>
+	<field name="field4" class="java.lang.String"/>
+	<field name="field5" class="java.lang.String"/>
+	<field name="field6" class="java.lang.String"/>
+	<field name="field7" class="java.lang.String"/>
+	<field name="field8" class="java.lang.String"/>
+	<field name="field9" class="java.lang.String"/>
+	<field name="field10" class="java.lang.String"/>
+	<field name="field11" class="java.lang.String"/>
+	<field name="field12" class="java.lang.String"/>
+	<field name="field13" class="java.lang.String"/>
+	<field name="field14" class="java.lang.String"/>
+	<field name="field15" class="java.lang.Integer"/>
+	<field name="field16" class="java.math.BigDecimal"/>
+	<field name="field17" class="java.math.BigDecimal"/>
+	<field name="field18" class="java.math.BigDecimal"/>
+	<field name="field19" class="java.math.BigDecimal"/>
+	<field name="field20" class="java.math.BigDecimal"/>
+	<variable name="sumf15" class="java.math.BigDecimal" resetType="Group" resetGroup="brhGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{field15}]]></variableExpression>
+	</variable>
+	<variable name="sumf16" class="java.math.BigDecimal" resetType="Group" resetGroup="brhGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{field16}]]></variableExpression>
+	</variable>
+	<variable name="sumf17" class="java.math.BigDecimal" resetType="Group" resetGroup="brhGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{field17}]]></variableExpression>
+	</variable>
+	<variable name="sumf18" class="java.math.BigDecimal" resetType="Group" resetGroup="brhGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{field18}]]></variableExpression>
+	</variable>
+	<variable name="sumf19" class="java.math.BigDecimal" resetType="Group" resetGroup="brhGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{field19}]]></variableExpression>
+	</variable>
+	<variable name="sumf20" class="java.math.BigDecimal" resetType="Group" resetGroup="brhGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{field20}]]></variableExpression>
+	</variable>
+	<variable name="sums15" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{field15}]]></variableExpression>
+	</variable>
+	<variable name="sums16" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{field16}]]></variableExpression>
+	</variable>
+	<variable name="sums17" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{field17}]]></variableExpression>
+	</variable>
+	<variable name="sums18" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{field18}]]></variableExpression>
+	</variable>
+	<variable name="sums19" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{field19}]]></variableExpression>
+	</variable>
+	<variable name="sums20" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{field20}]]></variableExpression>
+	</variable>
+	<group name="brhGroup">
+		<groupExpression><![CDATA[$F{field1}]]></groupExpression>
+		<groupFooter>
+			<band height="50">
+				<textField>
+					<reportElement x="1199" y="10" width="53" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sumf15}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="1252" y="10" width="79" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sumf16}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="1331" y="10" width="82" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sumf17}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="1413" y="10" width="82" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sumf18}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="1495" y="10" width="90" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sumf19}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="1585" y="10" width="87" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sumf20}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="10" width="42" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+					</textElement>
+					<text><![CDATA[合计]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="42" y="10" width="86" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{field1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="128" y="10" width="86" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0" lineStyle="Solid"/>
+						<leftPen lineWidth="2.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="2.0" lineStyle="Solid"/>
+						<rightPen lineWidth="2.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{field2}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="214" y="10" width="985" height="20"/>
+					<box>
+						<pen lineWidth="2.0"/>
+						<topPen lineWidth="2.0"/>
+						<leftPen lineWidth="2.0"/>
+						<bottomPen lineWidth="2.0"/>
+						<rightPen lineWidth="2.0"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="1672" height="79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isStrikeThrough="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[神思电子商户交易信息统计表]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="1572" y="4" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{OPR_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1505" y="4" width="67" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[操作员]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="1338" y="4" width="67" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[日期]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1405" y="4" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PRINT_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="234" y="4" width="83" height="20"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[机构名称	]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="317" y="4" width="87" height="20"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{BRH_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="4" width="87" height="20"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{BRH_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="4" width="83" height="20"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[机构编号]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="516" y="4" width="178" height="20"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{startDate}+" - "+$P{endDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="433" y="4" width="83" height="20"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[查询跨度]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="35" width="42" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[序号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="35" width="86" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[商户号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="35" width="106" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[商户名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1252" y="35" width="79" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[总交易金额]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1199" y="35" width="53" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[总笔数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1413" y="35" width="82" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[应收商户手续费]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="406" y="35" width="54" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[MCC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="524" y="35" width="60" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[签约网点]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="584" y="35" width="83" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[客户经理工号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="667" y="35" width="73" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[客户经理姓名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1585" y="35" width="87" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[手续费净额]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="35" width="86" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[分行代码]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="35" width="86" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[分行名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="35" width="64" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[商户组别]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="740" y="35" width="93" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[商户结算周期]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="833" y="35" width="84" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[商户结算账户类型]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="917" y="35" width="103" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[商户账户户名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1020" y="35" width="119" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[商户账户账号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1139" y="35" width="60" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[计费名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1495" y="35" width="90" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[清算金额]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1331" y="35" width="82" height="29"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[应付银联手续费]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1603" y="0" width="69" height="22"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[单位：元]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="42" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1585" y="0" width="87" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field20}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="0" width="86" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="0" width="86" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="0" width="86" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="106" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="0" width="54" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="64" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="524" y="0" width="60" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="584" y="0" width="83" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field8}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="667" y="0" width="73" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field9}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="740" y="0" width="93" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field10}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="833" y="0" width="84" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field11}.equals( "A" )?"对公账户":"对私账户"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="917" y="0" width="103" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field12}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1020" y="0" width="119" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field13}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1139" y="0" width="60" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field14}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1199" y="0" width="53" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field15}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1252" y="0" width="79" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field16}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1413" y="0" width="82" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field18}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1495" y="0" width="90" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field19}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1331" y="0" width="82" height="30"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{field17}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="1199" y="10" width="53" height="20"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sums15}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1252" y="10" width="79" height="20"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sums16}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1331" y="10" width="82" height="20"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sums17}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1413" y="10" width="82" height="20"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sums18}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1495" y="10" width="90" height="20"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sums19}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1585" y="10" width="87" height="20"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{sums20}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="42" height="20"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[总计]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="10" width="1157" height="20"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

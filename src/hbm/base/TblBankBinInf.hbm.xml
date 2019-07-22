@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class name="TblBankBinInf" table="TBL_BANK_BIN_INF">
+
+		<id name="id" column="IND"  type="integer">
+			<generator class="assigned" />
+		</id>
+		
+		<property name="InsIdCd" column="INS_ID_CD" type="string" 
+			not-null="true" length="11" />
+		<property name="BinOffSet" column="BIN_OFFSET" type="string" 
+			not-null="true" length="2" />
+		<property name="BinLen" column="BIN_LEN" type="string"
+			not-null="true" length="2" />
+		<property name="BinStaNo" column="BIN_STA_NO" type="string"
+			not-null="true" length="30" />
+		<property name="BinEndNo" column="BIN_END_NO" type="string"
+			not-null="true" length="30" />
+		
+		<property name="CardTp" column="CARD_TP" type="string"
+			not-null="true" length="2" />
+		<property name="BinTnum" column="BIN_TNUM" type="string"
+			not-null="true" length="1" />
+		<property name="Acc1Offset" column="ACC1_OFFSET" type="string"
+			not-null="false" length="2" />
+		<property name="Acc1Len" column="ACC1_LEN" type="string"
+			not-null="false" length="2" />
+		<property name="Acc1Tnum" column=" ACC1_TNUM" type="string"
+			not-null="false" length="1" />
+		<property name="Acc2Offset" column="ACC2_OFFSET" type="string"
+			not-null="false" length="2" />
+		<property name="Acc2Len" column="ACC2_LEN" type="string"
+			not-null="false" length="2" />
+		<property name="Acc2Tnum" column="ACC2_TNUM " type="string"
+			not-null="false" length="1" />
+		<property name="CardDis" column="CARD_DIS" type="string"
+			not-null="false" length="40" />
+		<property name="RecOprId" column="REC_OPR_ID" type="string"
+			not-null="false" length="40" />
+		<property name="RecUpdOpr" column="REC_UPD_OPR" type="string"
+			not-null="false" length="40" />
+		<property name="RecCrtTs" column="REC_CRT_TS" type="string"
+			not-null="false" />
+		<property name="RecUpdTs" column="REC_UPD_TS" type="string"
+			not-null="false" />
+
+	</class>
+</hibernate-mapping>

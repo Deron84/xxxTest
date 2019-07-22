@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">	
+			<value>classpath:jdbc.properties</value>
+		</property>
+	</bean>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
+		<property name="driverClassName">
+			<value>${jdbc.oracle.driverClassName}</value>
+		</property> 
+		<property name="url">
+		 	<value>${jdbc.oracle.url}</value>
+		</property> 
+		<property name="username">
+		 	<value>${jdbc.oracle.username}</value> 
+		</property> 
+		<property name="password"> 
+			<value>${jdbc.oracle.password}</value>
+		</property>
+        <property name="removeAbandoned" value="true"/>
+          <property name="initialSize" value="10" />
+          <property name="maxIdle" value="10" />
+          <property name="minIdle" value="10" />
+           <property name="maxActive" value="30" />
+           <property name="maxWait" value="30000" />
+           <property name= "testWhileIdle" value="true" />
+        <property name= "testOnBorrow" value="false" />
+        <property name= "testOnReturn" value="false" />
+        <property name= "validationQuery" value="select 1 from dual" />
+        <property name= "timeBetweenEvictionRunsMillis" value="30000" />
+        <property name= "numTestsPerEvictionRun" value="30" />
+        <property name="minEvictableIdleTimeMillis" value="1800000" />
+	</bean>
+	
+	<!-- 针对查询连接池 -->
+	<bean id="dataSourceQuery" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
+		<property name="driverClassName">
+			<value>${jdbc.oracle.driverClassName}</value>
+		</property> 
+		<property name="url">
+		 	<value>${jdbc.oracle.url}</value>
+		</property> 
+		<property name="username">
+		 	<value>${jdbc.oracle.username}</value> 
+		</property> 
+		<property name="password"> 
+			<value>${jdbc.oracle.password}</value>
+		</property>
+		<property name="maxActive">
+			<value>5</value>
+		</property>
+		<property name="minIdle">
+			<value>1</value>
+		</property>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					com.huateng.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.classic.ClassicQueryTranslatorFactory
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<!-- 系统 -->
+				<value>hbm/system/TblFuncInf.hbm.xml</value>
+				<value>hbm/system/TblRoleInf.hbm.xml</value>
+				<value>hbm/system/TblRoleFuncMap.hbm.xml</value>
+				<value>hbm/system/TblTxnInfo.hbm.xml</value>
+				<!-- 基本信息管理 -->
+				<value>hbm/base/TblOprInfo.hbm.xml</value>
+				<value>hbm/base/TblBrhInfo.hbm.xml</value>
+				<value>hbm/base/TblMbfBankInfo.hbm.xml</value>
+				<value>hbm/base/TblPosCardInf.hbm.xml</value>
+				<value>hbm/base/TblComCardInf.hbm.xml</value>
+				<value>hbm/base/TblIPosInf.hbm.xml</value>
+				<value>hbm/base/CstSysParam.hbm.xml</value>
+				<value>hbm/base/TblBankBinInf.hbm.xml</value>
+				<value>hbm/base/TblBrhTlrInfo.hbm.xml</value>
+				<value>hbm/base/TblEmvPara.hbm.xml</value>
+				<value>hbm/base/SettleDocInfo.hbm.xml</value>
+				<value>hbm/base/TblBrhParam.hbm.xml</value>
+				<value>hbm/base/AlipayShareParam.hbm.xml</value>
+				<!-- 商户管理 -->
+			    <value>hbm/mchnt/TblMchtBaseInf.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtBaseInfTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtCupInfo.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtCupInfoTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtLicenceInf.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtLicenceInfTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtSettleInf.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtSettleInfTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblMerRoleFuncMap.hbm.xml</value>				
+				<value>hbm/mchnt/TblInfMchntTp.hbm.xml</value>
+				<value>hbm/mchnt/TblInfMchntTpGrp.hbm.xml</value>
+				<value>hbm/mchnt/TblDivMchnt.hbm.xml</value>
+				<value>hbm/mchnt/TblDivMchntTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntRefuse.hbm.xml</value>	
+				<value>hbm/mchnt/CstMchtFeeInf.hbm.xml</value>		
+				<value>hbm/mchnt/TblMchtBranInf.hbm.xml</value>		
+				<value>hbm/mchnt/TblGroupMchtInf.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtAcctInf.hbm.xml</value>
+				<value>hbm/mchnt/TblInfDiscCd.hbm.xml</value>
+				<value>hbm/mchnt/TblHisDiscAlgo.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtCheckInf.hbm.xml</value>
+				<value>hbm/mchnt/TblUnitPersonBind.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtSignAccInf.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntMap.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntApply.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntDiscountRule.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntDiscountRuleBind.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntUser.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntFee.hbm.xml</value>	
+				<value>hbm/mchnt/TcMchntMap.hbm.xml</value>	
+				<value>hbm/mchnt/TMsMerchnt.hbm.xml</value>	
+				<value>hbm/mchnt/TMsPayChannel.hbm.xml</value>	
+				<value>hbm/mchnt/TAreaCode.hbm.xml</value>	
+				<value>hbm/mchnt/TBrhDatadic.hbm.xml</value>	
+						
+				<!-- 入网商户管理-->
+				<value>hbm/mchnt/TblMchtNetTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblMchtNet.hbm.xml</value>
+				<!-- 商户入账卡号管理 -->
+				<value>hbm/mchnt/TblInCardManagent.hbm.xml</value>
+				<!-- 终端管理 -->
+				<value>hbm/pos/TblTermInf.hbm.xml</value>
+				<value>hbm/pos/TblTermInfTmp.hbm.xml</value>
+				<value>hbm/pos/TblTermTmkLog.hbm.xml</value>
+                <value>hbm/pos/TblTermRefuse.hbm.xml</value>
+                <value>hbm/pos/TblVegeCodeInf.hbm.xml</value>
+                <value>hbm/pos/TblVegeMappingInf.hbm.xml</value>
+                <!-- 终端库存-->
+                <value>hbm/pos/TblTermManagement.hbm.xml</value>
+				<!-- 风险控制 -->
+				<value>hbm/risk/TblRiskInf.hbm.xml</value>
+				<value>hbm/risk/TblRiskInfUpdLog.hbm.xml</value>
+				<value>hbm/risk/TblCtlCardInf.hbm.xml</value>
+				<value>hbm/risk/TblCtlMchtInf.hbm.xml</value>
+				<!-- 分行内部账户 -->
+				<value>hbm/settle/TblBrhAcct.hbm.xml</value>
+				<value>hbm/settle/TblInfileOpt.hbm.xml</value>
+				<!-- 商户服务-->
+				<value>hbm/mchtSrv/TblProfessionalOrgan.hbm.xml</value>
+				<value>hbm/mchtSrv/TblPaperDefInf.hbm.xml</value>
+				<value>hbm/mchtSrv/TblPaperOptInf.hbm.xml</value>
+				<value>hbm/mchtSrv/TblPaperSelInf.hbm.xml</value>
+				<value>hbm/mchtSrv/TblMarketAct.hbm.xml</value>
+				<value>hbm/mchtSrv/TblMarketActReview.hbm.xml</value>
+				<value>hbm/mchtSrv/TblMchntParticipat.hbm.xml</value>
+				<value>hbm/mchtSrv/TblMchntParticipatReview.hbm.xml</value>
+				<value>hbm/mchtSrv/TblMchtMarkSubsidy.hbm.xml</value>
+				<value>hbm/mchtSrv/TblMchtMarkSubsidyBind.hbm.xml</value>
+				<!-- 差错处理 -->
+				<value>hbm/accident/TblManualReturn.hbm.xml</value>
+				<value>hbm/accident/TblEntrustTrade.hbm.xml</value>
+				<value>hbm/accident/TblCostInf.hbm.xml</value>
+				<value>hbm/accident/TblRTxn.hbm.xml</value>
+				
+				<!-- 二期添加 -->
+				<!-- EPOS-->
+				<value>hbm/epos/TblCupBcMap.hbm.xml</value>
+				<value>hbm/epos/TblFirstPage.hbm.xml</value>
+				<value>hbm/epos/TblMenuMsg.hbm.xml</value>
+				<value>hbm/epos/TblPrtMsg.hbm.xml</value>
+				<value>hbm/epos/TblPptMsg.hbm.xml</value>
+				<value>hbm/epos/TblRspMsg.hbm.xml</value>
+				<value>hbm/epos/TblTxnCfg.hbm.xml</value>
+				<value>hbm/epos/TblTermTxn.hbm.xml</value>
+				<value>hbm/epos/TblTxnCfgDsp.hbm.xml</value>
+				<value>hbm/epos/TblVerMng.hbm.xml</value>
+				
+				
+				
+				<!-- 门禁管理 -->
+				<value>hbm/rail/access/RailAccessEmployee.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessEquipInfo.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessEquipType.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessInfo.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessMaintain.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessMaintainWarn.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessOptlog.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessTool.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessWarn.hbm.xml</value>
+				<!-- 基础 -->
+				<value>hbm/rail/base/RailArea.hbm.xml</value>
+				<value>hbm/rail/base/RailEmployee.hbm.xml</value>
+				<value>hbm/rail/base/RailEmployeeType.hbm.xml</value>
+				<value>hbm/rail/base/RailPatrol.hbm.xml</value>
+				<value>hbm/rail/base/RailPush.hbm.xml</value>
+				<value>hbm/rail/base/RailTeam.hbm.xml</value>
+				<!-- 施工单位及供应商 -->
+				<value>hbm/rail/org/RailConstOrg.hbm.xml</value>
+				<value>hbm/rail/org/RailFormOrg.hbm.xml</value>
+				<value>hbm/rail/org/RailMfrsOrg.hbm.xml</value>
+				
+				<!-- 工具 -->
+				<value>hbm/rail/tool/RailToolInfo.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolMaintain.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolMaintainWarn.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolModel.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolName.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolRepair.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolScrap.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolTransfer.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolType.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolUnit.hbm.xml</value>
+				<!-- 仓库 -->
+				<value>hbm/rail/warehouse/RailWhseEmployee.hbm.xml</value>
+				<value>hbm/rail/warehouse/RailWhseInfo.hbm.xml</value>
+				<value>hbm/rail/warehouse/RailWhseTool.hbm.xml</value>
+				<value>hbm/rail/warehouse/RailWhseToolWarn.hbm.xml</value>
+				<!-- 工单 -->
+				<value>hbm/rail/work/RailWorkEmployee.hbm.xml</value>
+				<value>hbm/rail/work/RailWorkImg.hbm.xml</value>
+				<value>hbm/rail/work/RailWorkInfo.hbm.xml</value>
+				<value>hbm/rail/work/RailWorkTool.hbm.xml</value>
+				<value>hbm/rail/work/RailWorkWarn.hbm.xml</value>
+				<value>hbm/rail/work/RailTeamEmployee.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="sessionFactoryQuery" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSourceQuery" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					com.huateng.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.classic.ClassicQueryTranslatorFactory
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>hbm/system/TblFuncInf.hbm.xml</value>
+				<value>hbm/system/TblRoleFuncMap.hbm.xml</value>
+				<value>hbm/mchnt/TblDivMchnt.hbm.xml</value>
+				<value>hbm/mchnt/TblDivMchntTmp.hbm.xml</value>
+				<value>hbm/mchnt/TblMchntRefuse.hbm.xml</value>
+				<!-- 门禁管理 -->
+				<value>hbm/rail/access/RailAccessEmployee.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessEquipInfo.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessEquipType.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessInfo.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessMaintain.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessMaintainWarn.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessOptlog.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessTool.hbm.xml</value>
+				<value>hbm/rail/access/RailAccessWarn.hbm.xml</value>
+				<!-- 基础 -->
+				<value>hbm/rail/base/RailArea.hbm.xml</value>
+				<value>hbm/rail/base/RailEmployee.hbm.xml</value>
+				<value>hbm/rail/base/RailEmployeeType.hbm.xml</value>
+				<value>hbm/rail/base/RailPatrol.hbm.xml</value>
+				<value>hbm/rail/base/RailPush.hbm.xml</value>
+				<value>hbm/rail/base/RailTeam.hbm.xml</value>
+				<!-- 施工单位及供应商 -->
+				<value>hbm/rail/org/RailConstOrg.hbm.xml</value>
+				<value>hbm/rail/org/RailFormOrg.hbm.xml</value>
+				<value>hbm/rail/org/RailMfrsOrg.hbm.xml</value>
+				
+				<!-- 工具 -->
+				<value>hbm/rail/tool/RailToolInfo.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolMaintain.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolMaintainWarn.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolModel.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolName.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolRepair.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolScrap.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolTransfer.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolType.hbm.xml</value>
+				<value>hbm/rail/tool/RailToolUnit.hbm.xml</value>
+				<!-- 仓库 -->
+				<value>hbm/rail/warehouse/RailWhseEmployee.hbm.xml</value>
+				<value>hbm/rail/warehouse/RailWhseInfo.hbm.xml</value>
+				<value>hbm/rail/warehouse/RailWhseTool.hbm.xml</value>
+				<value>hbm/rail/warehouse/RailWhseToolWarn.hbm.xml</value>
+				<!-- 工单 -->
+				<value>hbm/rail/work/RailWorkEmployee.hbm.xml</value>
+				<value>hbm/rail/work/RailWorkImg.hbm.xml</value>
+				<value>hbm/rail/work/RailWorkInfo.hbm.xml</value>
+				<value>hbm/rail/work/RailWorkTool.hbm.xml</value>
+				<value>hbm/rail/work/RailWorkWarn.hbm.xml</value>
+				<value>hbm/rail/work/RailTeamEmployee.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!--Transaction -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>*Target</value>
+                <value>*BO</value>
+                <value>*Service</value>
+                
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+
+    <!-- 一些没有主键的 或者一些表的 字段多char类型的   适用于jdbcTemplate来执行sql by樊东东 -->
+    <bean id="sqlDao" class="com.huateng.dao.common.SqlDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 简单的继承HibernateDaoSuuport -->
+	<bean id="hqlDao" class="com.huateng.dao.common.HqlDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

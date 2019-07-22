@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.base">
+	<class
+		name="TblIPosInf"
+		table="TBL_I_POS_INF"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="POS_MCH"
+		>
+			<generator class="assigned"/>
+		</id>
+
+		<property
+			name="PosStage"
+			column="POS_STAGE"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="MchNumber"
+			column="MCH_NUMBER"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="OutmchNumber"
+			column="OUTMCH_NUMBER"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="InmchNumber"
+			column="INMCH_NUMBER"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="FeeCode"
+			column="FEE_CODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="CrtOprId"
+			column="CRT_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="UpdOprId"
+			column="UPD_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="RecCrtTs"
+			column="REC_CRT_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="RecUpdTs"
+			column="REC_UPD_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="Reserve1"
+			column="RESERVE1"
+			type="string"
+			not-null="false"
+			length="38"
+		/>
+		<property
+			name="Reserve2"
+			column="RESERVE2"
+			type="string"
+			not-null="false"
+			length="38"
+		/>
+		<property
+			name="Reserve3"
+			column="RESERVE3"
+			type="string"
+			not-null="false"
+			length="38"
+		/>
+		<property
+			name="Reserve4"
+			column="RESERVE4"
+			type="string"
+			not-null="false"
+			length="38"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

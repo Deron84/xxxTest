@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblMchtCheckInf"
+		table="TBL_MCHT_CHECK_INF"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblMchtCheckInfPK">
+			<key-property
+				name="MchtNo"
+				column="MCHT_NO"
+				type="string"
+			/>
+			<key-property
+				name="CheckDate"
+				column="CHECK_DATE"
+				type="string"
+			/>
+		</composite-id>
+
+		<property
+			name="CheckName"
+			column="CHECK_NAME"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="CheckInf"
+			column="CHECK_INF"
+			type="string"
+			not-null="false"
+			length="512"
+		/>
+		<property
+			name="CrtOprId"
+			column="CRT_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="UpdOprId"
+			column="UPD_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="RecCrtTs"
+			column="REC_CRT_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="RecUpdTs"
+			column="REC_UPD_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="Reserve1"
+			column="RESERVE1"
+			type="string"
+			not-null="false"
+			length="38"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

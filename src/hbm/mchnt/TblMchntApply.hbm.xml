@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblMchntApply"
+		table="TBL_MCHNT_APPLY"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id name="applyId" type="string" column="APPLY_ID">
+			<generator class="assigned" />
+		</id>
+		
+		<property
+			name="mchntId"
+			column="MCHNT_ID"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="applyType"
+			column="APPLY_TYPE"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="applyStatus"
+			column="APPLY_STATUS"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="applyName"
+			column="APPLY_NAME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="createTime"
+			column="CREATE_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="createPerson"
+			column="CREATE_PERSON"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="createPhone"
+			column="CREATE_PHONE"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="auditTime"
+			column="AUDIT_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="auditId"
+			column="AUDIT_ID"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="auditPhone"
+			column="AUDIT_PHONE"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>		
+		<property
+			name="remark"
+			column="remark"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>		
+	</class>	
+</hibernate-mapping>

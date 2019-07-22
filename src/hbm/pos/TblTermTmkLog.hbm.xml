@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblTermTmkLog"
+		table="TBL_TERM_TMK_LOG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblTermTmkLogPK">
+			<key-property name="TermIdId" column="TERM_ID_ID" type="string" />
+			<key-property name="BatchNo" column="BATCH_NO" type="string"/>
+		</composite-id>
+		<property
+			name="MchnNo"
+			column="MCHN_NO"
+			type="string"
+			not-null="false"
+			length="15"
+		/>
+		<property
+			name="TermBranch"
+			column="TERM_BRANCH"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="State"
+			column="STATE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="ReqOpr"
+			column="REQ_OPR"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="ReqDate"
+			column="REQ_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="ChkOpr"
+			column="CHK_OPR"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="ChkDate"
+			column="CHK_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="Misc"
+			column="MISC"
+			type="string"
+			not-null="false"
+			length="255"
+		/>
+		<property
+			name="RecUpdOpr"
+			column="REC_UPD_OPR"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="RecUpdTs"
+			column="REC_UPD_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+<property
+			name="prtOpr"
+			column="PRT_OPR"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="prtDate"
+			column="PRT_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="prtCount"
+			column="PRT_COUNT"
+			type="integer"
+			not-null="false"
+			length="22"
+		/>
+
+	</class>	
+</hibernate-mapping>

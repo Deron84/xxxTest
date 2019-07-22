@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="T110100BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.tools.T110100BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T110100BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T110100BOTarget" class="com.rail.bo.impl.tools.T110100BOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="T110801BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.tools.T110801BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T110801BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T110801BOTarget" class="com.rail.bo.impl.tools.T110801BOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="T110701BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.tools.T110701BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T110701BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T110701BOTarget" class="com.rail.bo.impl.tools.T110701BOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="T110601BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.tools.T110601BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T110601BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T110601BOTarget" class="com.rail.bo.impl.tools.T110601BOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="T110401BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.tools.T110401BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T110401BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T110401BOTarget" class="com.rail.bo.impl.tools.T110401BOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 发送信息 socket  -->
+	<bean id="TSendMsgSocketBO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.tools.TSendMsgSocketBO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>TSendMsgSocketBOTarget</value>
+		</property>
+	</bean>
+	<bean id="TSendMsgSocketBOTarget" class="com.rail.bo.impl.tools.TSendMsgSocketBOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	<bean id="TaskBO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.task.TaskBO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>TaskBOTarget</value>
+		</property>
+	</bean>
+	<bean id="TaskBOTarget" class="com.rail.bo.impl.task.TaskBOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

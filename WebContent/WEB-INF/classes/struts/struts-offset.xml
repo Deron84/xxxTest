@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.objectFactory" value="spring" />
+	<package name="offset" extends="struts-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		<!--start 交易补登 -->
+       	<action name="T60101Action" class="t60101Action"/>
+       	<action name="T60102Action" class="t601Action"/>
+       	<action name="T60103Action" class="t601Action"/>
+       	<action name="T60104Action" class="t601Action"/>
+        <!-- end 交易补登-->
+	</package>
+</struts>

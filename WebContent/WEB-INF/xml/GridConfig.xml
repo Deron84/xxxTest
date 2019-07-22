@@ -1,0 +1,2387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grids>
+
+	<!--巡护中队信息 -->
+	<!-- 0标识、1中队名称、2添加时间 -->
+	<Grid id="patrols" type="sync">
+		<Columns>
+			<![CDATA[id,patrolName,addDate]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPatrols" />
+		</SyncMode>
+	</Grid>
+	<!--班组人员信息 -->
+	<!--0人员编码、1姓名、2性别、3、年龄、4身份证号、5照片地址、6作业单位、7、职务、8人员类型、9联系方式、10所属机构 -->
+	<Grid id="teamEmployees" type="sync">
+		<Columns>
+			<![CDATA[employeeCode,employeeName,sex,age,idNumber,employeeImg,constOrgName,job,typeName,employeeTel,brhName,employeeType,constOrg,password,entryDate,dept,birthday]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTeamEmployees" />
+		</SyncMode>
+	</Grid>
+	<!-- 得到作业单元管理 进出高铁物料清单 -->
+	<!-- 工具名称、工具单位、当前状态、出库房数量、入网数量、出网数量、入库数量 -->
+	<Grid id="worktoolsSeeList" type="sync">
+		<Columns>
+			<![CDATA[note2,toolName,toolUnit,infoSign,infoSign1,infoSign2,infoSign3,infoSign4]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkToolsSeeList" />
+		</SyncMode>
+	</Grid>
+	<!-- 得到作业单元管理 进出高铁人员清单 -->
+	<!-- 姓名、性别、年龄、当前状态、点名人数、入网人数、出网人数 -->
+	<Grid id="workEmployeesSeeList" type="sync">
+		<Columns>
+			<![CDATA[employeeName,employeeSex,employeeAge,employeeStatus,dmNum,inSignNum,outSignNum]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkEmployeesSeeList" />
+		</SyncMode>
+	</Grid>
+	<Grid id="workToolInfo" type="sync">
+		<Columns>
+			<![CDATA[toolName,toolTypeName,note2,inWhse]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkToolInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 班组人员列表 -->
+	<Grid id="teamEmployee" type="sync">
+		<Columns>
+			<![CDATA[employeeCode,employeeName,job,opt]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTeamEmployee" />
+		</SyncMode>
+	</Grid>	
+	<!-- 工单工具列表 -->
+	<Grid id="workTool" type="sync">
+		<Columns>
+			<![CDATA[toolCode,toolName,note1]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkTool" />
+		</SyncMode>
+	</Grid>	
+	<!-- 工单工具列表 -->
+	<Grid id="whseTool" type="sync">
+		<Columns>
+			<![CDATA[toolCode,toolName,note1]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWhseTool" />
+		</SyncMode>
+	</Grid>	
+	
+	<!-- 班组人员关联列表 -->
+	<Grid id="teamEmployee2" type="sync">
+		<Columns>
+			<![CDATA[employeeCode,employeeName,job,opt]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTeamEmployee2" />
+		</SyncMode>
+	</Grid>	
+	<!-- 相反班组人员列表 -->
+	<Grid id="nullteamEmployee" type="sync">
+		<Columns>
+			<![CDATA[employeeCode,employeeName,job,opt]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getnullTeamEmployee" />
+		</SyncMode>
+	</Grid>	
+	<!-- 工单人员列表 -->
+	<Grid id="workEmployee" type="sync">
+		<Columns>
+			<![CDATA[employeeCode,employeeName,sex,birthday,idNumber,job,employeeType,infoSign,employeeTel,typeName]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkEmployee" />
+		</SyncMode>
+	</Grid>	
+	<!-- 工单审核 -->
+	<Grid id="getWorkInfo" type="sync">
+		<Columns>
+			<![CDATA[workCode,dispatchCode,workName,maintenceType,station,workPic,skylightStart,skylightEnd,workStatus,workStart,workEnd,auditStatus,auditMsg,auditDate,auditUser]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkInfo" />
+		</SyncMode>
+	</Grid>	
+	<!-- 作业工具管理 -->
+	<!-- t.WORK_CODE,t.DISPATCH_CODE,t.WORK_NAME,t4.TOOL_TYPE_NAME,t3.TOOL_NAME,t1.TOOL_STATUS,t1.IN_WHSE,t1.ADD_DATE -->
+	<Grid id="workTools" type="sync">
+		<Columns>
+			<![CDATA[workCode,dispatchCode,workName,workStatus,toolTypeName,toolName,note2,toolStatus,inWhse,infoSign,addDate]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkTools" />
+		</SyncMode>
+	</Grid>	
+	<!-- 作业单元管理 -->
+	<Grid id="workEmployees" type="sync">
+		<Columns>
+			<![CDATA[workCode,dispatchCode,workName,workStatus,workTeamName,employeeCode,employeeName,openSign,infoSign,addDate]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkEmployees" />
+		</SyncMode>
+	</Grid>	
+`	<!-- 工具移库库记录 -->
+	<Grid id="toolTransfer" type="sync">
+		<Columns>
+		<!-- 	<![CDATA[toolCode,toolName,transferMsg,infoSign,whseBefore,whseBeforeName,whseAfter,whseAfterName,addUser,addDate,toolExpiration,toolStatus,inWhse,lastExam]]> -->
+			<![CDATA[toolCode,toolName,whseBefore,whseBeforeName,whseAfter,whseAfterName,transferMsg,infoSign,addUser,addDate,toolExpiration,toolStatus,inWhse,lastExam]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailToolTransfer" />
+		</SyncMode>
+	</Grid>	
+	<!-- 工具出入库记录 -->
+	<Grid id="railWhseTool" type="sync">
+		<Columns>
+			<![CDATA[toolCode,toolName,toolExpiration,whseCode,whseName,workCode,workName,infoSign,addDate,toolStatus,inWhse,lastExam]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailWhseTool" />
+		</SyncMode>
+	</Grid>	
+		<!-- 工具预警阈值 -->
+	<Grid id="railWhseToolWarn" type="sync">
+		<Columns>
+			<![CDATA[whseCode,whseName,toolName,toolNameName,lowerThreshold,addUser,addDate,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailWhseToolWarn" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 工具下限预警-->
+	<Grid id="railWhseToolWarntongji" type="sync">
+		<Columns>
+			<![CDATA[whseCode,whseName,toolName,num,lowerThreshold,toolCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailWhseToolWarntongji" />
+		</SyncMode>
+	</Grid>
+	<!-- 工具列表  更换标签 -->
+	<Grid id="railTool" type="sync">
+		<Columns>
+			<![CDATA[id,toolCode,toolName,modelCode,toolImg,toolExpiration,whseCode,rfid,purchaseDept,purchaseUser,mfrsOrg,toolStatus,delStatus,inWhse,examPeriod,lastExam,
+			accessCode,addUser,addDate,updUser,updDate,note1,listPrice,initPrice,dept]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailToolList" />
+		</SyncMode>
+	</Grid>	
+	<!-- 仓库信息 -->
+	<!-- 人员出入库记录 -->
+	<Grid id="railWhseEmployee" type="sync">
+		<Columns>
+			<![CDATA[employeeCode,employeeName,sex,employeeTel,costOrgName,workCode,workName,whseCode,whseName,infoSign,addDate]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailWhseEmployee" />
+		</SyncMode>
+	</Grid>	
+	<!-- 仓库信息 -->
+	<Grid id="railWhseInfo" type="sync">
+	<!-- RWI.WHSE_CODE,RWI.WHSE_NAME,RWI.WHSE_ADDRESS,RWI.WHSE_CAPA,RWI.WHSE_PIC,RWI.WHSE_TEL,TBI.BRH_NAME,
+	RWI.ENABLE_STATUS,RWI.WHSE_DEPT,RWI.PARENT_WHSE_CODE,RWI2.WHSE_NAME AS parentWhse -->
+		<Columns>
+			<![CDATA[whseCode,whseName,whseAddress,parentWhse,whseCapa,whsePic,whseTel,brhName,enableStatusDesc,enableStatus,whseDept,parentWhseCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailWhseInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 仓库盘点查询列表 100103 -->
+	<!-- 仓库编码、仓库名称、工具名称、正常数量、维护数量、报废数量、停用数量、使用次数 -->
+	<Grid id="railWhseToolPandian" type="sync">
+		<Columns>
+			<![CDATA[whseCode,whseName,toolName,normalNum,preserveNum,scrapNum,stopNum,useNum]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWhseTools" />
+		</SyncMode>
+	</Grid>
+
+	<!-- 仓库统计查询列表 100105 -->
+	<!-- 仓库编码、仓库名称、工具名称、存放位置（架-层-位）、数量 -->
+	<Grid id="railWhseToolTongji" type="sync">
+		<Columns>
+			<![CDATA[whseCode,whseName,toolName,position,inWhseNum,outWhseNum,num]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWhseToolsStatic" />
+		</SyncMode>
+	</Grid>
+	<!-- 得到工具检修保养列表 110802 -->
+	<!-- 仓库名称、工具名称、标签号、存放位置（架层位）、入库时间、保养周期、保养人、保养时间 -->
+	<Grid id="railToolMaintains" type="sync">
+		<Columns>
+			<![CDATA[whseName,toolName,rfid,location,addDate,examPeriod,maintainUser,maintainDate,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolMaintains" />
+		</SyncMode>
+	</Grid>
+	<!-- 得到工具预警列表 110701 -->
+	<!-- 仓库名称、工具名称、标签号、存放位置（架层位）、预警内容、是否确认、审核人、审核时间
+【审核、定时任务根据保养周期/最后一次保养时间，有效期进行插入】 -->
+	<Grid id="railToolMaintainWarnning" type="sync">
+		<Columns>
+			<![CDATA[whseName,toolName,rfid,location,warnMsg,infoSign,verifyMsg,verifyUser,verifyDate,note1,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolMaintainWarnning" />
+		</SyncMode>
+	</Grid>	
+	<!-- 得到工具报废列表 110602/110603 -->
+	<!--仓库名称、工具名称、标签号、存放位置（架层位）、报废信息、申请人、申请时间、审核状态、审核人、审核时间、审核信息
+【新增报废申请、审核 审核通过修改工具状态为报废】-->
+	<Grid id="railToolScrap" type="sync">
+		<Columns>
+			<![CDATA[whseName,toolName,rfid,location,applyMsg,applyUser,applyDate,verifyMsg,infoSign,verifyUser,verifyDate,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolScrap" />
+		</SyncMode>
+	</Grid>		
+	
+	<!-- 得到工具移库记录 110501 -->
+	<!-- 仓库名称、工具名称、标签号、存放位置（架层位）、移库前仓库、移库事由、移库类型、移库人、移库时间
+【只允许同级调库，写个通用判定方法】 -->
+	<Grid id="railToolTransfer" type="sync">
+		<Columns>
+			<![CDATA[whseName,toolName,rfid,location,whseBefore,transferMsg,infoSign,transferUser,transferDate,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolTransfer" />
+		</SyncMode>
+	</Grid>
+
+	<!-- 得到工具维修列表 110402/110403 -->
+	<!-- 仓库名称、工具名称、标签号、存放位置（架层位）、维修信息、申请人、申请时间、审核状态、审核人、审核时间、审核信息
+【同报废，审核通过之后变成维修】 -->
+	<Grid id="railToolRepair" type="sync">
+		<Columns>
+			<![CDATA[whseName,toolName,rfid,location,applyMsg,applyUser,applyDate,verifyMsg,infoSign,verifyUser,verifyDate,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolRepair" />
+		</SyncMode>
+	</Grid>	
+
+	<!-- 得到工具信息列表 110102/110103 -->
+	<!-- 得到工具信息列表 110102
+仓库名称、工具名称、标签号、工具类型、材质、单位、存放位置（架层位）、检修周期、最后检修时间、有效期、入库时间、工具状态、在库状态-->
+	<Grid id="railToolInfo" type="sync">
+		<Columns>
+			<![CDATA[whseName,toolName,rfid,toolType,toolMaterial,toolUnit,location,examPeriod,lastExam,toolExpiration,addDate,toolStatus,inWhse,note2id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolInfo" />
+		</SyncMode>
+	</Grid>		
+	<!-- 得到工具信息列表 110101 -->
+	<!--仓库名称、工具名称、标签号、工具类型、材质、单位、6存放位置（架层位）、检修周期、最后检修时间、有效期、入库时间、11工具状态、12在库状态
+	 -->	
+	<Grid id="railToolInfofix" type="sync">
+		<Columns>
+		<!-- 	<![CDATA[toolCode,rfid,toolType,toolName,toolModel,toolMaterial,addDate,toolStatus,toolExpiration,inWhse,lastExam,addDates,whseCode,location,purchaseDept,purchaseUser,id]]> -->
+			<![CDATA[whseName,toolName,rfid,toolType,toolMaterial,toolUnit,location,examPeriod,lastExam,toolExpiration,addDate,toolStatus,inWhse,note2,purchaseDept,purchaseUser,mfrsOrg,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolInfofix" />
+		</SyncMode>
+	</Grid>			
+	
+	
+		
+		<!-- 门禁信息 -->
+	<Grid id="railAccessInfo" type="sync">
+		<Columns>
+			<![CDATA[accessCode,accessName,accessType,note1,accessRoute,accessAddress,brhName,accessPic,accessTel,policeOffice,examPeriod,lastExam,accessStatus,note5,openStatus,mileage,mileagePrevious,mileageNext,installDate,longitude,latitude,whseCode,addUser,accessDept,accessTypeDesc,accessStatusDesc,openStatusDesc]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailAccessInfo" />
+		</SyncMode>
+	</Grid>
+		<!-- 门禁终端设备信息 -->
+	<Grid id="railAccessEquipInfo" type="sync">
+		<Columns>
+			<![CDATA[accessCode,equipCode,equipName,equipTypeName,equipIp,note1,note2,installDate,equipStatus,addUser,addDate,equipType,defence,equipStatus2,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailAccessEquipInfo" />
+		</SyncMode>
+	</Grid>
+		<!-- 门禁预警信息 -->
+	<Grid id="railAccessWarn" type="sync">
+		<Columns>
+			<![CDATA[accessCode,accessName,warnTypeDesc,warnMsg,infoSignDesc,addDate,verifyMsg,verifyUser,verifyDate,id,warnType,infoSign]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailAccessWarn" />
+		</SyncMode>
+	</Grid>
+	<!-- 工单预警信息 -->
+	<Grid id="railWorkWarn" type="sync">
+		<Columns>
+			<![CDATA[workCode,workName,warnType,warnMsg,infoSign,addDate,verifyMsg,verifyUser,verifyDate,dispatchCode,workStart,workEnd,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailWorkWarn" />
+		</SyncMode>
+	</Grid>
+	<!--  人员出入网信息 -->
+	<Grid id="accessEmployees" type="sync">
+		<Columns>
+			<![CDATA[accessCode,accessName,addDate,workCode,dispatchCode,workName,workPic,workTel,openStatus,id,opnStatus]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getAccessEmployees" />
+		</SyncMode>
+	</Grid>
+	<!--作业图片视频信息 -->
+	<Grid id="workImgs" type="sync">
+		<Columns>
+			<![CDATA[workCode,workName,imgType,note1,addUser,addDate,id,imgPath,dispatchCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWorkImgs" />
+		</SyncMode>
+	</Grid>
+	
+	<!--班组信息
+	//0班组名称，1班组状态，2班组人数，3创建人，4创建时间,5id -->
+	<Grid id="workTeam" type="sync">
+		<Columns>
+			<![CDATA[workTeamName,deptName,count,enableStatus,addUser,addDate,id,dept]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTeams" />
+		</SyncMode>
+	</Grid>
+	
+	<!--人员信息
+	0人员编码、1姓名、2性别、3、年龄、4身份证号、5照片地址、6作业单位、7、职务、8人员类型、9联系方式、10所属机构 -->
+	<Grid id="employees" type="sync">
+		<Columns>
+			<![CDATA[employeeCode,employeeName,sex,age,idNumber,employeeImg,constOrgName,job,typeName,employeeTel,brhName,employeeType,constOrg,password,entryDate,dept,birthday]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getEmployees" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 门禁检修保养预警信息 -->
+	<Grid id="railAccessMaintainWarn" type="sync">
+		<Columns>
+			<![CDATA[accessCode,accessName,warnMsg,infoSignDesc,addDate,verifyMsg,verifyUser,verifyDate,id,infoSign]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailAccessMaintainWarn" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 门禁检修保养信息 -->
+	<Grid id="railAccessMaintain" type="sync">
+		<Columns>
+			<![CDATA[accessCode,accessName,accessRoute,accessAddress,accessPic,accessTel,addDate,maintainUser,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailAccessMaintain" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 门禁出入记录信息 -->
+	<Grid id="railAccessOptlog" type="sync">
+		<Columns>
+			<![CDATA[accessCode,accessName,employeeCode,employeeName,workCode,workName,infoSign,openSign,addDate,addUser,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRailAccessOptlog" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 作业管理 -->
+	<Grid id="constOrg" type="sync">
+		<Columns>
+			<![CDATA[costOrgName,enableStatus,addUser,addDate,formOrgName,updUser,updDate,formOrg,id,enableStatus2]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getConstOrg" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 供应商管理 -->
+	<Grid id="mfrsOrg" type="sync">
+		<Columns>
+			<![CDATA[mfrsOrgName,enableStatus,mfrsAddress,mfrsPic,mfrsTel,mfrsFax,addUser,addDate,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMfrsOrg" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 仓库区管理 -->
+	<Grid id="area" type="sync">
+		<Columns>
+			<![CDATA[id,whseAreaName,addUser,addDate,updUser,updDate,enableStatus,constOrg,constOrgName]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getArea" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 工具名称管理 -->
+	<Grid id="toolName" type="sync">
+		<Columns>
+			<![CDATA[toolName,enableStatus,toolTypeName,toolImg,addUser,addDate,id,toolType,enableStatus]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolName" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 工具分类管理 -->
+	<Grid id="toolType" type="sync">
+		<Columns>
+			<![CDATA[toolTypeName,enableStatus,addUser,addDate,updUser,updDate,enableStatus,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolType" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 工具单位管理 -->
+	<Grid id="toolUnit" type="sync">
+		<Columns>
+			<![CDATA[toolUnitName,enableStatusDesc,addUser,addDate,updUser,updDate,enableStatus,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolUnit" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 工具型号管理 -->
+	<Grid id="toolModel" type="sync">
+		<Columns>
+			<![CDATA[id,modelName,addUser,addDate,updUser,updDate,enableStatus]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getToolModel" />
+		</SyncMode>
+	</Grid>
+	
+		<!-- 门禁终端类型管理 -->
+	<Grid id="accessEquipType" type="sync">
+		<Columns>
+			<![CDATA[equipTypeName,enableStatus,addUser,addDate,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getAccessEquipType" />
+		</SyncMode>
+	</Grid>
+	
+		<!-- 人员类型管理 -->
+	<Grid id="employeeType" type="sync">
+		<Columns>
+			<![CDATA[typeName,enableStatus,addUser,addDate,id]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getEmployeeType" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 机构信息 -->
+	<Grid id="brhInfo" type="sync">
+		<Columns>
+			<![CDATA[brhId,brhLvl,upBrhId,brhName,brhAddr,brhTelNo,postCode,brhContName,cupBrhId,resv1]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBrhInfoBelow" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户巡检信息 -->
+	<Grid id="mchtCheckInf" type="sync">
+		<Columns>
+			<![CDATA[mcht_no,check_date,check_name,check_inf,mcht_nm,addr,contact,comm_tel]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtCheckInf" />
+		</SyncMode>
+	</Grid>
+	
+	
+	
+	<!--财务POS账户 -->
+	<Grid id="posCardInfo" type="sync">
+		<Columns>
+			<![CDATA[card_no,mcht_no,term_id,brh_id,holder_name,holder_id,holder_tel,stat,sms_quota,start_time,stop_time]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosCardInfo" />
+		</SyncMode>
+	</Grid>
+	<!--财务POS账户 2-->
+	<Grid id="comCardInfo" type="sync">
+		<Columns>
+			<![CDATA[card_no,mcht_no,term_id,brh_id,holder_name,holder_id,holder_tel,stat,sms_quota,start_time,stop_time]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getComCardInfo" />
+		</SyncMode>
+	</Grid>
+	<!--云SHOP -->
+	<Grid id="iPosInf" type="sync">
+		<Columns>
+			<!-- <![CDATA[pos_mch,mch_number,outmch_number,inmch_number,fee_code]]> -->
+			<![CDATA[pos_mch,mch_number,pos_stage,outmch_number,inmch_number,fee_code]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getiPosInf" />
+		</SyncMode>
+	</Grid>
+	<!--分期信息 -->
+	<Grid id="divInf" type="sync">
+		<Columns>
+			<!-- <![CDATA[pos_mch,mch_number,outmch_number,inmch_number,fee_code]]> -->
+			<![CDATA[mcht_id,div_no,product_code,inproduct_code,fee_code]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDivInfo" />
+		</SyncMode>
+	</Grid>
+	<!--费用收取 -->
+	<Grid id="costInf" type="sync">
+		<Columns>
+			<![CDATA[no,state,amount,card_id,mcht_no,remark_inf]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getCostInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 机构下操作员信息 -->
+	<Grid id="oprInfoWithBrh" type="sync">
+		<Columns>
+			<![CDATA[oprId,brhId,oprName,oprGender,registerDt,oprTel,oprMobile]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getOprInfoWithBrh" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 直联商户信息列表 -->
+	<Grid id="mchntCupInfo" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtNm,mchtStates,mchtType,crtTs,updTs,insetFlag,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntCupInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 系统参数信息 -->
+	<Grid id="sysParamInfo" type="sql">
+		<Columns>
+			<![CDATA[owner,key,type,value,descr,reserve]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select owner,key,type,value,descr,reserve from cst_sys_param where type = '00']]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+		<!-- 路由信息 -->
+	<Grid id="routeParamInfo" type="sql">
+		<Columns>
+			<![CDATA[usage_key,line_index,local_addr,remote_addr,in_sock_num,out_sock_num,line_dsp]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select usage_key,line_index,local_addr,remote_addr,in_sock_num,out_sock_num,line_dsp from tbl_line_cfg where srv_id = '1']]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	<!-- 清算凭证信息 -->
+	<Grid id="settleDocInfo" type="sync">
+		<Columns>
+			<![CDATA[BRH_ID,EXCHANGE_NO,PAYER_NAME,PAYER_ACCOUNT_NO,PAY_BANK_NO,IN_BANK_SETTLE_NO,SETTLE_BUS_NO,INNER_ACCT,INNER_ACCT1,INNER_ACCT2]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getSettleDocInfo" />
+		</SyncMode>
+	</Grid>
+	<Grid id="getMchntSettleInfo" type="sync">
+		<Columns>
+			<![CDATA[BRH_CODE,MCHT_NO,MCHT_NM,ACCT_TYPE,MCHT_ACCT,ACCT_NM,DATE_SETTLMT,SETTLE_AMT,TXN_AMT,SETTLE_FEE1,TXN_NUM,SETTLE_FLAG,FAIL_RESN,FLAG]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntSettleInfo" />
+		</SyncMode>
+	</Grid>	
+		<Grid id="getMchntSettleInfoNew" type="sync">
+		<Columns>
+			<![CDATA[BRH_CODE,MCHT_NO,MCHT_NM,DATE_SETTLMT,SETTLE_AMT,TXN_AMT,SETTLE_FEE1,TXN_NUM,SETTLE_FLAG,FAIL_RESN,FLAG]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntSettleInfoNew" />
+		</SyncMode>
+	</Grid>	
+	<!--卡表管理-->
+	
+	<Grid id="bankBinInf" type="sync">
+		<Columns>
+			<![CDATA[ind,insIdCd,cardDis,cardTp,acc1Offset,acc1Len,acc1Tnum,binOffSet,binLen,binStaNo,binEndNo,binTnum]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBankBinInf" />
+		</SyncMode>
+	</Grid>
+	
+	<!--银联CA公钥管理-->	
+	<Grid id="emvPara" type="sync">
+		<Columns>
+			<![CDATA[paraIdx,usageKey,paraOrg,9F06,9F22,DF05,DF06,DF07,DF02,DF04,DF03]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getEmvPara" />
+		</SyncMode>
+	</Grid>	
+	
+		<!--虚拟柜员管理-->	
+	<Grid id="brhTlrInfo" type="sync">
+		<Columns>
+			<![CDATA[brhId,tlrId,tlrSta,resv1,lastUpdOprId,recUpdTs,recCrtTs]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBrhTlrInfo" />
+		</SyncMode>
+	</Grid>	
+	<!-- 虚拟柜员维护   phj -->
+	<Grid id="brhTlrInfo01" type="sync">
+		<Columns>
+			<![CDATA[brhId,tlrId,tlrSta,resv1,lastUpdOprId,recUpdTs,recCrtTs]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBrhTlrInfo01" />
+		</SyncMode>
+	</Grid>	
+	
+	<!--机构地区码只包含地区码与地区名称-->
+	<Grid id="oldCityCodeInfo" type="sql">
+		<Columns>
+			<![CDATA[cityCode,cityName]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select distinct(city_code_old),city_name from cst_city_code]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	
+	<!-- 地区码信息 -->
+	<Grid id="cityCodeInfo" type="sql">
+		<Columns>
+			<![CDATA[cityCodeNew,cityCodeOld,cityName,initTime,modiTime]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select city_code_new,city_code_old,city_name,init_time,modi_time from cst_city_code]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	<!-- 权限列表 -->
+	<Grid id="roleInfo" type="sync">
+		<Columns>
+			<![CDATA[roleId,roleName,roleType,description,recUpdOpr,recCrtTs,recUpdTs]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRoleInfo" />
+		</SyncMode>
+	</Grid>
+	<!--  
+	<Grid id="roleInfo" type="sql">
+		<Columns>
+			<![CDATA[roleId,roleName,roleType,description,recUpdOpr,recCrtTs,recUpdTs]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select ROLE_ID,ROLE_NAME,ROLE_TYPE,DESCRIPTION,REC_UPD_OPR,REC_CRT_TS,REC_UPD_TS from tbl_role_inf where ROLE_ID != 1 order by ROLE_ID]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	-->
+	<!-- 操作员列表 -->
+	<Grid id="oprInfo" type="sync">
+		<Columns>
+			<![CDATA[oprId,brhId,oprDegree,oprName,oprGender,registerDt,oprTel,oprMobile,pwdOutDate,oprSta]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getOprInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 操作员交易日志 -->
+	<Grid id="txnInfo" type="sync">
+		<Columns>
+			<![CDATA[oprId,txnDate,txnTime,txnName,txnSta,errMsg]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTxnInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 集团商户信息列表 -->
+	<Grid id="groupMchtInf" type="sync">
+		<Columns>
+			<![CDATA[groupMchtCd,grouName,groupType,regFund,busRange,mchtPerson,contactAddr]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getGroupMchtInf" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 商户入网信息列表 -->
+	<Grid id="mchntNet" type="sync">
+		<Columns>
+			<![CDATA[id,brhId,status,mchtNm,legalNm,createTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntNet" />
+		</SyncMode>
+	</Grid>
+	
+	<!--商户限额维护信息查询-->
+	<Grid id="mchtFeeInf" type="sync">
+		<Columns>
+			<![CDATA[mchtCd,mchtNm,txnNum,cardType,dayNum,dayAmt,daySingle,monNum,monAmt]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtFeeInf" />
+		</SyncMode>
+	</Grid>
+	
+	<!--到真实表中查询商户信息-->
+	<Grid id="mchntInfoTrue" type="sync">
+		<Columns>
+			<![CDATA[mchntId,mchntCnName,mchntEnName,mcc,certificate,addr,postCode,email,legalName,contactName,contactTel,mchntSt]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntInfoTrue" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 商户信息列表 -->
+	<Grid id="mchntInfo" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtNm,engName,mcc,licenceNo,addr,postCode,commEmail,manager,contact,commTel,applyDate,mchtStatus,termCount,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户信息列表TMP -->
+	<Grid id="mchntInfoTmp" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtNm,engName,mcc,licenceNo,addr,commEmail,contact,commTel,applyDate,mchtStatus,termCount,crtOprId,updOprId,updTs,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntInfoTmp" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 商户正式表信息列表（全部） -->
+	<Grid id="mchntBaseInfoQuery" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtNm,engName,mcc,licenceNo,addr,commEmail,contact,commTel,applyDate,mchtStatus,termCount,crtOprId,updOprId,updTs,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntBaseInfoAll" />
+		</SyncMode>
+	</Grid>
+	
+		<!-- 商户临时表信息列表（全部） -->
+	<Grid id="mchntBaseInfoQueryTmp" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtNm,mappingMchntcdOne,mappingMchntcdTwo,licenceNo,applyDate,mchtStatus,termCount,engName,mcc,addr,commEmail,contact,commTel,crtOprId,updOprId,updTs,mappingMchntTypeOne,mappingMchntTypeTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntBaseInfoAllTmp" />
+		</SyncMode>
+	</Grid>
+
+	<!-- 终端信息查询（商户状态不正常，应该在终端信息查询中不能显示。） -->
+	<Grid id="termInfoCondition" type="sync">
+		<Columns>
+			<![CDATA[termId,mchtCd,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,termBranch,termIns,recCrtTs,rentFee]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermInfoByConditon" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 商户正式表查询==终端信息查询 （正式表） -->
+	<Grid id="termInfoRealByCondition" type="sync">
+		<Columns>
+			<![CDATA[termId,mchtCd,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,termBranch,termIns,recCrtTs,rentFee]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBaseTermInfoByConditon" />
+		</SyncMode>
+	</Grid> 
+	
+	<!-- 商户信息列表（全部） -->
+	<Grid id="mchntInfoQuery" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtNm,engName,mchtGrp,mcc,licenceNo,addr,connType,commEmail,contact,commTel,applyDate,mchtStatus,termCount,crtOprId,updOprId,updTs,mchtFlag1,mchtFlag2,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntInfoAll" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户审核信息列表 -->
+	<Grid id="mchntCheckInfo" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtNm,engName,mcc,licenceNo,addr,commEmail,contact,commTel,applyDate,mchtStatus,termCount,crtOprId,partNum,updTs,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntCheckInfo" />
+		</SyncMode>
+	</Grid>
+	<!--商户分店查询-->
+	<Grid id="recUpdTs" type="sync">
+		<Columns>
+			<![CDATA[mchtCd,branchCd,branchNm,branchArea,branchSvrLvl,branchContMan,branchTel,branchFax,branchNmEn,branchAddr,custNager,custMobile,custTel,oprNm,signDate]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getrecUpdTs" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户组别列表 -->
+	<Grid id="mchntGrpInfo" type="sql">
+		<Columns>
+			<![CDATA[mchntTpGrp,descr]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[SELECT MCHNT_TP_GRP,DESCR FROM TBL_INF_MCHNT_TP_GRP]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	
+	<!--商户MCC列表 -->
+	<Grid id="mchntMccInfo" type="sync">
+		<Columns>
+			<![CDATA[mchntTp,mchntTpGrp,descr,recSt]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntMccInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户MCC列表 
+	<Grid id="mchntMccInfo" type="sql">
+		<Columns>
+			<![CDATA[mchntTp,mchntTpGrp,descr,recSt]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[SELECT MCHNT_TP,MCHNT_TP_GRP,DESCR,REC_ST FROM TBL_INF_MCHNT_TP]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	-->
+	
+		<!-- 计费算法列表 -->
+	<Grid id="tblInfDiscCd" type="sync">
+		<Columns>
+			<![CDATA[discCd,discNm,discOrg,lastOperIn,recUpdUserId,recUpdTs,recCrtTs]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblInfDiscCd" />
+		</SyncMode>
+	</Grid>
+	
+		<!-- 计费算法列表 -->
+	<Grid id="tblInfDiscCd1" type="sync">
+		<Columns>
+			<![CDATA[discCd,discNm,discOrg,lastOperIn,recUpdUserId,recUpdTs,recCrtTs]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblInfDiscCd1" />
+		</SyncMode>
+	</Grid>
+	
+		<!-- 计费算法列表 -->
+	<Grid id="tblInfDiscCd2" type="sync">
+		<Columns>
+			<![CDATA[discCd,discNm,discOrg,lastOperIn,recUpdUserId,recUpdTs,recCrtTs]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblInfDiscCd2" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 商户退回拒绝原因查询 -->
+	<Grid id="mchntRefuseInfo" type="sync">
+		<Columns>
+			<![CDATA[txnTime,mchntId,brhId,oprId,refuseType,refuseInfo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntBackRefuseInfo" />
+		</SyncMode>
+	</Grid>
+    
+    <!-- 终端退回拒绝原因查询 -->
+    <Grid id="termRefuseInfo" type="sync">
+        <Columns>
+            <![CDATA[txnTime,termId,mcht_cd,brhId,oprId,refuseType,refuseInfo]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getTermBackRefuseInfo" />
+        </SyncMode>
+    </Grid>
+	<!-- 终端类型列表 -->
+	<Grid id="termTpInfo" type="sql">
+		<Columns>
+			<![CDATA[termTp,descr]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[SELECT TERM_TP,DESCR FROM TBL_TERM_TP]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	<!-- 终端信息列表 -->
+	<Grid id="termManagementInfo" type="sync">
+		<Columns>
+      			<![CDATA[termId,state,manufacturer,productCd,terminalType,termType,mchnNo,batchNo,storOprId,storDate,reciOprId,reciDate,bankOprId,bankDate,invalidOprId,invalidDate,signOprId,signDate,misc,pinPad,brhId]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermManagementInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 终端审核信息列表 -->
+	<Grid id="termCheckInfo" type="sync">
+		<Columns>
+			<![CDATA[termId,mchntNo,termSt,isSuppIc,isSuppCredit,termType,callType,callNo,brhId,sequenceNo,kbSequenceNo,vTeller,encType,bindNo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermCheckInfo" />
+		</SyncMode>
+	</Grid>
+    <!-- 终端审核信息列表 -->
+    <Grid id="termTmkInfo" type="sync">
+        <Columns>
+            <![CDATA[mchntNo,termId,termBranch,termSta,propInsNm]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getTermTmkInfo" />
+        </SyncMode>
+    </Grid>
+    <!-- 终端密钥下发申请   phj -->
+    <Grid id="termTmkInfo01" type="sync">
+        <Columns>
+            <![CDATA[mchntNo,termId,termBranch,termSta,propInsNm]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getTermTmkInfo01" />
+        </SyncMode>
+    </Grid>
+	<!-- 终端信息查询（所有） -->
+	<Grid id="termInfoAll" type="sync">
+		<Columns>
+			<![CDATA[termId,orgId,mchtCd,mchtFlag1,mchtFlag2,connTp,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,mchtGrp,termBranch,termIns,proRate,leaseFee,rentFee,useDate,misc2,termName,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo,mappingTermidOne,mappingTermidTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermInfoAll" />
+		</SyncMode>
+	</Grid>
+	<!-- 终端信息查询（除去Epos商户下的终端） -->
+	<Grid id="termInfoNew" type="sync">
+		<Columns>
+			<![CDATA[termId,orgId,mchtCd,mchtFlag1,mchtFlag2,connTp,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,mchtGrp,termBranch,termIns,proRate,leaseFee,rentFee,useDate,misc2,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo,mappingTermidOne,mappingTermidTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermInfoNew" />
+		</SyncMode>
+	</Grid>
+	<!-- 终端信息查询（只有Epos商户下的终端） -->
+	<Grid id="termInfoNewEpos" type="sync">
+		<Columns>
+			<![CDATA[termId,orgId,mchtCd,mchtFlag1,mchtFlag2,connTp,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,mchtGrp,termBranch,termIns,proRate,leaseFee,rentFee,useDate,misc2,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo,mappingTermidOne,mappingTermidTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermInfoNewEpos" />
+		</SyncMode>
+	</Grid>
+	<!-- 终端信息查询（所有）  phj-->
+	<Grid id="termInfoAll01" type="sync">
+		<Columns>
+			<![CDATA[termId,orgId,mchtCd,mchtFlag1,mchtFlag2,connTp,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,mchtGrp,termBranch,termIns,proRate,leaseFee,rentFee,useDate,misc2,termName,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo,mappingTermidOne,mappingTermidTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermInfoAll" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 商户正式表查询与导出==终端信息查询（所有） -->
+	<Grid id="termInfoBaseAll" type="sync">
+		<Columns>
+			<![CDATA[termId,mchtCd,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,termBranch,termIns,recCrtTs,rentFee]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermInfoBaseAll" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 终端信息查询（待审核） -->
+	<Grid id="termInfoForAudit" type="sync">
+		<Columns>
+			<![CDATA[termId,mchtCd,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,termBranch,termIns,recCrtTs,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo,mappingTermidOne,mappingTermidTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermInfoForAudit" />
+		</SyncMode>
+	</Grid>
+	
+    <!-- 终端信息查询（正式表） -->
+    <Grid id="termInfo" type="sync">
+        <Columns>
+            <![CDATA[termId,mchntNo,termSta,termSignSta,termIdId,termFactory,termMachTp,termVer,termTp,termBranch,termIns,termName]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getTermInfo" />
+        </SyncMode>
+    </Grid>
+    
+    <!-- 终端密钥下发日志-->
+    <Grid id="termTmkInfoAll" type="sync">
+        <Columns>
+            <![CDATA[batchNo,termIdId,mchnNo,termBranch,state,propInsNm,reqOpr,reqDate,chkOpr,chkDate,misc,recUpdOpr,recUpdTs,prtOpr,prtDate,prtCount]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getTermTmkInfoAll" />
+        </SyncMode>
+    </Grid>
+    <!-- 终端密钥未打印-->
+    <Grid id="termTmkInfoUn" type="sync">
+        <Columns>
+            <![CDATA[batchNo,termIdId,mchnNo,termBranch,state,propInsNm,reqOpr,reqDate,chkOpr,chkDate,misc,recUpdOpr,recUpdTs,prtOpr,prtDate,prtCount]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getTermTmkInfoUn" />
+        </SyncMode>
+    </Grid>
+    <!-- 终端密钥打印查询 -->
+    <Grid id="termTmkInfoPrint" type="sync">
+        <Columns>
+            <![CDATA[batchNo,termIdId,mchnNo,termBranch,state,propInsNm,reqOpr,reqDate,chkOpr,chkDate,misc,recUpdOpr,recUpdTs,prtOpr,prtDate,prtCount]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getTermTmkInfoPrint" />
+        </SyncMode>
+    </Grid>
+	<!-- 终端退回/拒绝原因查询 -->
+	<Grid id="posRefuseInfo" type="sync">
+		<Columns>
+			<![CDATA[txnTime,mchntId,brhId,oprId,refuseType,refuseInfo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosBackRefuseInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 终端密钥列表 -->
+	<Grid id="posKeyInfo" type="sync">
+		<Columns>
+			<![CDATA[mchntId,termId,brhId,posTmk,tmkSt]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosKeyInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 查询风险交易模型 -->
+	<Grid id="getRiskModelInfo" type="sync">
+		<Columns>
+			<![CDATA[saModelKind,saLimitNum,saLimitAmountSingle,saLimitAmountTotle,saBeUse,saAction,modiZoneNo,modiOprId,modiTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRiskModelInfo" />
+		</SyncMode>
+	</Grid>
+	<Grid id="getRRiskModelInfo" type="sync">
+		<Columns>
+			<![CDATA[saModelKind,saLimitAmount,saBeUse,saAction,modiZoneNo,modiOprId,modiTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRRiskModelInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 查询风险交易模型修改记录 -->
+	<Grid id="riskModelInfoUpdLog" type="sync">
+		<Columns>
+			<![CDATA[saModelKind,saBranchCode,saFieldName,saFieldValueBF,saFieldValue,modiZoneNo,modiTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRiskModelInfoUpdLog" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 查询风险模型信息 -->
+	<Grid id="riskModelInfo" type="sql">
+		<Columns>
+			<![CDATA[saModelKind,saBeUse,saAction,saLimitNum,saLimitAmount,modiZoneNo,modiOprId,modiTime,saBranchCode]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select sa_model_kind,sa_be_use,sa_action,sa_limit_num,round(sa_limit_amount / 100,2),modi_zone_no,modi_opr_id,modi_time,sa_branch_code from tbl_risk_inf]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	<!-- 卡黑名单信息 -->
+	<Grid id="cardRiskInfo" type="sync">
+		<Columns>
+			<![CDATA[saCardNo,saLimitAmt,saAction,saInitZoneNo,saInitOprId,saInitTime,saModiZoneNo,saModiOprId,saModiTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getCardRiskInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户黑名单信息 -->
+	<Grid id="mchntRiskInfo" type="sync">
+		<Columns>
+			<![CDATA[saMerNo,saMerChName,saMerEnName,saLimitAmt,saAction,saZoneNo,saAdmiBranNo,saConnOr,saConnTel,saInitZoneNo,saInitOprId,saInitTime,saModiZoneNo,saModiOprId,saModiTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntRiskInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 查询历史风险记录 -->
+	<Grid id="historyRiskRecords" type="sync">
+		<Columns>
+			<![CDATA[saTxnCard,saMchtNo,saTermNo,saTxnNum,saTxnAmt,saTxnTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getHistoryRiskRecords" />
+		</SyncMode>
+	</Grid>
+	<!-- 卡黑名单历史交易 -->
+	<Grid id="cardRiskHistory" type="sync">
+		<Columns>
+			<![CDATA[saTxnCard,saMchtNo,saTermNo,saTxnNum,saTxnAmt,saTxnDate,saTxnTime,saClcAction]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getCardRiskHistory" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户黑名单历史交易 -->
+	<Grid id="mchtRiskHistory" type="sync">
+		<Columns>
+			<![CDATA[saTxnCard,saMchtNo,saTermNo,saTxnNum,saTxnAmt,saTxnDate,saTxnTime,saClcAction]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtRiskHistory" />
+		</SyncMode>
+	</Grid>
+	<!-- gd联机交易查询 -->
+	<Grid id="posTxnInfogd" type="sync">
+		<Columns>
+			<![CDATA[instDate,cardAccpId,mchtNm,brhName,addr,cardAccpTermId,settleAcctNm,settleAcct,instTime,pan,termSsn,amtSettlmt,btSettlmt,transType,track1Data,transCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosTxnInfogd" />
+		</SyncMode>
+	</Grid>
+	<!-- 交易查询(十日内) -->
+	<Grid id="posTxnInfo" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,SYS_SEQ_NUM,PAN,CARD_ACCP_ID,MCHT_NM,SETTLE_AREA_NO,CARD_ACCP_TERM_ID,RETRIVL_REF,AMT_TRANS,ACQ_INST_ID_CODE,RESP_CODE,AMT_CDHLDR_BIL,CUP_SSN,DATE_LOCAL_TRANS,TIME_LOCAL_TRANS,TRANS_TYPE,MARKSUBSIDY_AMOUNT,SUBSIDY_RULE,TRACK_1_DATA,TRANS_CODE,REVSAL_FLAG,SUBSIDY_TYPE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosTxnInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 交易查询(十日前) -->
+	<Grid id="posTxnInfoHis" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,SYS_SEQ_NUM,PAN,CARD_ACCP_ID,MCHT_NM,SETTLE_AREA_NO,CARD_ACCP_TERM_ID,RETRIVL_REF,AMT_TRANS,ACQ_INST_ID_CODE,RESP_CODE,AMT_CDHLDR_BIL,CUP_SSN,DATE_LOCAL_TRANS,TIME_LOCAL_TRANS,TRANS_TYPE,MARKSUBSIDY_AMOUNT,SUBSIDY_RULE,TRACK_1_DATA,TRANS_CODE,REVSAL_FLAG,SUBSIDY_TYPE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosTxnInfoHis" />
+		</SyncMode>
+	</Grid>
+	<!-- 联机交易查询（用于手工退货） -->
+	<Grid id="posTxnInfo2" type="sync">
+		<Columns>
+			<![CDATA[instDate,instTime,sysSeqNum,pan,cardAccpId,cardAccpName,cardAccpTermId,retrivlRef,amtTrans,acqInstIdCode,txnNum,respCode,keyRsp]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosTxnInfo2" />
+		</SyncMode>
+	</Grid>
+	<!-- 脱机交易查询 -->
+	<Grid id="posTxnInfoOutline" type="sync">
+		<Columns>
+			<![CDATA[instDate,instTime,sysSeqNum,pan,cardAccpId,cardAccpName,cardAccpTermId,retrivlRef,amtTrans,acqInstIdCode,txnNum,respCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosTxnInfoOutline" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 计费信息 -->
+	<Grid id="getDiscInf" type="sync">
+		<Columns>
+			<![CDATA[txnNum,cardType,minFee,maxFee,flag,feeValue]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDiscInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 计费信息 -->
+	<Grid id="getDiscInf1" type="sync">
+		<Columns>
+			<![CDATA[txnNum,cardType,minFee,maxFee,flag,feeValue]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDiscInf1" />
+		</SyncMode>
+	</Grid>
+	<!-- 计费信息 -->
+	<Grid id="getDiscInf2" type="sync">
+		<Columns>
+			<![CDATA[txnNum,cardType,minFee,maxFee,flag,feeValue]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDiscInf2" />
+		</SyncMode>
+	</Grid>
+	<!-- 影音文件 -->
+	<Grid id="getImgInf" type="sync">
+		<Columns>
+			<![CDATA[id,btBig,btDel,width,height,fileName]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getImgInf" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 对账任务 -->
+	<Grid id="batchMission" type="sync">
+		<Columns>
+			<![CDATA[batId,batDsp,batState,batNote,oprate]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBatchMission" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户清算 -->
+	<Grid id="batchMissionMcht" type="sync">
+		<Columns>
+			<![CDATA[batId,batDsp,batState,batNote,oprate]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBatchMissionMcht" />
+		</SyncMode>
+	</Grid>
+	<Grid id="batchMissionOutline" type="sync">
+		<Columns>
+			<![CDATA[batId,batDsp,batState,batNote,oprate]]>
+		</Columns>
+		<SyncMode>
+			<Method value="batchMissionOutline" />
+		</SyncMode>
+	</Grid>
+	<Grid id="batchDtl" type="sync">
+        <Columns>
+            <![CDATA[dateSettlm,brhCode,settleAmt1,settleAmt2,settleAmt3,brhName,settleAmt,sendNum,flag,failResn,settleFlag]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getBatchDtl" />
+        </SyncMode>
+    </Grid>
+    <Grid id="batchBankInfo" type="sync">
+        <Columns>
+            <![CDATA[dateSettlm,brhCode,总行新系统本金,总行新系统手续费,总行旧系统手续费,清算金额总计]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getBatchBankInfo" />
+        </SyncMode>
+    </Grid>
+    <!-- 商户关联终端信息 -->
+    <Grid id="mchntTermInfo" type="sync">
+        <Columns>
+            <![CDATA[termId,termStatus,termSignSta,mchtCd]]>
+        </Columns>
+        <SyncMode>
+            <Method value="getMchntTermInfo" />
+        </SyncMode>
+    </Grid>
+    <!-- 代发记录查询 -->
+    <Grid id="getSettleLog" type="sync">
+		<Columns>
+			<![CDATA[BRH_ID,INST_DATE,START_DATE,END_DATE,SETTLE_AMT,TXN_AMT,SETTLE_FEE1,MCHNT_COUNT,SETTLE_AMT_DIS,TXN_AMT_DIS,SETTLE_FEE1_DIS,MCHNT_COUNT_DIS,SETTLE_AMT_TAL,TXN_AMT_TAL,SETTLE_FEE1_TAL,MCHNT_COUNT_TAL,SUCC_FILE,FAIL_FILE,STLM_FLAG,STLM_FLAG2,OPR_ID1,OPR_ID2,STLM_DSP,REC_CRE_TIME,REC_UPD_TIME]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getSettleLog" />
+		</SyncMode>
+	</Grid>	
+	
+	<!-- 商户问卷信息 -->
+	<Grid id="PaperDefInf" type="sync">
+		<Columns>
+			<![CDATA[PAPER_ID,QUES_ID,QUES_INDEX,QUESTION,OPTIONS,REMARKS]]>
+		</Columns>
+		<SyncMode>
+			<Method value="PaperDefInf" />
+		</SyncMode>
+	</Grid>
+	<Grid id="PaperRecInf" type="sync">
+		<Columns>
+			<![CDATA[PAPER_ID,RESERVE1,RESERVE2,CRT_USER,CRT_TIME,STA]]>
+		</Columns>
+		<SyncMode>
+			<Method value="PaperRecInf" />
+		</SyncMode>
+	</Grid>
+	<Grid id="PaperHisInf" type="sync">
+		<Columns>
+			<![CDATA[QUES_ID,QUES_INDEX,QUESTION,OPTIONS,REMARKS]]>
+		</Columns>
+		<SyncMode>
+			<Method value="PaperHisInf" />
+		</SyncMode>
+	</Grid>
+	<Grid id="getQuestionInf" type="sync">
+		<Columns>
+			<![CDATA[OPT_ID,option,point]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getQuestionInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户级别查询-->
+	<Grid id="PaperLelInf" type="sync">
+		<Columns>
+			<![CDATA[SEL_MCHT_ID,PAPER_ID,MCHT_ID,MCHT_NM,MCHT_POINT,MCHT_LEVEL,RESERVE1,RESERVE2,CRT_USER,CRT_TIME]]>
+		</Columns>
+		<SyncMode>
+			<Method value="PaperLelInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 获取专业服务机构-->
+	<Grid id="organInfo" type="sync">
+		<Columns>
+			<![CDATA[OrgId,Branch,OrgName,Remarks,Misc,CrtOpr,CrtTs,LastUpdOpr,LastUpdTs,areaCode,principal,linkman,linkTel]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getOrganInfo" />
+		</SyncMode>
+	</Grid>	
+	<!-- 为营销活动获取商户信息-->
+	<Grid id="mchntInfoForActivityNew" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtNm,mchtGrp,mcc,acqInstId,connType,discNm,actFee]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntInfoForActivityNew" />
+		</SyncMode>
+	</Grid>	
+	<!-- 营销活动信息-->
+	<Grid id="marketAct" type="sync">
+		<Columns>
+			<![CDATA[bankNo,actNo,actName,state,startDate,endDate,actCycle,organNo,organType,actContent,actFee,remarks,flag01,crtDt,crtOpr,updDt,updOpr,recOpr,misc1]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMarketAct" />
+		</SyncMode>
+	</Grid>	
+	<!-- 营销活动信息（只显示有效正常的活动编号）-->
+	<Grid id="marketActNew" type="sync">
+		<Columns>
+			<![CDATA[bankNo,actNo,actName,state,startDate,endDate,actCycle,organNo,organType,actContent,actFee,remarks,flag01,crtDt,crtOpr,updDt,updOpr,recOpr,misc1]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMarketActNew" />
+		</SyncMode>
+	</Grid>	
+	<!-- 营销活动商户参与信息-->
+	<Grid id="mchntParticipat" type="sync">
+		<Columns>
+			<![CDATA[actNo,actName,bankNo,state,startDate,endDate,mchntNo,mchtNm,actContent,actFee,flag01]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntParticipat" />
+		</SyncMode>
+	</Grid>	
+	
+	<!--IC卡其他参数维护-->	
+	<Grid id="icParam" type="sync">
+		<Columns>
+			<![CDATA[USAGE_KEY,PARA_IDX,PARA_ID,PARA_LEN,PARA_VAL,REC_UPD_OPR,REC_CRT_TS]]>
+		</Columns>
+		<SyncMode>
+			<Method value="icParam" />
+		</SyncMode>
+	</Grid>	
+	<!-- 手工退货信息 -->
+	<!-- <Grid id="manualReturnForCheck" type="sync">
+		<Columns>
+			<![CDATA[key_rsp,pan,card_accp_id,amt_trans,status,count,instDate,instTime,sysSeqNum,cardAccpName,cardAccpTermId,retrivlRef,acqInstIdCode,txnNum,respCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getManualReturnForCheck" />
+		</SyncMode>
+	</Grid> -->
+	<Grid id="manualReturnForCheck" type="sync">
+		<Columns>
+			<![CDATA[rInstDate,key_rsp,pan,mcht_no,orig_amt,return_amt,status,instDate,sysSeqNum,cardAccpName,cardAccpTermId,retrivlRef,acqInstIdCode,respCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getReturnForCheck" />
+		</SyncMode>
+	</Grid>
+	<!-- 手工退货信息 -->
+	<!-- <Grid id="manualReturnForManage" type="sync">
+		<Columns>
+			<![CDATA[key_rsp,pan,card_accp_id,amt_trans,status,count,instDate,instTime,sysSeqNum,cardAccpName,cardAccpTermId,retrivlRef,acqInstIdCode,txnNum,respCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getManualReturnForManage" />
+		</SyncMode>
+	</Grid> -->
+	<Grid id="manualReturnForManage" type="sync">
+		<Columns>
+			<![CDATA[key_rsp,pan,mcht_no,orig_amt,return_amt,match_sta,status,instDate,sysSeqNum,mcht_name,cardAccpTermId,retrivlRef,acqInstIdCode,respCode]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getReturnForManage" />
+		</SyncMode>
+	</Grid>
+	<!-- 托收交易信息 -->
+	<Grid id="entrustInfo" type="sync">
+		<Columns>
+			<![CDATA[trade_id,status,pan,card_accp_id,amt_trans]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getEntrustInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 差错未处理 -->
+	<Grid id="bthDtlErrGc" type="sync">
+		<Columns>
+			<![CDATA[bankNo,DATE_SETTLMT,OUT_SSN,TERM_SSN,acq_txn_ssn,PAN,AMT_TRANS,err_proc_cd,trans_date_time,txnNm,txn_num,stlmFlag,mchtNo,mchtNm]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBthDtlErrGc" />
+		</SyncMode>
+	</Grid>
+	<!-- 差错已处理 -->
+	<Grid id="bthDtlErrGcFinish" type="sync">
+		<Columns>
+			<![CDATA[bankNo,DATE_SETTLMT,OUT_SSN,TERM_SSN,acq_txn_ssn,PAN,AMT_TRANS,err_proc_cd,trans_date_time,txn_num,stlmFlag,mchtNo,mchtNm]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBthDtlErrGcFinish" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 差错处理 -->
+	<Grid id="bthGcTxnSucc" type="sync">
+		<Columns>
+			<![CDATA[ACQ_REGION_CD,DATE_SETTLMT,HOST_SSN,TERM_SSN,SYS_SEQ_NUM,PAN,AMT_TRANS,err_proc_cd,trans_date_time,txn_num]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBthGcTxnSucc" />
+		</SyncMode>
+	</Grid>
+	<!-- 证照号信息列表TMP -->
+	<Grid id="licenceInfoTmp" type="sync">
+		<Columns>
+			<!-- <![CDATA[licenceNoUpd,etpsNmUpd,licenceEndDateUpd,bankLicenceNoUpd,etpsTypeUpd,faxNoUpd,busAmtUpd,mchtCreLvlUpd,managerUpd,artifCertifTpUpd,identityNoUpd,managerTelUpd,faxUpd,regAddrUpd,applyDateUpd,enableDateUpd,preAudNmUpd,confirmNmUpd,etpsStateUpd,updOprIdUpd,crtOprIdUpd,recUpdTsUpd,recCrtTsUpd]]> -->
+			<![CDATA[licenceNo,etpsNm,licenceEndDate,bankLicenceNo,etpsType,faxNo,busAmt,mchtCreLvl,manager,artifCertifTp,identityNo,managerTel,fax,regAddr,applyDate,enableDate,preAudNm,confirmNm,etpsState,reserved,refuseMsg2,updOprId,crtOprId,recUpdTs,recCrtTs]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getLicenceInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 证照号信息列表TMP(审核) -->
+	<Grid id="licenceInfoTmp2" type="sync">
+		<Columns>
+			<!-- <![CDATA[licenceNoUpd,etpsNmUpd,licenceEndDateUpd,bankLicenceNoUpd,etpsTypeUpd,faxNoUpd,busAmtUpd,mchtCreLvlUpd,managerUpd,artifCertifTpUpd,identityNoUpd,managerTelUpd,faxUpd,regAddrUpd,applyDateUpd,enableDateUpd,preAudNmUpd,confirmNmUpd,etpsStateUpd,updOprIdUpd,crtOprIdUpd,recUpdTsUpd,recCrtTsUpd]]> -->
+			<![CDATA[licenceNo,etpsNm,licenceEndDate,bankLicenceNo,etpsType,faxNo,busAmt,mchtCreLvl,manager,artifCertifTp,identityNo,managerTel,fax,regAddr,applyDate,enableDate,preAudNm,confirmNm,etpsState,updOprId,crtOprId,recUpdTs,recCrtTs]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getLicenceInf2" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户待巡检信息 -->
+	<Grid id="mchtAwaitCheckInf" type="sync">
+		<Columns>
+			<![CDATA[mcht_no,mcht_nm,rct_check_date,check_frqc,plan_check_date,addr,contact,comm_tel,agr_br]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtAwaitCheckInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户手工巡检待审核信息 -->
+	<Grid id="mchtAwaitAuditInf" type="sync">
+		<Columns>
+			<![CDATA[mcht_no,mcht_nm,rct_check_date,check_frqc,plan_check_date,addr,contact,comm_tel,agr_br]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtAwaitAuditInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 城市地区码  by樊东东 2013-2-28 -->
+	<Grid id="areaInfo" type="sync">
+		<Columns>
+			<![CDATA[cityCode,cityName,modiOprId,modiTime,initTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getAreaInf" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 商户分期信息  by樊东东 2013-3-10 -->
+	<Grid id="divMchtInfo" type="sync">
+		<Columns>
+			<![CDATA[mchtId,mchtName,divNo,productCode,feeCode,feeName,productDivName,modiOprId,initTime,modiTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDivMchtInf" />
+		</SyncMode>
+	</Grid>
+	<Grid id="divMchtInfoNew" type="sync">
+		<Columns>
+			<![CDATA[mchtId,mchtName,divNo,productCode,feeCode,feeName,productDivName,modiOprId,initTime,modiTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDivMchtInfNew" />
+		</SyncMode>
+	</Grid>
+	<!--财务pos商户单位卡个人卡签约信息  by樊东东 2013-3-11 -->
+	<Grid id="mchtUnitPersonBindInfo" type="sync">
+		<Columns>
+			<![CDATA[mchtNo,mchtName,cardNo,cardFlag,modiOprId,initTime,modiTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtUnitPersonBindInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户清算明细 -->
+	<Grid id="mchtAlgoInfo" type="sync">
+		<Columns>
+			<![CDATA[trans_date,trans_date_time,date_settlmt,txn_ssn,pan,cardType,trans_amt,transFee,cupFee,fwFee,settl_amt,mcht_cd,mchtGrp,mchtFlag1,term_id,txn_num,acq_ins_id_cd,oldFlag,refFlag]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtAlgoInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户清算汇总 -->
+	<Grid id="mchtAlgoInfoCount" type="sync">
+		<Columns>
+			<![CDATA[mcht_cd,mchtNm,mchtGrp,mchtTp1,mchtTp2,brhName,mchtFeeTp,trans_amt,transFee,settl_amt,transCount,amtIn]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtAlgoInfoCount" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户付款交易明细 -->
+	<Grid id="mchtPayInfo" type="sync">
+		<Columns>
+			<![CDATA[trans_date,trans_date_time,mcht_cd,mchtGrp,mcht_flag1,mcht_flag2,term_id,arg_br,ins_nm,seq_nm,retrivl_ref,inst_id_code,pan,acct_id2,cupFee,amt_trans]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtPayInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户付款交易汇总 -->
+	<Grid id="mchtPayInfoCount" type="sync">
+		<Columns>
+			<![CDATA[mcht_cd,mchtNm,mchtGrp,mchtTp1,mchtTp2,mchtFeeTp,trans_amt,transFee,settl_amt,transCount,amtIn]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtpayInfoCount" />
+		</SyncMode>
+	</Grid>
+	<!-- 直联商户清算明细 -->
+	<Grid id="mchtAlgoCupInfo" type="sync">
+		<Columns>
+			<![CDATA[settleDate,transDate,brh,mchtId,mchtNm,termId,ssn,pan,tanNum,amt,fee,cupFee,acount]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtAlgoCupInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 直联商户清算汇总 -->
+	<Grid id="mchtAlgoInfoCupCount" type="sync">
+		<Columns>
+			<![CDATA[mchtId,mchtNm,mchtTp1,mchtTp2,brhName,transCount,transSum,fee,errCount,errAmt,backAmt,othAmt,settleAmt,accountAmt,feeSum]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtAlgoInfoCupCount" />
+		</SyncMode>
+	</Grid>
+	<!-- 风险交易查询(套现) -->
+	<Grid id="riskTxnInfo" type="sync">
+		<Columns>
+			<![CDATA[ABS_MON,BRH_NO,MCHT_NO,MCHT_NM,SETTLE_ACCT,SINGLE_COUNT,SINGLE_AMT,CREDIT_COUNT,CREDIT_AMT,RET_COUNT,RET_AMT,INTE_COUNT,INTE_AMT,BIG_COUNT,BIG_AMT,REF_COUNT,REF_AMT,MISC,whiteFlag,FLAG]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRiskTxnInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 风控监测处理 -->
+	<Grid id="shiftTermAct" type="sync">
+		<Columns>
+			<![CDATA[settleDate,mchtNo,mchtNm,lastAmt,infileAmt,returnAmt,settleAmt,loamAmt,FLAG,DESR,rank,moveTp]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getShiftTermAct" />
+		</SyncMode>
+	</Grid>
+	<!-- 风控监测 详细-->
+	<Grid id="shiftTermInfo" type="sync">
+		<Columns>
+			<![CDATA[settleDate,mchtNo,mchtNm,lastAmt,infileAmt,returnAmt,settleAmt,loamAmt,FLAG,DESR,moveTp]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getShiftTermInfo" />
+		</SyncMode>
+	</Grid>
+     <!-- 移机监测详细信息 -->
+	<Grid id="shiftTermDayInfo" type="sync">
+		<Columns>
+			<![CDATA[ABS_DATE,BRH_NO,MCHT_NO,MCHT_NM,TERM_NO,SETTLE_ACCT,AMT_TRANS,FLAG,DESR,ACQ_INST_ID,REAL_TEL,BIND_TEL1,BIND_TEL2,BIND_TEL3,TXN_NUM,INST_TIME,PAN,TERM_SSN,CERTI_ID,AUTHR_ID_R,RETRIVL_REF,drank]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getshiftTermDayInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 补登信息 -->
+	<Grid id="tblDTxnInfo" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,INST_TIME,SETTLE_DATE,SYS_SEQ_NUM,MCHT_NO,PAN,TRANS_AMT,RETURN_FEE,CREATE_OPR,UPDATE_DATE,UPDATE_OPR,OPR_STA,SETTLE_STATUS,RECORD,RESERVED]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblDTxnInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户退货信息 -->
+	<Grid id="tblRTxnInfo" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,INST_TIME,SETTLE_DATE,MSG_SRC_ID,TERM_SSN,SYS_SEQ_NUM,KEY_RSP,PAN,CARD_TYPE,LICENCE_NO,MCHT_NO,RETURN_AMT,ORIG_TXN_NUM,ORIG_AMT,ORIG_DIV_NO,ORIG_PRODUCT_CODE,ORIG_DATE,RETRIVL_REF,ORIG_FEE_ALGO_ID,ORIG_FEE_MD,ORIG_FEE_PARAM,ORIG_FEE_PCT_MIN,ORIG_FEE_PCT_MAX,ORIG_FEE,RETURN_FEE,TERM_NO,CREATE_OPR,UPDATE_OPR,UPDATE_DATE,MATCH_STA,OPR_STA,SETTLE_STATUS,RECORD,RESERVED,AUDIT_STA]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblRTxnInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户退货控制台发起部分 -->
+	<Grid id="tblRTxnInfoNew" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,INST_TIME,SETTLE_DATE,MSG_SRC_ID,TERM_SSN,SYS_SEQ_NUM,KEY_RSP,PAN,CARD_TYPE,LICENCE_NO,MCHT_NO,RETURN_AMT,ORIG_TXN_NUM,ORIG_AMT,ORIG_DIV_NO,ORIG_PRODUCT_CODE,ORIG_DATE,RETRIVL_REF,ORIG_FEE_ALGO_ID,ORIG_FEE_MD,ORIG_FEE_PARAM,ORIG_FEE_PCT_MIN,ORIG_FEE_PCT_MAX,ORIG_FEE,RETURN_FEE,TERM_NO,CREATE_OPR,UPDATE_OPR,UPDATE_DATE,MATCH_STA,OPR_STA,SETTLE_STATUS,RECORD,RESERVED,AUDIT_STA]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblRTxnInfoNew" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户退货信息all -->
+	<Grid id="tblRTxnInfoAll" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,INST_TIME,SETTLE_DATE,MSG_SRC_ID,TERM_SSN,SYS_SEQ_NUM,KEY_RSP,TXNNM,PAN,CARD_TYPE,LICENCE_NO,MCHT_NO,RETURN_AMT,ORIG_TXN_NUM,ORIG_AMT,ORIG_DIV_NO,ORIG_PRODUCT_CODE,ORIG_DATE,RETRIVL_REF,ORIG_FEE_ALGO_ID,ORIG_FEE_MD,ORIG_FEE_PARAM,ORIG_FEE_PCT_MIN,ORIG_FEE_PCT_MAX,ORIG_FEE,RETURN_FEE,TERM_NO,CREATE_OPR,UPDATE_OPR,UPDATE_DATE,MATCH_STA,OPR_STA,SETTLE_STATUS,RECORD,RESERVED,AUDIT_STA]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblRTxnInfoAll" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户退货信息申请 -->
+	<Grid id="tblRTxnInfoApp" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,INST_TIME,SETTLE_DATE,MSG_SRC_ID,TERM_SSN,SYS_SEQ_NUM,KEY_RSP,PAN,CARD_TYPE,LICENCE_NO,MCHT_NO,RETURN_AMT,ORIG_TXN_NUM,ORIG_AMT,ORIG_DIV_NO,ORIG_PRODUCT_CODE,ORIG_DATE,RETRIVL_REF,ORIG_FEE_ALGO_ID,ORIG_FEE_MD,ORIG_FEE_PARAM,ORIG_FEE_PCT_MIN,ORIG_FEE_PCT_MAX,ORIG_FEE,RETURN_FEE,TERM_NO,CREATE_OPR,UPDATE_OPR,UPDATE_DATE,MATCH_STA,OPR_STA,SETTLE_STATUS,RECORD,RESERVED,AUDIT_STA]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblRTxnInfoApp" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户退货信息check -->
+	<Grid id="tblRTxnInfoCheck" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,INST_TIME,SETTLE_DATE,MSG_SRC_ID,TERM_SSN,SYS_SEQ_NUM,KEY_RSP,PAN,CARD_TYPE,LICENCE_NO,MCHT_NO,RETURN_AMT,ORIG_TXN_NUM,ORIG_AMT,ORIG_DIV_NO,ORIG_PRODUCT_CODE,ORIG_DATE,RETRIVL_REF,ORIG_FEE_ALGO_ID,ORIG_FEE_MD,ORIG_FEE_PARAM,ORIG_FEE_PCT_MIN,ORIG_FEE_PCT_MAX,ORIG_FEE,RETURN_FEE,TERM_NO,CREATE_OPR,UPDATE_OPR,UPDATE_DATE,MATCH_STA,OPR_STA,SETTLE_STATUS,RECORD,RESERVED,AUDIT_STA]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblRTxnInfoCheck" />
+		</SyncMode>
+	</Grid>
+	<Grid id="tblRTxnInfoCheckReady" type="sync">
+		<Columns>
+			<![CDATA[INST_DATE,INST_TIME,SETTLE_DATE,MSG_SRC_ID,TERM_SSN,SYS_SEQ_NUM,KEY_RSP,PAN,CARD_TYPE,LICENCE_NO,MCHT_NO,RETURN_AMT,ORIG_TXN_NUM,ORIG_AMT,ORIG_DIV_NO,ORIG_PRODUCT_CODE,ORIG_DATE,RETRIVL_REF,ORIG_FEE_ALGO_ID,ORIG_FEE_MD,ORIG_FEE_PARAM,ORIG_FEE_PCT_MIN,ORIG_FEE_PCT_MAX,ORIG_FEE,RETURN_FEE,TERM_NO,CREATE_OPR,UPDATE_OPR,UPDATE_DATE,MATCH_STA,OPR_STA,SETTLE_STATUS,RECORD,RESERVED,AUDIT_STA]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblRTxnInfoCheckReady" />
+		</SyncMode>
+	</Grid>
+	<!-- 正常交易信息 -->
+	<Grid id="normalTransInfo" type="sync">
+		<Columns>
+			<![CDATA[pan,mchtNo,bankNo,mchtScct,mchtScctNm,transAmt,fee,errAmt,errFee,back]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getNormalTransInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 商户对账信息 -->
+	<Grid id="accountSettle" type="sync">
+		<Columns>
+			<![CDATA[pan,bank,mchtNo,mchtNm,txnNum,settleDate,transDate,transTime,termId,transAmt,fee,settleAmt,txnSsn,backFlag]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getAccountSettle" />
+		</SyncMode>
+	</Grid>
+	<!-- 对账可疑数据 -->
+	<Grid id="dubiousTransInfo" type="sync">
+		<Columns>
+			<![CDATA[dateSettle,mchtNo,bankNo,mchtScct,mchtScctNm,transAmt,fee,errAmt,errFee,back]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDubiousTransInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 对账不平数据 -->
+	<Grid id="errTransInfo" type="sync">
+		<Columns>
+			<![CDATA[dateSettle,mchtNo,bankNo,mchtScct,mchtScctNm,transAmt,fee,errAmt,errFee,back]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getErrTransInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 触发风控数据 -->
+	<Grid id="riskTransInfo" type="sync">
+		<Columns>
+			<![CDATA[dateSettle,mchtNo,bankNo,mchtScct,mchtScctNm,transAmt,fee,errAmt,errFee,back,riskTp]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getRiskTransInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 当日交易金额负数押款信息 -->
+	<Grid id="deferTransInfo" type="sync">
+		<Columns>
+			<![CDATA[dateSettle,mchtNo,bankNo,mchtScct,mchtScctNm,transAmt,fee,errAmt,errFee,back]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDeferTransInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 退货交易信息 -->
+	<Grid id="backTransInfo" type="sync">
+		<Columns>
+			<![CDATA[dateSettle,mchtNo,mchtScctNm,pan,transDate,transAmt,backAmt,backFee]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBackTransInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 商户转入卡管理 -->
+	<Grid id="mchntInCardQuery" type="sync">
+		<Columns>
+			<![CDATA[termId,mchtNo,mchtNm,inOutFlag,InCardNum,agrBr,brhName,contactName,contactTel,contactIdentify,inFlag,useFlag,messageLimit,dealBeginTime,dealEndTime]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntInCard" />
+		</SyncMode>
+	</Grid>
+	
+	<!--终端版本信息-->
+	<Grid id="verMng" type="sync">
+		<Columns>
+			<![CDATA[VER_ID,BANK_ID,BRH_NAME,MISC,CRT_DATE,UPD_DATE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="verMng" />
+		</SyncMode>
+	</Grid>
+	<!--配置首页提示信息-->	
+	<Grid id="firstMsg" type="sync">
+		<Columns>
+			<![CDATA[BRH_ID,BRH_NAME,PPT_MSG,CRT_OPR,CRT_DATE,UPD_OPR,UPD_DATE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="firstMsg" />
+		</SyncMode>
+	</Grid>
+	<!--终端交易配置-->
+	<Grid id="termTxnCode" type="sync">
+		<Columns>
+			<![CDATA[TERM_TXN_CODE,INT_TXN_CODE,DSP]]>
+		</Columns>
+		<SyncMode>
+			<Method value="termTxnCode" />
+		</SyncMode>
+	</Grid>
+	<!--终端版本信息-->
+	<Grid id="verMng" type="sync">
+		<Columns>
+			<![CDATA[VER_ID,BANK_ID,BRH_NAME,MISC,CRT_DATE,UPD_DATE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="verMng" />
+		</SyncMode>
+	</Grid>
+	<!-- 终端返回码 -->
+	<Grid id="rspMsg" type="sync">
+		<Columns>
+			<![CDATA[RSP_NO,CHG_NO,ERR_NO,ERR_MSG,CRT_DATE,UPD_DATE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="rspMsg" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 终端返回码 -->
+	<Grid id="getEposMenu" type="sync">
+		<Columns>
+			<![CDATA[BANK_ID,BRH_NAME,VER_ID,MISC,MENU_NUM1,MENU_NUM2,MENU_NUM3]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getEposMenu" />
+		</SyncMode>
+	</Grid>
+	<!--终端菜单配置信息-->	
+	<Grid id="eposMenuMsg" type="sync">
+		<Columns>
+			<![CDATA[USAGE_KEY,BRH_ID,MENU_ID,MENU_LEVEL,MENU_MSG,MENU_PRE_ID1,MENU_PRE_ID2,TXN_CODE,TXN_DSP,CON_FLAG,PPT_ID,PPT_MSG,OPR_ID,VER_ID,CRT_DATE,UPD_DATE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="eposMenuMsg" />
+		</SyncMode>
+	</Grid>
+		<!-- 查询商户签约账户信息 -->
+	<Grid id="gettblMchtSignAccInf" type="sync">
+		<Columns>
+			<![CDATA[MCHT_NO,SIGN_ACCT,SIGN_TYPE,SIGN_STATUS,RCV_BANK_ID,RCV_BANK_NO,REC_UPD_TS,REC_CRT_TS,UPD_OPR_ID,CRT_OPR_ID,BANK_NO,BANK_NAME,BANK_ADDR,ACCT_NAME]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTblMchtSignAccInf" />
+		</SyncMode>
+	</Grid>
+
+	<!-- 查询商户重置密码申请列表 -->
+	<Grid id="gettblMchntApplyInf" type="sync">
+		<Columns>
+			<![CDATA[applyId,mchnNo,type,state,createTime,createPerson,userName,createPhone,auditTime,auditId,auditPhone,remark,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="gettblMchntApplyInf" />
+		</SyncMode>
+	</Grid>
+
+
+	<!-- 商户申请列表 -->
+	<Grid id="mchntApplyInfoQuery" type="sync">
+		<Columns>
+			<![CDATA[applyId,mchntId,applyType,applyStatus,createTime,createPerson,userName,createPhone,auditTime,auditId,auditPhone,remark,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntApplyInfoAll" />
+		</SyncMode>
+	</Grid>
+
+	
+	<!-- 商户映射查询 -->
+	<Grid id="mchntMappingInfo" type="sync">
+		<Columns>
+			<![CDATA[mappingId,mchntId,equipmentId,acquirersId,createTime,createPerson,remark,acmchntId,acequipmentId,termName]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntMappingInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 优惠规则列表查询 -->
+	<Grid id="getMchntDiscountRuleInfo" type="sync">
+		<Columns>
+			<![CDATA[discountId,discountType,discountCard,discountValue,discountValueInfo,createTime,createPerson,startTimeEff,endTimeEff,discountCode,openType,isDownload,openLian,acquirersType,remark,issuedContent,acquirersId,sumcount0,sumcount1,sumcount0l,sumcount1l]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntDiscountRuleInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 优惠规则绑定列表查询 -->
+	<Grid id="getMchntDiscountRuleBindInfo" type="sync">
+		<Columns>
+			<![CDATA[bindId,mchntId,equipmentId,acquirersId,discountId,createTime,mchntName,discountValueInfo,activityId,activityDesc,isOpen,createPerson,startTime,endTime,acquirersType,discountValue]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntDiscountRuleBindInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 手续费配置信息查询 -->
+	<Grid id="getMchntFeeInfo" type="sync">
+		<Columns>
+			<![CDATA[mchntId,feeType,feeRate,feeMin,feeMax,createTime,updateTime,operator,,mappingMchntTypeOne,mappingMchntcdOne,mappingMchntTypeTwo,mappingMchntcdTwo]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntFeeInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 交易统计 -->
+	<Grid id="getTxnSummaryInfo" type="sync">
+		<Columns>
+			<![CDATA[settleDate,merchantCode,terminalCode,transAmount,cupsTransFee,localTransFee]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTxnSummaryInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 交易统计详情 -->
+	<Grid id="getTxnSummaryInfoDetail" type="sync">
+		<Columns>
+			<![CDATA[posSerial,merchantCode,terminalCode,transTime,masterAccount,transAmount,cupsTransFee,settleDate,merchantType,respCode,checkState]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTxnSummaryInfoDetail" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 机构参数信息 -->
+	<Grid id="brhParamInfo" type="sync">
+		<Columns>
+			<![CDATA[brhId,brhName,statDate,stdToalcounts,stdToalmoney,stdCondition]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getBrhParamInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 达标统计 -->
+	<Grid id="getStdCountInfo" type="sync">
+		<Columns>
+			<![CDATA[mchtNm,cardAccpId,cardAccpTermId,transCnt,amtTrans,amtSettlmt,panNums,reachsdt,startDate,endDate,addr,brhName]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getStdCountInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 
+		交易明细查询(支付宝、微信)
+			@author hanyongqing
+	 -->
+	<Grid id="posTxnInfoAir" type="sync">
+		<Columns>
+			<![CDATA[ 	ORDER_TIME,MCHT_NM,SETTLE_AREA_NO,Yl_MCHNT_NO,YL_TERM_NO,TERM_ORDER_ID,INFO_ID,ORDER_FEE,ORG_FEE,FEE,PAY_TYPE,NOTICE_STATUS,C_MCHNT_NO,NOTICE_ORDER_ID,C_MCHNT_BRH,ORDER_RESP_TIME,AGR_BR,BRH_NAME,SELLER_ID,BUYER_ID,SELLER_EMAIL,BUYER_LOGON_ID ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTxnInfoAir" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		交易明细查询(银联)
+			@author hanyongqing
+	 -->
+	<Grid id="posTxnInfoTxn" type="sync">
+		<Columns>
+			<![CDATA[ INST_DATE,MAPPING_MCHNTCDTWO,CARD_ACCP_TERM_ID,SYS_SEQ_NUM,AMT_TRANS,AMT_SETTLMT,PAN,TRANS_TYPE,REVSAL_FLAG,RESP_CODE,TRANS_STATE,MARKSUBSIDY_AMOUNT,SUBSIDY_RULE,AGR_BR,MCHT_NM,BRH_NAME,SETTLE_AREA_NO,SUBSIDY_TYPE ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTxnInfoTxn" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		交易明细查询(所有：包括支付宝、微信、银联)
+			@author hanyongqing
+	 -->
+	<Grid id="posTxnInfoAll" type="sync">
+		<Columns>
+			<![CDATA[ 	TRADE_TIME,YL_MCHNT_NO,YL_TERM_NO,ACCOUNT_NUM,MCHNT_NUM,REPLEN_NUM,TRADE_MON,PAY_TYPE,AGR_BR,MCHT_NM,BRH_NAME ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTxnInfoAll" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		交易信息小计 (所有：包括支付宝、微信、银联)
+			@author hanyongqing
+	 -->
+	<Grid id="posStatSumInfo" type="sync">
+		<Columns>
+			<![CDATA[  MCHNTNO,TERMNO,TOTALMON,TOTALNUM ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getStatSumInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		交易信息总计 (所有：包括支付宝、微信、银联)
+			@author hanyongqing
+	 -->
+	<Grid id="posTotalSumInfo" type="sync">
+		<Columns>
+			<![CDATA[  TOTALMON,TOTALNUM ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTotalSumInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 
+		交易统计详情 (所有：包括支付宝、微信、银联)
+			@author hanyongqing
+	 -->
+	<Grid id="posStatSumInfoDetail" type="sync">
+		<Columns>
+			<![CDATA[  TOTALTIME,MCHNTNO,TERMNO,TOTALMON,TOTALNUM ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getStatSumInfoDetail" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 
+		菜品编码表
+			@author hanyongqing
+	 -->
+	<Grid id="vegCodeInfo" type="sync">
+		<Columns>
+			<![CDATA[  VEGE_CODE,VEGE_NAME ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getVegCodeInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 
+		终端菜品映射表
+			@author hanyongqing
+	 -->
+	<Grid id="vegMappingInfo" type="sync">
+		<Columns>
+			<![CDATA[ MCHNT_NO,TERM_NO,KEY_CODE,VEGE_CODE,VEGE_NAME  ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getVegMappingInfo" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 
+		菜品编码表 
+			用于增加菜品编码到终端的映射关系，
+			最多显示10000条数据
+			@author hanyongqing
+	 -->
+	<Grid id="vegCodeInfo2" type="sync">
+		<Columns>
+			<![CDATA[  VEGE_CODE,VEGE_NAME ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getVegCodeInfo2" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		菜品编码表 
+			用于查询菜品明细信息
+			@author hanyongqing
+	 -->
+	<Grid id="vegDetailInfo" type="sync">
+		<Columns>
+			<![CDATA[  TRADE_TIME,REPNUM,MCHT_NM,MCHNT_NO,TERM_NO,VEGE_CODE,VEGE_NAME,WEIGHT,AMOUNT,PRICE,PAYTYPE,AGR_BR,BRH_NAME,REPEAT_FLAG,UPLOAD_TIME ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getVegDetailInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		当前交易流水表
+			用于查询时间段内，某个机构、某个商户的统计信息
+			@auther hanyongqing
+	 -->
+	<Grid id="statRepInfo" type="sync">
+		<Columns>
+			<![CDATA[  BRH_ID,BRH_NAME,MCHT_NO,MCHT_NM,NUM,AMT_TRANS,AMT_SETTLMT,PREFEE,SETTLE_ACCT_SND,SETTLE_BANK_NO_SND,SETTLE_BANK_NM_SND,SETTLE_ACCT_NM_SND  ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getStatRepInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		当前交易流水表
+			用于查询时间段内，某个机构、某个商户的统计信息和
+			@auther hanyongqing
+	 -->
+	<Grid id="statRepInfo2" type="sync">
+		<Columns>
+			<![CDATA[  BRH_ID,BRH_NAME,MCHT_NO,MCHT_NM,NUM,AMT_TRANS,AMT_SETTLMT,PREFEE,SETTLE_ACCT_SND,SETTLE_BANK_NO_SND,SETTLE_BANK_NM_SND,SETTLE_ACCT_NM_SND  ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getStatRepInfo2" />
+		</SyncMode>
+	</Grid>
+	
+	<!-- 
+		扫码支付商户与POS终端关联
+			@auther hanyongqing
+	 -->
+	<Grid id="posCodeInfo" type="sync">
+		<Columns>
+			<![CDATA[ MCHT_NM,Yl_MCHNT_NO,Yl_TERM_NO,C_MCHNT_NO,TERM_FIX_NO,SCANCODEFLAG,C_BRH_NAME,C_KEY,CIPHER,BUSS_ID,RESV1,CERTPATH,BRANCHCODE,FLAG,VALID_START_DATE,VALID_END_DATE,ID  ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPosCodeInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		二维码不平账查询
+			@auther hanyongqing
+	 -->
+	<Grid id="payBillInfo" type="sync">
+		<Columns>
+			<![CDATA[ TRADE_TIME,MCHNT_ID,MCHNT_ORDER_NO,YS_ORDER_NO,PAY_TYPE,ORDER_FEE,CHECK_RESULT  ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getPayBillInfo" />
+		</SyncMode>
+	</Grid>
+		<!-- 
+		对账查询
+			@auther hanyongqing
+	 -->
+	<Grid id="comparePayBill" type="sync">
+		<Columns>
+			<![CDATA[ ACC_DATE,FILE_NAME,STEPS,LAST_TIME ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getComparePayBill" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		营销补贴规则查询
+			@auther hanyongqing
+	 -->
+	<Grid id="mchntSubsidyRuleInfo" type="sync">
+		<Columns>
+			<![CDATA[ RULE_ID,RULE_NAME,SUBSIDY_TYPE,SUBSIDY_RULE,OPEN_TYPE,CARD_BIN,START_TIME,END_TIME,CARD_LIMIT,TERM_LIMIT,MCHT_LIMIT,ADD_TIME,MODIFY_TIME,REMARK  ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchntSubsidyRuleInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 
+		营销补贴规则绑定
+			@auther hanyongqing
+	 -->
+	<Grid id="mchtMarkSubsidyBind" type="sync">
+		<Columns>
+			<![CDATA[  RECORD_ID,RULE_ID,MCHNT_NO,TERM_NO,OPEN_FLAG,MCHT_NM,BRH_NAME,BIND_TIME,MODIFY_TIME,REMARK ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getMchtMarkSubsidyBind" />
+		</SyncMode>
+	</Grid>
+	<!-- 终端类型参数维护
+	      @auther   lixiaomin  -->  
+	<Grid id="termTypeInfo" type="sync">
+		<Columns>
+			<![CDATA[termTp,descr,termNum,termType,proDescr]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermTypeInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 交易统计(商户)
+	      @auther   lixiaomin  
+	-->  
+	<Grid id="dealTxnInfo" type="sync">
+		<Columns>
+			<![CDATA[CITY_NAME,BRH_NAME,MCHT_NM,Yl_MCHNT_NO,MARKETER_NAME,TOTAL_FEE,TOTAL_NUM,WECHAT_TOTAL_FEE,WECHAT_TOTAL_NUM,ALIPAY_TOTAL_FEE,ALIPAY_Total_NUM,BANK_CARD_FEE,BANK_CARD_NUM,OTHER_FEE,OTHER_NUM]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDealTxnInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 交易统计(终端)
+	      @auther   lixiaomin  
+	-->  
+	<Grid id="dealMchtTxnInfo" type="sync">
+		<Columns>
+			<![CDATA[CITY_NAME,BRH_NAME,MCHT_NM,Yl_MCHNT_NO,Yl_TERM_NO,MARKETER_NAME,TOTAL_FEE,TOTAL_NUM,WECHAT_TOTAL_FEE,WECHAT_TOTAL_NUM,ALIPAY_TOTAL_FEE,ALIPAY_TOTAL_NUM,BANK_CARD_FEE,BANK_CARD_NUM,OTHER_FEE,OTHER_NUM]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getDealMchtTxnInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 支付宝对账查询
+	      @auther   lixiaomin  
+	-->  
+	<Grid id="alipayAccount" type="sync">
+		<Columns>
+			<![CDATA[APPID,OUTTRADENO,TRADENO,TRADETYPE,GOODNAME,STORECODE,STORENAME,OPERATOR,TERMNO,PAYACCOUNT,TOTALFEE,REALFEE,ALIPAYBONUS,POINTBONUS,ALIPAYPREFFEE,MCHNTPREFEE,VOUCHFEE,VOUCHNAME,MCHTCOSTBONUS,CARDCOSTFEE,BATCHNO,SERVFEES,DISTRIPROFITS,REMARK,CMCHNTBRH,CRETIME,PAYTIME,STATUS,CHKMARK,CHKTIME]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getAlipayAccount" />
+		</SyncMode>
+	</Grid>
+	<!-- 微信对账查询
+	      @auther   lixiaomin  
+	-->  
+	<Grid id="weChatAccount" type="sync">
+		<Columns>
+			<![CDATA[APPID,OUTTRADENO,TRADENO,MCHID,SUBMCHID,USERFLAG,TRADETYPE,TRADESTATUS,PAYBANK,CURRYTYPE,TOTALFEE,ENTERBONS,WECHATRFDNO,REFUNDNO,REFUNDFEE,ENTERRFDBONS,REFUNDTYPE,REFUNDSTATUS,GOODNAME,PACKGE,FEE,FEERATE,SN,CMCHNTBRH,PAYTIME,STATUS,CHKMARK,CHKTIME]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getWeChatAccount" />
+		</SyncMode>
+	</Grid>
+	<!-- 民生商户维护
+	      @auther   lixiaomin  
+	-->  
+	<Grid id="mchntMSInfo" type="sync">
+		<Columns>
+			<![CDATA[OUTMCHNTID,OPERID,MCHNTNAME,MCHNTFULLNAME,DEVTYPE,ACDCODE,PROVINCE,CITY,ADDRESS,ISCERT,LICID,IDTCARD,CORPNAME,TELEPHONE,AUTOSETTLE,STATUS,CMBCMCHNTID,MESSAGE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getmchntMSInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 民生支付渠道维护
+	      @auther   lixiaomin  
+	-->  
+	<Grid id="payChannelInfo" type="sync">
+		<Columns>
+			<![CDATA[OUTMCHNTID,OPERID,CMBCMCHNTID,APICODE,INDUSTRYID,OPERATETYPE,DAYLIMIT,MONTHLIMIT,RATEFLAG,FEERATE,ACCOUNT,PBCBANKID,ACCTNAME,ACCTTYPE,CMBCSIGNID,CREATE_TIME,MODIFY_TIME,MESSAGE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getpayChannelInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 微信、支付宝渠道维护
+	      @auther   lixiaomin  -->  
+	<Grid id="airpayMapInfo" type="sync">
+		<Columns>
+			<![CDATA[YL_MCHNT_NO,YL_TERM_NO,APP_ID,PAY_FLAG,MCH_ID,C_KEY1,C_KEY2,SIGN_TYPE,FLAG,AUTHORITY_FLAG]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getAirpayMapInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 国密终端密钥维护
+	      @auther   lixiaomin  -->  
+	<Grid id="termKeyInfo" type="sync">
+		<Columns>
+			<![CDATA[YL_MCHNT_NO,YL_TERM_NO,C_KEY]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getTermKeyInf" />
+		</SyncMode>
+	</Grid>
+	<!-- 支付宝分润参数 -->
+	<Grid id="alipayShareParamInfo" type="sql">
+		<Columns>
+			<![CDATA[BRH_ID,SHARE_STANDARD_TOTAL,SINGLE_SHARE_MONEY,SHARE_THRESHOLD,BRH_NAME,SHARE_RULEID,SHARE_RULENAME,FREERATIO,SHARETYPE,MCHT_SHAREVAL,ORGSHAREVAL_FIRST,ORGSHAREVAL_SECOND,ORGSHAREVAL_THREE,SHARE_RULESTATUS]]>
+		</Columns>
+		<SqlMode>
+			<Sql>
+				<![CDATA[select m.BRH_ID,m.SHARE_STANDARD_TOTAL,m.SINGLE_SHARE_MONEY,m.SHARE_THRESHOLD,n.BRH_NAME,m.SHARE_RULEID,m.SHARE_RULENAME,m.FREERATIO,case m.SHARETYPE when '0' then '固定金额' else '比例(%)' end as SHARETYPE,m.MCHT_SHAREVAL,m.ORGSHAREVAL_FIRST,m.ORGSHAREVAL_SECOND,m.ORGSHAREVAL_THREE,case m.SHARE_RULESTATUS when '0' then '停止' else '启用' end as SHARE_RULESTATUS from TBL_ALIPAY_SHARE_PARAM m,TBL_BRH_INFO n where m.BRH_ID = n.BRH_ID]]>
+			</Sql>
+			<Dao>CommQueryDAO</Dao>
+			<Wheres>
+				<where type="string">
+					<DataBaseColumn></DataBaseColumn>
+					<QueryColumn></QueryColumn>
+				</where>
+			</Wheres>
+		</SqlMode>
+	</Grid>
+	<!-- 支付宝分润统计 -->
+	<Grid id="alipayShareSta" type="sync">
+		<Columns>
+			<![CDATA[ ORDER_TIME,MCHT_NM,SETTLE_AREA_NO,Yl_MCHNT_NO,YL_TERM_NO,TERM_ORDER_ID,INFO_ID,ORDER_FEE,ORG_FEE,PAY_TYPE,NOTICE_STATUS,C_MCHNT_NO,NOTICE_ORDER_ID,C_MCHNT_BRH,ORDER_RESP_TIME,AGR_BR,BRH_NAME,SELLER_ID,BUYER_ID,SELLER_EMAIL,BUYER_LOGON_ID,MCHT_SHARE,ONEORG_SHARE,TWOORG_SHARE,THREEORG_SHARE ]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getAlipayShareInfo" />
+		</SyncMode>
+	</Grid>
+	<!-- 手续费统计 -->
+	<Grid id="feeSta" type="sync">
+		<Columns>
+			<![CDATA[ ORDER_TIME,MCHT_NM,SETTLE_AREA_NO,Yl_MCHNT_NO,FEE]]>
+		</Columns>
+		<SyncMode>
+			<Method value="getFeeStaInfo" />
+		</SyncMode>
+	</Grid>
+</Grids>

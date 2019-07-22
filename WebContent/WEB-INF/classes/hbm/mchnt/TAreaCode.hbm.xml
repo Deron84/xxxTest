@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TAreaCode" table="T_AREACODE">
+		<meta attribute="sync-DAO">false</meta>
+			
+		<composite-id name="tAreaCodePK" class="TAreaCodePK">
+			<key-property name="upAreaCode" column="UPAREACODE" type="string" />
+			<key-property name="areaCode" column="AREACODE" type="string" />
+		</composite-id>
+		
+		<property name="levels" column="LEVELS" type="string"
+			not-null="true" length="10" />
+		<property name="rootAreaCode" column="ROOTAREACODE" type="string"
+			not-null="true" length="20" />
+		<property name="areaName" column="AREANAME" type="string"
+			not-null="true" length="50"/>
+	</class>
+</hibernate-mapping>

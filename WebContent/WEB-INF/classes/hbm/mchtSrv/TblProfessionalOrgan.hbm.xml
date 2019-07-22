@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchtSrv">
+	<class name="TblProfessionalOrgan" table="TBL_PROFESSIONAL_ORGAN">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="OrgId" type="string" column="ORG_ID">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Branch" column="BRANCH" type="string"
+			not-null="true" length="8" />
+		<property name="OrgName" column="ORG_NAME" type="string"
+			not-null="true" length="50" />
+		<property name="principal" column="principal" type="string"
+			not-null="true" length="20" />
+		<property name="linkman" column="linkman" type="string"
+			not-null="true" length="20" />
+		<property name="linkTel" column="link_tel" type="string"
+			not-null="true" length="20" />
+		<property name="Rate" column="RATE" type="big_decimal"
+			not-null="true" length="2" />
+		<!-- <property name="RateType" column="RATE_TYPE" type="string" length="1" 
+			/> -->
+		<property name="Remarks" column="REMARKS" type="string"
+			not-null="false" length="300" />
+		<property name="Misc" column="MISC" type="string" not-null="false"
+			length="300" />
+		<property name="CrtOpr" column="CRT_OPR" type="string"
+			not-null="false" length="8" />
+		<property name="CrtTs" column="CRT_TS" type="string"
+			not-null="false" length="14" />
+		<property name="LastUpdOpr" column="LAST_UPD_OPR" type="string"
+			not-null="false" length="8" />
+		<property name="LastUpdTs" column="LAST_UPD_TS" type="string"
+			not-null="false" length="14" />
+		<!-- 地区码 -->
+		<property name="areaCode" column="AREA_CODE" type="string"
+			not-null="false" length="4" />
+
+	</class>
+</hibernate-mapping>

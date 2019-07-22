@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--通用查询-->
+	<bean id="CommQueryDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.commquery.dao.ICommQueryDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>commQueryDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="commQueryDAOTarget" class="com.huateng.commquery.dao.CommQueryDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactoryQuery" />
+		</property>
+	</bean>
+	<!-- 日志信息 -->
+	<bean id="TxnInfoDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.sdses.dao.iface.TblTxnInfoDAO2</value>
+		</property>
+		<property name="interceptorNames">
+			<value>txnInfDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="txnInfDAOTarget" class="com.sdses.dao.impl.TblTxnInfoDAOTarget">
+		<property name="txnInfoDAO">
+			<ref bean="TblTxnInfoDAO" />
+		</property>
+	</bean>
+	<bean id="TblTxnInfoDAO" class="com.sdses.dao.TblTxnInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!--角色信息-->
+	<bean id="RoleInfDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.TblRoleInfDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>roleInfDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="roleInfDAOTarget" class="com.huateng.dao.TblRoleInfDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="T10301BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.base.T10301BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T10301BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T10301BOTarget" class="com.huateng.bo.impl.base.T10301BOTarget">
+		<property name="tblRoleInfDAO">
+			<ref bean="RoleInfDAO" />
+		</property>
+		<property name="tblRoleFuncMapDAO">
+			<ref bean="RoleFuncMapDAO" />
+		</property>
+		<property name="commQueryDAO">
+			<ref bean="CommQueryDAO" />
+		</property>
+	</bean>
+	<!--角色交易对应信息-->
+	<bean id="RoleFuncMapDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.TblRoleFuncMapDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>roleFuncMapDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="roleFuncMapDAOTarget" class="com.huateng.dao.TblRoleFuncMapDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 升级程序类 -->
+	<bean id="upGradeAction" class="com.sdses.struts.upGrade.action.UpGradeAction">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>	
+	</bean>	
+</beans>

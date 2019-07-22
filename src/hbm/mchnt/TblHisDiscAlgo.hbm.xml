@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblHisDiscAlgo"
+		table="TBL_HIS_DISC_ALGO"
+	>
+	<composite-id name="Id" class="TblHisDiscAlgoPK">
+		<key-property
+			name="DiscId"
+			column="DISC_ID"
+			type="string"
+		/>
+		<key-property
+			name="IndexNum"
+			column="INDEX_NUM"
+			type="integer"
+		/>
+	</composite-id>
+
+		<property
+			name="MinFee"
+			column="MIN_FEE"
+			type="big_decimal"
+			not-null="true"
+			length="16"
+		/>
+		<property
+			name="MaxFee"
+			column="MAX_FEE"
+			type="big_decimal"
+			not-null="true"
+			length="16"
+		/>
+		<property
+			name="FloorMount"
+			column="FLOOR_AMOUNT"
+			type="big_decimal"
+			not-null="true"
+			length="16"
+		/>
+		<property
+			name="UpperMount"
+			column="UPPER_AMOUNT"
+			type="big_decimal"
+			not-null="true"
+			length="16"
+		/>
+		<property
+			name="Flag"
+			column="FLAG"
+			type="integer"
+			not-null="true"
+			length="1"
+		/>
+		<property
+			name="FeeValue"
+			column="FEE_VALUE"
+			type="big_decimal"
+			not-null="true"
+			length="16"
+		/>
+		<property
+			name="RecUpdUsrId"
+			column="REC_UPD_USR_ID"
+			type="string"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="RecUpdTs"
+			column="REC_UPD_TS"
+			type="string"
+			not-null="true"
+			length="14"
+		/>
+		<property
+			name="RecCrtTs"
+			column="REC_CRT_TS"
+			type="string"
+			not-null="true"
+			length="14"
+		/>
+		<property
+			name="txnNum"
+			column="TXN_NUM"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="CardType"
+			column="CARD_TYPE"
+			type="string"
+			not-null="true"
+			length="2"
+		/>
+	</class>
+	<query name="getAllByCd">
+	<![CDATA[
+from TblHisDiscAlgo tblHisDiscAlgo where tblHisDiscAlgo.Id.DiscId= :DiscId
+	]]>
+	</query>
+		
+</hibernate-mapping>

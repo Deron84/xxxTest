@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="warehouse" extends="json-default">
+		<!-- 系统拦截器 -->
+		<interceptors>
+			<interceptor name="logInter" class="com.huateng.interceptor.LogInter"></interceptor>
+			<interceptor-stack name="SystemInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="logInter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+	 	<default-interceptor-ref name="SystemInterceptor"/>
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		<!--start 仓库管理 -->
+        <!-- 新增仓库信息-->
+		<action name="T100100Action" class="com.rail.struts.warehouse.action.T100100Action" />
+		<!-- 仓库信息维护-->
+		<action name="T100101Action" class="com.rail.struts.warehouse.action.T100101Action" />
+		<action name="T100101Action_getData" class="com.rail.struts.warehouse.action.T100101Action" method="getData"/>
+		<!-- 仓库信息查询-->
+		<action name="T100102Action" class="com.rail.struts.warehouse.action.T100102Action" />
+		<!-- 仓库盘点-->
+		<action name="T100103Action" class="com.rail.struts.warehouse.action.T100103Action" />
+		<!-- 移库查询-->
+		<action name="T100104Action" class="com.rail.struts.warehouse.action.T100104Action" />
+		
+		
+		<!-- 人员出入库信息-->
+		<action name="T100200Action" class="com.rail.struts.warehouse.action.T100200Action" />
+		<!-- 工具出入库信息-->
+		<action name="T100201Action" class="com.rail.struts.warehouse.action.T100201Action" />
+	
+	  <!-- 仓库工具预警阈值管理-->
+		<action name="T100300Action" class="com.rail.struts.warehouse.action.T100300Action" />
+	    <action name="T100300Action_getData" class="com.rail.struts.warehouse.action.T100300Action" method="getData"/>
+	
+	</package>
+</struts>

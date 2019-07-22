@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblBrhAcct"
+		table="TBL_BRH_ACCT"
+	>
+		<id
+			name="Id"
+			type="string"
+			column="BRH_ID"
+		>
+		</id>
+
+		<property
+			name="Acct1"
+			column="ACCT1"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="Acct2"
+			column="ACCT2"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="Resv1"
+			column="RESV1"
+			type="string"
+			not-null="false"
+			length="128"
+		/>
+		<property
+			name="LastUpdOprId"
+			column="LAST_UPD_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="LastUpdTxnId"
+			column="LAST_UPD_TXN_ID"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="LastUpdTs"
+			column="LAST_UPD_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

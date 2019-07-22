@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!--手工退货 -->
+	<bean id="TblManualReturnDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.accident.TblManualReturnDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>TblManualReturnDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="TblManualReturnDAOTarget" class="com.huateng.dao.impl.accident.TblManualReturnDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!--手工退货 new -->
+	<bean id="TblRTxnDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.accident.TblRTxnDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>TblRTxnDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="TblRTxnDAOTarget" class="com.huateng.dao.impl.accident.TblRTxnDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="T90101BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.accident.T90101BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T90101BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T90101BOTarget" class="com.huateng.bo.impl.accident.T90101BOTarget">
+		<property name="sqlDao">
+			<ref bean="sqlDao" />
+		</property>
+	</bean>
+
+	<bean id="T90102BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.accident.T90102BO</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<value>t90102botarget</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="t90102botarget" class="com.huateng.bo.impl.accident.T90102BOTarget">
+		<property name="sqlDao">
+			<ref bean="sqlDao" />
+		</property>
+	</bean>
+
+	<!--托收交易 -->
+	<bean id="TblEntrustTradeDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.accident.TblEntrustTradeDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>TblEntrustTradeDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="TblEntrustTradeDAOTarget" class="com.huateng.dao.impl.accident.TblEntrustTradeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="T90201BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.accident.T90201BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T90201BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T90201BOTarget" class="com.huateng.bo.impl.accident.T90201BOTarget">
+		<property name="tblEntrustTradeDAO">
+			<ref bean="TblEntrustTradeDAO" />
+		</property>
+	</bean>
+
+	<!--费用收取 -->
+	<bean id="TblCostInfDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.accident.TblCostInfDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>TblCostInfDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="TblCostInfDAOTarget" class="com.huateng.dao.impl.accident.TblCostInfDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="T90401BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.accident.T90401BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T90401BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T90401BOTarget" class="com.huateng.bo.impl.accident.T90401BOTarget">
+		<property name="tblCostInfDAO">
+			<ref bean="TblCostInfDAO" />
+		</property>
+	</bean>
+	<bean id="T90301BOTarget" class="com.huateng.bo.impl.accident.T90301BOTarget">
+		<property name="sqlDao" ref="sqlDao" />
+	</bean>
+</beans>

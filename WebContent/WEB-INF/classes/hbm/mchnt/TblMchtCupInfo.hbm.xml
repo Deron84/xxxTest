@@ -1,0 +1,719 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblMchtCupInfo"
+		table="tbl_mcht_cup_info"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id name="mcht_no" 
+			type="string" 
+			column="MCHT_NO"
+			length="15"
+		>
+			<generator class="assigned" />
+		</id>
+		
+		<property
+			name="inner_acq_inst_id"
+			column="INNER_ACQ_INST_ID"
+			type="string"
+			not-null="false"
+			length="11"
+		/>
+		
+		<property
+			name="acq_inst_id_code"
+			column="ACQ_INST_ID_CODE"
+			type="string"
+			not-null="false"
+			length="11"
+		/>
+		
+		<property
+			name="inst_id"
+			column="INST_ID"
+			type="string"
+			not-null="false"
+			length="11"
+		/>
+		
+		<property
+			name="mcht_nm"
+			column="MCHT_NM"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		
+		
+		<property
+			name="mcht_short_cn"
+			column="MCHT_SHORT_CN"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		
+		<property
+			name="area_no"
+			column="AREA_NO"
+			type="string"
+			not-null="false"
+			length="6"
+		/>
+		
+		<property
+			name="inner_stlm_ins_id"
+			column="INNER_STLM_INS_ID"
+			type="string"
+			not-null="false"
+			length="11"
+		/>
+		
+		<property
+			name="mcht_type"
+			column="MCHT_TYPE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		
+		<property
+			name="mcht_status"
+			column="MCHT_STATUS"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		
+		<property
+			name="acq_area_cd"
+			column="ACQ_AREA_CD"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		
+		<property
+			name="settle_flg"
+			column="SETTLE_FLG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		
+		<property
+			name="conn_inst_cd"
+			column="CONN_INST_CD"
+			type="string"
+			not-null="false"
+			length="11"
+		/>
+		
+		<property
+			name="mchnt_tp_grp"
+			column="MCHNT_TP_GRP"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		
+		<property
+			name="mchnt_srv_tp"
+			column="MCHNT_SRV_TP"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		
+		<property
+			name="real_mcht_tp"
+			column="REAL_MCHT_TP"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		
+		<property
+			name="settle_area_cd"
+			column="SETTLE_AREA_CD"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		
+		<property
+			name="mcht_acq_curr"
+			column="MCHT_ACQ_CURR"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		
+		<property
+			name="conn_type"
+			column="CONN_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		
+		<property
+			name="currcy_cd"
+			column="CURRCY_CD"
+			type="string"
+			not-null="false"
+			length="3"
+		/>
+		
+		<property
+			name="deposit_flag"
+			column="DEPOSIT_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		
+		<property
+			name="res_pan_flag"
+			column="RES_PAN_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		
+		<property
+			name="res_track_flag"
+			column="RES_TRACK_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		
+		<property
+			name="process_flag"
+			column="PROCESS_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		
+		<property
+			name="cntry_code"
+			column="CNTRY_CODE"
+			type="string"
+			not-null="false"
+			length="3"
+		/>
+		
+		<property
+			name="ch_store_flag"
+			column="CH_STORE_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="mcht_tp_reason"
+			column="MCHT_TP_REASON"
+			type="string"
+			not-null="false"
+			length="2"
+		/><!--  -->
+		<property
+			name="mcc_md"
+			column="MCC_MD"
+			type="string"
+			not-null="false"
+			length="2"
+		/><!--  -->
+		<property
+			name="rebate_flag"
+			column="REBATE_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="mcht_acq_rebate"
+			column="MCHT_ACQ_REBATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/><!--  -->
+		
+		<property
+			name="rebate_stlm_cd"
+			column="REBATE_STLM_CD"
+			type="string"
+			not-null="false"
+			length="5"
+		/><!--  -->
+		
+		<property
+			name="reason_code"
+			column="REASON_CODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/><!--  -->
+		<property
+			name="rate_type"
+			column="RATE_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		<property
+			name="fee_cycle"
+			column="FEE_CYCLE"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		<property
+			name="fee_type"
+			column="FEE_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		<property
+			name="limit_flag"
+			column="limit_flag"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		<property
+			name="fee_rebate"
+			column="FEE_REBATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/><!-- -->
+		<property
+			name="settle_amt"
+			column="SETTLE_AMT"
+			type="string"
+			not-null="false"
+			length="15"
+		/><!--  -->
+		<property
+			name="amt_top"
+			column="AMT_TOP"
+			type="string"
+			not-null="false"
+			length="15"
+		/><!--  -->
+		<property
+			name="amt_bottom"
+			column="AMT_BOTTOM"
+			type="string"
+			not-null="false"
+			length="15"
+		/><!--  -->
+		
+		<property
+			name="disc_cd"
+			column="DISC_CD"
+			type="string"
+			not-null="false"
+			length="5"
+		/><!--  -->
+		<property
+			name="fee_type_m"
+			column="FEE_TYPE_M"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		<property
+			name="limit_flag_m"
+			column="LIMIT_FLAG_M"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!-- -->
+		<property
+			name="settle_amt_m"
+			column="SETTLE_AMT_M"
+			type="string"
+			not-null="false"
+			length="15"
+		/><!--  -->
+		<property
+			name="amt_top_m"
+			column="AMT_TOP_M"
+			type="string"
+			not-null="false"
+			length="15"
+		/><!--  -->
+		
+		
+		<property
+			name="amt_bottom_m"
+			column="AMT_BOTTOM_M"
+			type="string"
+			not-null="false"
+			length="15"
+		/><!--  -->
+		<property
+			name="disc_cd_m"
+			column="DISC_CD_M"
+			type="string"
+			not-null="false"
+			length="5"
+		/><!--  -->
+		<property
+			name="fee_rate_type"
+			column="FEE_RATE_TYPE"
+			type="string"
+			not-null="false"
+			length="5"
+		/><!--  -->
+		<property
+			name="settle_bank_no"
+			column="SETTLE_BANK_NO"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!--  -->
+		<property
+			name="settle_bank_type"
+			column="SETTLE_BANK_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		<property
+			name="advanced_flag"
+			column="ADVANCED_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		<property
+			name="prior_flag"
+			column="PRIOR_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		<property
+			name="open_stlno"
+			column="OPEN_STLNO"
+			type="string"
+			not-null="false"
+			length="12"
+		/><!--  -->
+		<property
+			name="feerate_index"
+			column="FEERATE_INDEX"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!--  -->
+		<property
+			name="rate_role"
+			column="RATE_ROLE"
+			type="string"
+			not-null="false"
+			length="10"
+		/><!--  -->
+		
+		<property
+			name="rate_disc"
+			column="RATE_DISC"
+			type="string"
+			not-null="false"
+			length="5"
+		/><!--  -->
+		
+		<property
+			name="cycle_mcht"
+			column="CYCLE_MCHT"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="mac_chk_flag"
+			column="MAC_CHK_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="fee_div_mode"
+			column="FEE_DIV_MODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/><!--  -->
+		
+		<property
+			name="settle_mode"
+			column="SETTLE_MODE"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="attr_bmp"
+			column="ATTR_BMP"
+			type="string"
+			not-null="false"
+			length="10"
+		/><!--  -->
+		
+		<property
+			name="cycle_settle_type"
+			column="CYCLE_SETTLE_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="report_bmp"
+			column="REPORT_BMP"
+			type="string"
+			not-null="false"
+			length="10"
+		/><!--  -->
+		
+		<property
+			name="day_stlm_flag"
+			column="DAY_STLM_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="cup_stlm_flag"
+			column="CUP_STLM_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="adv_ret_flag"
+			column="ADV_RET_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="mcht_file_flag"
+			column="MCHT_FILE_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="fee_act"
+			column="FEE_ACT"
+			type="string"
+			not-null="false"
+			length="30"
+		/><!--  -->
+		
+		<property
+			name="licence_no"
+			column="LICENCE_NO"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!--  -->
+		
+		<property
+			name="licence_add"
+			column="LICENCE_ADD"
+			type="string"
+			not-null="false"
+			length="60"
+		/><!--  -->
+		
+		<property
+			name="principal"
+			column="PRINCIPAL"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!--  -->
+		
+		<property
+			name="comm_tel"
+			column="COMM_TEL"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!--  -->
+		
+		<property
+			name="manager"
+			column="MANAGER"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!--  -->
+		
+		<property
+			name="mana_cred_tp"
+			column="MANA_CRED_TP"
+			type="string"
+			not-null="false"
+			length="2"
+		/><!--  -->
+		
+		<property
+			name="mana_cred_no"
+			column="MANA_CRED_NO"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!--  -->
+		
+		<property
+			name="capital_sett_cycle"
+			column="CAPITAL_SETT_CYCLE"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="card_in_start_date"
+			column="CARD_IN_START_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/><!--  -->
+		
+		<property
+			name="settle_acct"
+			column="SETTLE_ACCT"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!--  -->
+		
+		<property
+			name="mcht_e_nm"
+			column="MCHT_E_NM"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!--  -->
+		
+		<property
+			name="settle_bank"
+			column="SETTLE_BANK"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!--  -->
+		
+		<property
+			name="rate_no"
+			column="RATE_NO"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!--  -->
+		
+		<property
+			name="card_in_settle_bank"
+			column="CARD_IN_SETTLE_BANK"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!--  -->
+		
+		<property
+			name="fee_spe_type"
+			column="FEE_SPE_TYPE"
+			type="string"
+			not-null="false"
+			length="2"
+		/><!--  -->
+		
+		<property
+			name="fee_spe_gra"
+			column="FEE_SPE_GRA"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!--  -->
+		
+		<property
+			name="reserved"
+			column="RESERVED"
+			type="string"
+			not-null="false"
+			length="100"
+		/><!--  -->
+		
+		<property
+			name="reserved1"
+			column="RESERVED1"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!--  -->
+		
+		<property
+			name="reserved2"
+			column="RESERVED2"
+			type="string"
+			not-null="false"
+			length="60"
+		/><!--  -->
+		
+		<property
+			name="upd_opr_id"
+			column="UPD_OPR_ID"
+			type="string"
+			not-null="false"
+			length="16"
+		/><!--  -->
+		
+		<property
+			name="crt_opr_id"
+			column="CRT_OPR_ID"
+			type="string"
+			not-null="false"
+			length="16"
+		/><!--  -->
+		
+		<property
+			name="upd_ts"
+			column="UPD_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/><!--  -->
+		
+		<property
+			name="crt_ts"
+			column="CRT_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/><!--  -->
+		
+	</class>	
+</hibernate-mapping>

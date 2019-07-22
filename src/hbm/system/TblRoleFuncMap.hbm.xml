@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblRoleFuncMap"
+		table="TBL_ROLE_FUNC_MAP"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblRoleFuncMapPK">
+			<key-property
+				name="KeyId"
+				column="KEY_ID"
+				type="integer"
+			/>
+			<key-property
+				name="ValueId"
+				column="VALUE_ID"
+				type="integer"
+			/>
+		</composite-id>
+		<property
+			name="RecUpdOpr"
+			column="REC_UPD_OPR"
+			type="string"
+			not-null="false"
+			length="16"
+		/>
+		<property
+			name="RecCrtTs"
+			column="REC_CRT_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="RecUpdTs"
+			column="REC_UPD_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+	</class>	
+</hibernate-mapping>

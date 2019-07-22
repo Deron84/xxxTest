@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblMchntFee"
+		table="TBL_MCHNT_FEE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id name="mchntId" type="string" column="MCHNT_ID">
+			<generator class="assigned" />
+		</id>
+		
+		<property
+			name="feeType"
+			column="FEE_TYPE"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="feeRate"
+			column="FEE_RATE"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="feeMin"
+			column="FEE_MIN"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="feeMax"
+			column="FEE_MAX"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="createTime"
+			column="CREATE_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="updateTime"
+			column="UPDATE_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="operator"
+			column="OPERATOR"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>		
+		
+	</class>	
+</hibernate-mapping>

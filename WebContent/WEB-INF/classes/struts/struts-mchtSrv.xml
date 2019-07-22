@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="mchtSrv" extends="json-default">
+		
+		<!-- 系统拦截器 -->
+		<interceptors>
+			<interceptor name="logInter" class="com.huateng.interceptor.LogInter"></interceptor>
+			<interceptor-stack name="SystemInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="logInter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+           
+        <!--
+			@auther hanyongqing 
+		  -->
+		<action name="T21503Action_getData" class="com.sdses.struts.mchnt.action.T21503Action" method="getData">
+		</action>
+        
+		<!-- 商户服务 -->
+		<action name="T7*_*" 
+			class="com.huateng.struts.mchtSrv.action.T7{1}" method="{2}">
+			<interceptor-ref name="SystemInterceptor"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+			<result name="error" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+
+		<!-- 商户营销补贴-->
+		<action name="T21503Action" class="com.sdses.struts.mchnt.action.T21503Action" />
+		
+		<!-- 商户营销补贴规则绑定-->
+		<action name="T21504Action" class="com.sdses.struts.mchnt.action.T21504Action" />
+		
+	</package>
+</struts>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblPptMsg"
+		table="TBL_PPT_MSG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblPptMsgPK">
+			<key-property
+				name="PptId"
+				column="PPT_ID"
+				type="integer"
+			/>
+			<key-property
+				name="UsageKey"
+				column="USAGE_KEY"
+				type="string"
+			/>
+			<key-property
+				name="MsgType"
+				column="MSG_TYPE"
+				type="string"
+			/>
+			<key-property
+				name="VerId"
+				column="VER_ID"
+				type="string"
+			/>
+		</composite-id>
+
+		<property
+			name="TmpId"
+			column="TMP_ID"
+			type="integer"
+			not-null="true"
+			length="22"
+		/>
+		<property
+			name="MsgFmt1"
+			column="MSG_FMT1"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="PptMsg1"
+			column="PPT_MSG1"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="MsgFmt2"
+			column="MSG_FMT2"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="PptMsg2"
+			column="PPT_MSG2"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="MsgFmt3"
+			column="MSG_FMT3"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="PptMsg3"
+			column="PPT_MSG3"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="CrtDate"
+			column="CRT_DATE"
+			type="string"
+			not-null="true"
+			length="8"
+		/>
+		<property
+			name="UpdDate"
+			column="UPD_DATE"
+			type="string"
+			not-null="true"
+			length="8"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

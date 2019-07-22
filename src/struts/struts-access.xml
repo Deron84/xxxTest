@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="access" extends="json-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		<!--start 仓库管理 -->
+        <!-- 新增门禁信息-->
+		<action name="T120100Action" class="com.rail.struts.access.action.T120100Action" />
+		<!-- 门禁信息维护-->
+		<action name="T120101Action" class="com.rail.struts.access.action.T120101Action" />
+	    <action name="T120101Action_getData" class="com.rail.struts.access.action.T120101Action" method="getData"/>
+		<!-- 门禁信息查询-->
+		<action name="T120102Action" class="com.rail.struts.access.action.T120102Action" />
+	    <!-- 设备终端管理-->
+		<action name="T120103Action" class="com.rail.struts.access.action.T120103Action" />
+	    <action name="T120103Action_getData" class="com.rail.struts.access.action.T120103Action" method="getData"/>
+		<!-- 门禁控制-->
+		<action name="T120200Action" class="com.rail.struts.access.action.T120200Action" />
+		<!-- 门禁预警-->
+		<action name="T120300Action" class="com.rail.struts.access.action.T120300Action" />
+		<action name="T120300Action_getData" class="com.rail.struts.access.action.T120300Action" method="getData"/>
+		<!-- 新增门禁检修保养-->
+		<action name="T120400Action" class="com.rail.struts.access.action.T120400Action" />
+		<!-- 门禁检修保养预警-->
+		<action name="T120401Action" class="com.rail.struts.access.action.T120401Action" />
+		<action name="T120401Action_getData" class="com.rail.struts.access.action.T120401Action" method="getData"/>
+		<!-- 门禁检修保养查询-->
+		<action name="T120402Action" class="com.rail.struts.access.action.T120402Action" />
+		<action name="T120402Action_getData" class="com.rail.struts.access.action.T120402Action" method="getData"/>
+		
+	</package>
+</struts>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblMchntUser"
+		table="TBL_MCHNT_USER"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id name="Id" type="string" column="ID">
+			<generator class="assigned" />
+		</id>
+		
+		<property
+			name="parentId"
+			column="PARENT_ID"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="mchntId"
+			column="MCHNT_ID"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="loginPwd"
+			column="LOGIN_PWD"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="status"
+			column="STATUS"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="wechatId"
+			column="WECHAT_ID"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="mchntPhone"
+			column="MCHNT_PHONE"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="mchntName"
+			column="MCHNT_NAME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="createTime"
+			column="CREATE_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="updateTime"
+			column="UPDATE_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="loginName"
+			column="LOGIN_NAME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>	
+		
+	</class>	
+</hibernate-mapping>

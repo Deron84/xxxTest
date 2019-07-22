@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TAirpayMap" table="T_AIRPAY_MAP">
+		<meta attribute="sync-DAO">false</meta>
+			
+		<composite-id name="tAirpayMapPK" class="TAirpayMapPK">
+			<key-property name="ylMchntNo" column="YL_MCHNT_NO" type="string" />
+			<key-property name="ylTermNo" column="YL_TERM_NO" type="string" />
+			<key-property name="payFlag" column="PAY_FLAG" type="string" />
+		</composite-id>
+		
+		<property name="appId" column="APP_ID" type="string"
+			not-null="true" length="32" />
+		<property name="mchId" column="MCH_ID" type="string"
+			not-null="false" length="32" />
+		<property name="cKey1" column="C_KEY1" type="string"
+			not-null="true" length="2048"/>
+		<property name="cKey2" column="C_KEY2" type="string"
+		    not-null="false" length="2048" />
+		<property name="signType" column="SIGN_TYPE" type="string"
+		    not-null="false" length="5" />
+		<property name="flag" column="FLAG" type="string"
+		    not-null="false" length="1" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblTermTxn"
+		table="TBL_TERM_TXN"
+	>
+		<meta attribute="sync-DAO">false</meta>
+
+		<id
+			name="TermTxnCode"
+			column="TERM_TXN_CODE"
+			type="string"
+			length="4"
+		/>
+		<property
+			name="IntTxnCode"
+			column="INT_TXN_CODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="Dsp"
+			column="DSP"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

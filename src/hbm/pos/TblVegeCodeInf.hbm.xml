@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TblVegeCodeInfo" table="VEGE_CODE_BASE">
+		<meta attribute="sync-DAO">false</meta>
+			
+		<id name="vegCode" column="VEGE_CODE" type="string">
+			<generator class="assigned" />
+		</id>
+		<property name="vegName" column="VEGE_NAME" type="string"
+			not-null="true" length="32" />
+	</class>
+</hibernate-mapping>

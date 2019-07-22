@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblPrtMsg"
+		table="TBL_PRT_MSG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblPrtMsgPK">
+			<key-property
+				name="usageKey"
+				column="USAGE_KEY"
+				type="string"
+			/>
+			<key-property
+				name="prtId"
+				column="PRT_ID"
+				type="integer"
+			/>
+		</composite-id>
+		<property
+			name="prtMsg"
+			column="PRT_MSG"
+			type="string"
+			not-null="false"
+			length="64"
+		/>
+		<property
+			name="crtDate"
+			column="CRT_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="updDate"
+			column="UPD_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

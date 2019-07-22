@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblMchtLicenceInfTmp"
+		table="tbl_mcht_licence_inf_tmp"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id name="LicenceNo" 
+			type="string" 
+			column="LICENCE_NO"
+			length="20"
+		>
+			<generator class="assigned" />
+		</id><!-- 营业执照号 -->
+		<property
+			name="EtpsNm"
+			column="ETPS_NM"
+			type="string"
+			not-null="false"
+			length="60"
+		/><!-- 企业名称 -->
+		<property
+			name="LicenceEndDate"
+			column="LICENCE_END_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/><!-- 营业执照有效期 -->
+		<property
+			name="BankLicenceNo"
+			column="BANK_LICENCE_NO"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!-- 机构代码证号码 -->
+		<property
+			name="EtpsType"
+			column="ETPS_TYPE"
+			type="string"
+			not-null="true"
+			length="4"
+		/><!-- 企业性质 -->
+		<property
+			name="FaxNo"
+			column="FAX_NO"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!-- 税务登记证号码 -->
+		<property
+			name="BusAmt"
+			column="BUS_AMT"
+			type="string"
+			not-null="false"
+			length="12"
+		/><!-- 注册资金 -->
+		<property
+			name="MchtCreLvl"
+			column="MCHT_CRE_LVL"
+			type="string"
+			not-null="false"
+			length="4"
+		/><!-- 企业资质等级 -->
+		<property
+			name="Manager"
+			column="MANAGER"
+			type="string"
+			not-null="true"
+			length="10"
+		/><!-- 法人姓名 -->
+		<property
+			name="ArtifCertifTp"
+			column="ARTIF_CERTIF_TP"
+			type="string"
+			not-null="false"
+			length="2"
+		/><!-- 法人证件类型 -->
+		<property
+			name="IdentityNo"
+			column="IDENTITY_NO"
+			type="string"
+			not-null="true"
+			length="20"
+		/><!-- 法人证件号码 -->
+		<property
+			name="ManagerTel"
+			column="MANAGER_TEL"
+			type="string"
+			not-null="true"
+			length="12"
+		/><!-- 法人联系电话 -->
+		<property
+			name="Fax"
+			column="FAX"
+			type="string"
+			not-null="false"
+			length="20"
+		/><!-- 传真 -->
+		<property
+			name="RegAddr"
+			column="REG_ADDR"
+			type="string"
+			not-null="false"
+			length="60"
+		/><!-- 注册地址 -->
+		<property
+			name="ApplyDate"
+			column="APPLY_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/><!-- 申请日期 -->
+		<property
+			name="EnableDate"
+			column="ENABLE_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/><!-- 启用日期 -->
+		<property
+			name="PreAudNm"
+			column="PRE_AUD_NM"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!-- 初审人 -->
+		<property
+			name="ConfirmNm"
+			column="CONFIRM_NM"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!-- 批准人 -->
+		<property
+			name="Reserved"
+			column="RESERVED"
+			type="string"
+			not-null="false"
+			length="60"
+		/><!-- 保留 -->
+		<property
+			name="etpsState"
+			column="ETPS_STATE"
+			type="string"
+			not-null="true"
+			length="1"
+		/><!-- 企业状态 -->
+		<property
+			name="RefuseMsg1"
+			column="REFUSE_MSG1"
+			type="string"
+			not-null="false"
+			length="100"
+		/><!-- 处理信息 -->
+		<property
+			name="RefuseMsg2"
+			column="REFUSE_MSG2"
+			type="string"
+			not-null="false"
+			length="1"
+		/><!-- 处理原因信息 -->
+		<property
+			name="UpdOprId"
+			column="upd_opr_id"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!-- 修改记录操作员 -->
+		<property
+			name="CrtOprId"
+			column="crt_opr_id"
+			type="string"
+			not-null="false"
+			length="40"
+		/><!-- 创建记录操作员 -->
+		<property
+			name="RecUpdTs"
+			column="rec_upd_ts"
+			type="string"
+			length="14"
+		/><!-- 记录修改时间 -->
+		<property
+			name="RecCrtTs"
+			column="rec_crt_ts"
+			type="string"
+			length="14"
+		/><!-- 记录创建时间 -->
+	</class>	
+</hibernate-mapping>

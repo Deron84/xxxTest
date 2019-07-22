@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TBrhDatadic" table="T_BRH_DATADIC">
+		<meta attribute="sync-DAO">false</meta>
+			
+		<composite-id name="tBrhDatadicPK" class="TBrhDatadicPK">
+			<key-property name="cBrhId" column="C_BRH_ID" type="string" />
+			<key-property name="cBrhName" column="C_BRH_NAME" type="string" />
+		</composite-id>
+		
+		<property name="codeBrhId" column="CORD_BRH_ID" type="string"
+			not-null="true" length="2" />	
+	</class>
+</hibernate-mapping>

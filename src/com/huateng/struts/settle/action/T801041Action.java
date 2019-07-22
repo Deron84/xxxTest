@@ -1,0 +1,106 @@
+package com.huateng.struts.settle.action;
+
+
+import java.io.PrintWriter;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.huateng.common.Constants;
+import com.huateng.common.StringUtil;
+import com.huateng.dao.common.SqlDao;
+import com.huateng.ftp.Download;
+import com.huateng.struts.system.action.BaseAction;
+import com.huateng.struts.system.action.ReportBaseAction;
+import com.huateng.system.util.CommonFunction;
+import com.huateng.system.util.ContextUtil;
+import com.huateng.system.util.SysParamUtil;
+
+@SuppressWarnings("serial")
+public class T801041Action extends BaseAction{
+	
+	SqlDao sqlDao = (SqlDao)ContextUtil.getBean("sqlDao");
+	
+	private String brhId;
+	
+	private String HmchntId;
+	
+	private String reportName;
+	
+	private String date;
+	
+	@Override
+	protected String subExecute() throws Exception {
+		if ("down".equals(method)) {
+			return down();
+		}
+		return rspCode;
+	}
+
+	private String down() throws Exception {
+		String filename = "";
+		String downUrl =  SysParamUtil.getParam("TEMP_FILE_DISK");
+		String fileUrl = SysParamUtil.getParam("ftpPath") + date + "/";
+		
+		if("ONE".equals(reportName)){
+			filename = "ONE"+date.substring(2, 8)+"01EXPREQ";
+//			filename += ".txt";
+		}else if("0521_HOSTERROR_000001".equals(reportName)){
+			filename = reportName+ "_" + date + ".csv";
+		}else if("mchtBill".equals(reportName)){
+			filename = date + "商户入账明细" + ".tar";
+			fileUrl = SysParamUtil.getParam("ftpPath_tar") + date + "/";
+		}else if("000".equals(reportName)){
+			filename = "ACCTRPT" + date + ".csv";
+		}else if("001".equals(reportName)){
+			filename = "RETURNRPT" + date + ".csv";
+		}else if("0521_HOSTERROR_000002".equals(reportName)){
+			filename = reportName+ "_" + date + ".csv";
+		}else if("002".equals(reportName)){
+			filename ="T0RPT"+date+".csv";
+		}else if("003".equals(reportName)){
+			filename ="T0DTLRPT"+date+".csv";
+		}else if("004".equals(reportName)){
+			filename ="SUMRPT"+date+".csv";
+		}else{
+			filename = reportName+ "_" + date;
+//			filename += ".txt";
+		}
+		
+		log("GET FILE:" + fileUrl + filename);
+		rspCode=Download.FTPDownLoad(fileUrl,filename,downUrl);
+		
+		return rspCode;
+	}
+
+	public String getBrhId() {
+		return brhId;
+	}
+
+	public void setBrhId(String brhId) {
+		this.brhId = brhId;
+	}
+
+	public String getHmchntId() {
+		return HmchntId;
+	}
+
+	public void setHmchntId(String hmchntId) {
+		HmchntId = hmchntId;
+	}
+
+	public String getReportName() {
+		return reportName;
+	}
+
+	public void setReportName(String reportName) {
+		this.reportName = reportName;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+}

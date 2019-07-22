@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="work" extends="json-default">
+	
+		<!-- 系统拦截器 -->
+		<interceptors>
+			<interceptor name="logInter" class="com.huateng.interceptor.LogInter"></interceptor>
+			<interceptor-stack name="SystemInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="logInter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+	 	<default-interceptor-ref name="SystemInterceptor"/>
+	
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+        <!-- 新增工单-->
+		<action name="T130100Action" class="com.rail.struts.work.action.T130100Action" />
+		<action name="T130101Action" class="com.rail.struts.work.action.T130101Action" />
+		<action name="T130101Action_getTeamEmployee" class="com.rail.struts.work.action.T130101Action" method="getTeamEmployee"/>
+
+		<action name="T130101Action_addWorkEmployee" class="com.rail.struts.work.action.T130101Action" method="addWorkEmployee"/>
+		<action name="T130103Action" class="com.rail.struts.work.action.T130103Action"/>
+		<action name="T130103Action_getWorkInfoData" class="com.rail.struts.work.action.T130103Action" method="getWorkInfoData"/>
+		<action name="T130103Action_auditWorkData" class="com.rail.struts.work.action.T130103Action" method="auditWorkData"/>
+		 <!-- 天窗预警-->
+		<action name="T130500Action" class="com.rail.struts.work.action.T130500Action" />
+		<action name="T130500Action_getData" class="com.rail.struts.work.action.T130500Action" method="getData"/>
+
+		 <!-- 班组管理-->
+		<action name="T130403Action" class="com.rail.struts.work.action.T130403Action" />
+		<action name="T130403Action_getData" class="com.rail.struts.work.action.T130403Action" method="getData"/>
+		 <!-- 人员类型管理-->
+		<action name="T130404Action" class="com.rail.struts.work.action.T130404Action" />
+		<action name="T130404Action_getData" class="com.rail.struts.work.action.T130404Action" method="getData"/>
+		
+		 <!-- 巡护中队管理-->
+		<action name="T130405Action" class="com.rail.struts.work.action.T130405Action" />
+		<action name="T130405Action_getData" class="com.rail.struts.work.action.T130405Action" method="getData"/>
+		 <!-- 人员管理-->
+		<action name="T130400Action" class="com.rail.struts.work.action.T130400Action" />
+		<action name="T130400Action_getData" class="com.rail.struts.work.action.T130400Action" method="getData"/>
+		
+		<!--  工单图片上传 -->
+		<action name="T130200Action_upload" class="com.rail.struts.work.action.T130200Action" method="upload">
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<!--  工单视频上传 -->
+		<action name="T130200Action_uploadVedio" class="com.rail.struts.work.action.T130200Action" method="uploadVedio">
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<!-- 导入人员信息  -->
+		<action name="T130200Action_excelImport" class="com.rail.struts.work.action.T130400ActionBacth" method="excelImport">
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<!-- 批量导入员工头像  -->
+		<action name="T130400Action_upload" class="com.rail.struts.work.action.T130401Action" method="upload">
+			<!-- <result name='success' type='json'>
+					<param name="root">result</param>
+				</result> -->
+		</action>
+		<!-- 修改员工头像  -->
+		<action name="T130200Action_editEmployeePig" class="com.rail.struts.work.action.T130400Action1" method="editPig">
+			 <result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+
+	</package>
+</struts>

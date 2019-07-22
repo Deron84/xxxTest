@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.objectFactory" value="spring" />
+	<package name="batch" extends="json-default">
+		
+		<!-- 系统拦截器 -->
+		<interceptors>
+			<interceptor name="logInter" class="com.huateng.interceptor.LogInter"></interceptor>
+			<interceptor-stack name="SystemInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="logInter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		
+		<!-- 批处理控制 -->
+        <action name="QryBatMainAction" class="qryBatMainAction"/>
+        
+        <!--
+			二维码不平账查询导出EXCEL，非模板形式
+			@auther hanyongqing 
+		 -->
+		<action name="T50107Action_download2" 
+			class="com.sdses.struts.query.action.T50107Action" method="download2">
+		</action>  
+        
+        <!--
+			对账查询导出EXCEL，非模板形式
+			@auther hanyongqing 
+		 -->
+		<action name="T50108Action_download2" 
+			class="com.sdses.struts.query.action.T50108Action" method="download2">
+		</action>  
+		
+		<!-- 清算对账 -->
+		<action name="T8*_*" 
+			class="com.huateng.struts.settle.action.T8{1}" method="{2}">
+			<interceptor-ref name="SystemInterceptor"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+			<result name="error" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+		
+		<!--分行内部账户号-->
+		<action name="T80208Action" class="com.huateng.struts.settle.action.T80208Action" />
+		<!--正常清算交易明细表-->
+		<action name="T80911Action" class="com.huateng.struts.settle.action.T80911Action" />
+		<!--对账可疑数据明细表-->
+		<action name="T80912Action" class="com.huateng.struts.settle.action.T80912Action" />
+		<!--对账不平数据明细表-->
+		<action name="T80913Action" class="com.huateng.struts.settle.action.T80913Action" />
+		<!--商户风控扣款明细数据表-->
+		<action name="T80914Action" class="com.huateng.struts.settle.action.T80914Action" />
+		<!--商户退货明细表-->
+		<action name="T80915Action" class="com.huateng.struts.settle.action.T80915Action" />
+		<!--商户因本金为负数押款的明细表-->
+		<action name="T80916Action" class="com.huateng.struts.settle.action.T80916Action" />
+		<!--间联商户付款交易汇总 -->
+		<action name="T80401Action" 
+			class="com.huateng.struts.settle.action.T80401Action" />
+		<!--间联商户付款交易明细 -->
+		<action name="T80402Action" 
+			class="com.huateng.struts.settle.action.T80402Action" />
+	</package>
+</struts>

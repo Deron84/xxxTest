@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="JSBConsole" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>JSBConsole</display-name>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/spring/db/applicationContext-hibernate.xml,   
+			/WEB-INF/spring/proxy/system.xml,
+			/WEB-INF/spring/proxy/base.xml,
+			/WEB-INF/spring/proxy/mchnt.xml,
+			/WEB-INF/spring/proxy/pos.xml,
+			/WEB-INF/spring/proxy/epos.xml,
+			/WEB-INF/spring/proxy/risk.xml,
+			/WEB-INF/spring/proxy/settle.xml,
+			/WEB-INF/spring/proxy/mchtSrv.xml,
+			/WEB-INF/spring/proxy/accident.xml,
+			/WEB-INF/spring/proxy/offset.xml
+			
+			
+			/WEB-INF/spring/proxy/warehouse.xml
+			/WEB-INF/spring/proxy/work.xml
+			/WEB-INF/spring/proxy/tools.xml
+			/WEB-INF/spring/proxy/apiApp.xml
+			/WEB-INF/spring/proxy/access.xml
+			/WEB-INF/spring/proxy/parameter.xml
+			/WEB-INF/spring/proxy/task.xml
+			/WEB-INF/spring/proxy/rail-common.xml
+		</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/log4j.properties</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.huateng.startup.listener.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.huateng.startup.listener.SystemListener</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>EncodeFilter</filter-name>
+		<filter-class>com.huateng.system.util.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ignore</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodeFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<filter>
+		<filter-name>RoleFilter</filter-name>
+		<filter-class>com.huateng.system.util.RoleFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RoleFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/page/system/error404.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/page/system/error404.jsp</location>
+	</error-page>
+
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>scriptCompressed</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>crossDomainSessionSecurity</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description>PrintImage</description>
+		<display-name>PrintImage</display-name>
+		<servlet-name>PrintImage</servlet-name>
+		<servlet-class>com.huateng.system.util.PrintImage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PrintImage</servlet-name>
+		<url-pattern>/PrintImage</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>This is class for test ws order</description>
+		<display-name>Test ws order</display-name>
+		<servlet-name>wsOrder</servlet-name>
+		<servlet-class>com.rail.zWebSocket.servlet.wsOrder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>wsOrder</servlet-name>
+		<url-pattern>/servlet/wsOrder</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>/page/system/login.jsp</welcome-file>
+	</welcome-file-list>
+	<session-config>
+		<session-timeout>20</session-timeout>
+	</session-config>
+</web-app>

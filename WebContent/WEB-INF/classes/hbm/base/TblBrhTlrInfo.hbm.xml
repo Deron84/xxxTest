@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class name="TblBrhTlrInfo" table="TBL_BRH_TLR_INFO">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblBrhTlrInfoPK">
+			<key-property name="TlrId" column="TLR_ID" type="string" />
+			<key-property name="BrhId" column="BRH_ID" type="string" />
+		</composite-id>
+
+		<property name="TlrSta" column="TLR_STA" type="string"
+			not-null="true" length="1" />
+		<property name="Resv1" column="RESV1" type="string" not-null="false"
+			length="40" />
+		<property name="LastUpdOprId" column="LAST_UPD_OPR_ID" type="string"
+			not-null="false" length="40" />
+		<property name="RecUpdTs" column="REC_UPD_TS" type="string"
+			not-null="false" length="14" />
+		<property name="RecCrtTs" column="REC_CRT_TS" type="string"
+			not-null="false" length="14" />
+	</class>
+</hibernate-mapping>

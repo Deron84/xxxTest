@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="CstSysParam"
+		table="CST_SYS_PARAM"
+	>
+        <composite-id name="Id" class="CstSysParamPK">
+			<key-property name="Owner" column="OWNER" type="string" />
+			<key-property name="Key" column="KEY" type="string" />
+		</composite-id>
+		<property
+			name="Type"
+			column="TYPE"
+			type="string"
+			not-null="true"
+			length="2"
+		/>
+		<property
+			name="Value"
+			column="VALUE"
+			type="string"
+			not-null="true"
+			length="200"
+		/>
+		<property
+			name="Descr"
+			column="DESCR"
+			type="string"
+			length="60"
+		/>
+		<property
+			name="Reserve"
+			column="RESERVE"
+			type="string"
+			length="64"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

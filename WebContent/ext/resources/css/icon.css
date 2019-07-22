@@ -1,0 +1,119 @@
+.mchnt {
+	background-image: url(../images/mchnt_16.png) !important;
+}
+
+.download {
+	background-image: url(../images/download_16.png) !important;
+}
+
+.upload {
+	background-image: url(../images/upload_16.png) !important;
+}
+.warning {
+	background-image: url(../images/jb_16.png) !important;
+}
+/**列表菜单修改按钮图标*/
+.edit {
+	background-image: url(../images/edit_16.png) !important;
+}
+
+/**接受通过按钮图标*/
+.accept {
+	background-image: url(../images/accept_16.png) !important;
+}
+
+/**审核退回按钮图标*/
+.back {
+	background-image: url(../images/back_16.png) !important;
+}
+
+/**审核拒绝按钮图标*/
+.refuse {
+	background-image: url(../images/refuse_16.png) !important;
+}
+
+/**停用按钮图标*/
+.stop {
+	background-image: url(../images/stop_16.png) !important;
+}
+
+/**停用回复按钮图标*/
+.recover {
+	background-image: url(../images/reset_16.png) !important;
+}
+
+/**查看详情按钮图标*/
+.detail {
+	background-image: url(../images/detail_16.png) !important;
+}
+
+.mchnt {
+	background-image: url(../images/mchnt_16.png) !important;
+}
+
+/**列表菜单删除按钮图标*/
+.delete {
+	background-image: url(../images/delete.png) !important;
+}
+
+/**列表菜单增加按钮图标*/
+.add {
+	background-image: url(../images/add.png) !important;
+}
+
+/**列表菜单查询按钮图标*/
+.query {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.money_query {
+	background-image: url(../images/money_query.png) !important;
+}
+
+.lock_edit {
+	background-image: url(../images/gif_57_034.gif) !important;
+}
+
+.add_max {
+	background-image: url(../images/maximize.png) !important;
+}
+
+.del_min {
+	background-image: url(../images/minimize.png) !important;
+}
+
+.save_16_1 {
+	background-image: url(../images/save.png) !important;
+}
+
+.query_2 {
+	background-image: url(../images/query_2.gif) !important;
+}
+
+.script_16x16 {
+	background-image: url(../images/script_16x16.gif) !important;
+}
+
+.application_16x16 {
+	background-image: url(../images/application_16x16.gif) !important;
+}
+
+.recycle {
+	background-image: url(../images/recycle.png) !important;
+}
+
+.print {
+	background-image: url(../images/print.png) !important;
+}
+
+.icon_download {
+	background-image: url(../images/icon_download.gif) !important;
+}
+
+.remote_16 {
+	background-image: url(../images/remote_16.png) !important;
+}
+
+.pause {
+	background-image: url(../images/pause.gif) !important;
+}

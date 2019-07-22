@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class name="TblBrhParam" table="TBL_BRH_PARAM">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="Id" type="string" column="BRH_ID">
+			<generator class="assigned" />
+		</id>
+		<property name="StatDate" column="STAT_DATE" type="string"
+			not-null="true" length="2" />
+		<property name="StdToalcounts" column="STD_TOALCOUNTS" type="int"
+			not-null="true" length="6" />
+		<property name="StdToalmoney" column="STD_TOALMONEY" type="string"
+			not-null="true" length="12" />
+		<property name="StdCondition" column="STD_CONDITION" type="string"
+			not-null="true" length="2" />
+		<property name="ResvField1" column="RESV_FIELD1" type="string"
+			not-null="false" length="12" />
+		<property name="ResvField2" column="RESV_FIELD2" type="string"
+			not-null="false" length="12" />
+	</class>
+</hibernate-mapping>

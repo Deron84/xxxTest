@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<!-- 公共 BO -->
+	<bean id="CommonBO" class="org.springframework.aop.framework.ProxyFactoryBean">
+	<property name="proxyInterfaces">
+		<value>com.rail.bo.task.CommonBO</value>
+	</property>
+	<property name="interceptorNames">
+		<value>CommonBOTarget</value>
+	</property>
+	</bean>
+	<bean id="CommonBOTarget" class="com.rail.bo.impl.task.CommonBOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+</beans>

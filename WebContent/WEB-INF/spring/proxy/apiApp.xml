@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="ApiAppBO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.api.app.ApiAppBO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>ApiAppBOTarget</value>
+		</property>
+	</bean>
+	<bean id="ApiAppBOTarget" class="com.rail.bo.impl.api.app.ApiAppBOTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="PubSearch" class="com.rail.bo.pub.PubSearch">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean> 
+	<bean id="GridConfigMethod" class="com.huateng.common.grid.GridConfigMethod">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean> 
+	
+	<!-- <bean id="PubSearch" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="beanFactory">
+			<value>com.rail.bo.pub.PubSearch</value>
+		</property>
+		<property name="sessionFactory">
+			
+		</property>
+	</bean> -->
+</beans>

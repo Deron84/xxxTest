@@ -1,0 +1,477 @@
+/**菜单样式*/
+.splitMenu {
+	background-image: url(../images/menu.png) !important;
+}
+/**菜单项样式*/
+.splitButtonItem {
+	background-image: url(../images/menuItem.png) !important;
+}
+
+/**二级菜单图标样式*/
+.T101 {
+	background-image: url(../images/branch.png) !important;
+}
+
+.T102 {
+	background-image: url(../images/promotion.png) !important;
+}
+
+.T103 {
+	background-image: url(../images/role_16.png) !important;
+}
+
+.T104 {
+	background-image: url(../images/users.png) !important;
+}
+
+.T201 {
+	background-image: url(../images/mchnt_16.png) !important;
+}
+
+.T202 {
+	background-image: url(../images/law_16x16.gif) !important;
+}
+
+.T203 {
+	background-image: url(../images/mchnt_tp.gif) !important;
+}
+
+.T204 {
+	background-image: url(../images/mchnt_grp_16.png) !important;
+}
+
+.T205 {
+	background-image: url(../images/mchnt_grp_16.png) !important;
+}
+
+.T206 {
+	background-image: url(../images/shopo.gif) !important;
+}
+
+.T207 {
+	background-image: url(../images/settel.gif) !important;
+}
+
+.T301 {
+	background-image: url(../images/pos_16.png) !important;
+}
+
+.T302 {
+	background-image: url(../images/law_16x16.gif) !important;
+}
+
+.T303 {
+	background-image: url(../images/database_16x16.gif) !important;
+}
+
+.T401 {
+	background-image: url(../images/times.gif) !important;
+}
+
+.T402 {
+	background-image: url(../images/backup.gif) !important;
+}
+
+.T403 {
+	background-image: url(../images/menuItem.png) !important;
+}
+
+.T501 {
+	background-image: url(../images/txn_query_16.png) !important;
+}
+
+.T502 {
+	background-image: url(../images/query_2.gif) !important;
+}
+
+.T503 {
+	background-image: url(../images/query_1.gif) !important;
+}
+
+.T504 {
+	background-image: url(../images/query_3.gif) !important;
+}
+
+.T601 {
+	background-image: url(../images/txn_query_16.png) !important;
+}
+
+.T602 {
+	background-image: url(../images/query_1.gif) !important;
+}
+
+.T603 {
+	background-image: url(../images/query_2.gif) !important;
+}
+
+.T604 {
+	background-image: url(../images/query_1.gif)) !important;
+}
+
+.T605 {
+	background-image: url(../images/query_3.gif) !important;
+}
+
+.T701 {
+	background-image: url(../images/settel_edit.png) !important;
+}
+
+.T702 {
+	background-image: url(../images/settel.gif) !important;
+}
+
+.T703 {
+	background-image: url(../images/branch.png) !important;
+}
+
+.T801 {
+	background-image: url(../images/settle_check.gif) !important;
+}
+
+.T802 {
+	background-image: url(../images/menuItem.png) !important;
+}
+/**顶部菜单图标样式*/
+.T10100 {
+	background-image: url(../images/base_search.png) !important;
+}
+
+.T10101 {
+	background-image: url(../images/branch.gif) !important;
+}
+
+.T10102 {
+	background-image: url(../images/28.png) !important;
+}
+
+.T10207 {
+	background-image: url(../images/check.gif) !important;
+}
+
+.T10201 {
+	background-image: url(../images/system.png) !important;
+}
+
+.T10204 {
+	background-image: url(../images/system.png) !important;
+}
+
+.T10204 {
+	background-image: url(../images/advanced.png) !important;
+}
+
+.T10205 {
+	background-image: url(../images/credit_16.png) !important;
+}
+
+.T10206 {
+	background-image: url(../images/key_16.png) !important;
+}
+
+.T10208 {
+	background-image: url(. ./ images/ label_(add) _16x16.gif) !important;
+}
+
+.T10301 {
+	background-image: url(../images/edit.gif) !important;
+}
+
+.T10302 {
+	background-image: url(../images/logo.png) !important;
+}
+
+.T10400 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T10401 {
+	background-image: url(../images/edit.gif) !important;
+}
+
+.T10403 {
+	background-image: url(../images/seacher.gif) !important;
+}
+
+.T20100 {
+	background-image: url(../images/administrator_add.gif) !important;
+}
+
+.T20101 {
+	background-image: url(../images/administrator3_edit.gif) !important;
+}
+
+.T20102 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T20103 {
+	background-image: url(../images/gif-0308.gif) !important;
+}
+
+.T20201 {
+	background-image: url(../images/law_edit.png) !important;
+}
+
+.T20301 {
+	background-image: url(../images/anchor.gif) !important;
+}
+
+.T20302 {
+	background-image: url(../images/settings2_16x16.gif) !important;
+}
+
+.T20304 {
+	background-image: url(../images/edit_16.png) !important;
+}
+
+.T20500 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T20501 {
+	background-image: url(../images/edit.gif) !important;
+}
+
+.T20600 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T20601 {
+	background-image: url(../images/edit.gif) !important;
+}
+
+.T20700 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T20701 {
+	background-image: url(../images/edit.gif) !important;
+}
+
+.T30101 {
+	background-image: url(../images/edit_16.png) !important;
+}
+
+.T30102 {
+	background-image: url(../images/lock.gif) !important;
+}
+
+.T30103 {
+	background-image: url(../images/unlock.png) !important;
+}
+
+.T30104 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T30105 {
+	background-image: url(../images/gif-0308.gif) !important;
+}
+
+.T30201 {
+	background-image: url(../images/pos_OK.png) !important;
+}
+
+.T30202 {
+	background-image: url(../images/access_add.gif) !important;
+}
+
+.T30203 {
+	background-image: url(../images/access_edit.png) !important;
+}
+
+.T30300 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T30301 {
+	background-image: url(../images/database_edit.gif) !important;
+}
+
+.T30302 {
+	background-image: url(../images/table_auto_format.gif) !important;
+}
+
+.T40101 {
+	background-image: url(../images/edit.gif) !important;
+}
+
+.T40102 {
+	background-image: url(../images/times.png) !important;
+}
+
+.T40103 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T40104 {
+	background-image: url(../images/gif-0032.gif) !important;
+}
+
+.T40201 {
+	background-image: url(../images/risk_card_16.png) !important;
+}
+
+.T40202 {
+	background-image: url(../images/risk_mchnt_16.png) !important;
+}
+
+.T40203 {
+	background-image: url(../images/txn_monitor.png) !important;
+}
+
+.T40204 {
+	background-image: url(../images/mchnt_16.png) !important;
+}
+
+.T50101 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T50102 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T50200 {
+	background-image: url(../images/list_users.gif) !important;
+}
+
+.T50201 {
+	background-image: url(../images/post_list.gif) !important;
+}
+
+.T50202 {
+	background-image: url(../images/list_users_post.gif) !important;
+}
+
+.T50203 {
+	background-image: url(../images/list_world.gif) !important;
+}
+
+.T50307 {
+	background-image: url(../images/list_comments.gif) !important;
+}
+
+.T50401 {
+	background-image: url(../images/table.gif) !important;
+}
+
+.T50402 {
+	background-image: url(../images/interface_installer.gif) !important;
+}
+
+.T50403 {
+	background-image: url(../images/list_errors.gif) !important;
+}
+
+.T50404 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T80101 {
+	background-image: url(../images/notepad.gif) !important;
+}
+
+.T80102 {
+	background-image: url(../images/notepad.gif) !important;
+}
+
+.T80104 {
+	background-image: url(../images/script_16x16.gif) !important;
+}
+
+.T80201 {
+	background-image: url(../images/up.png) !important;
+}
+
+.T80202 {
+	background-image: url(../images/query_16.png) !important;
+}
+
+.T80203 {
+	background-image: url(../images/script_16x16.gif) !important;
+}
+
+.T80204 {
+	background-image: url(../images/script_16x16.gif) !important;
+}
+
+.T80205 {
+	background-image: url(../images/down_16x16.gif) !important;
+}
+
+.T80206 {
+	background-image: url(../images/mobile_16.png) !important;
+}
+
+.T80207 {
+	background-image: url(../images/mchnt_16.png) !important;
+}
+
+.T80208 {
+	background-image: url(../images/seacher.gif) !important;
+}
+
+.T80209 {
+	background-image: url(../images/seacher.gif) !important;
+}
+
+.T80210 {
+	background-image: url(../images/refresh_16x16.gif) !important;
+}
+
+.T70101 {
+	background-image: url(../images/date.gif) !important;
+}
+
+.T70102 {
+	background-image: url(../images/detail_16.png) !important;
+}
+
+.T70103 {
+	background-image: url(../images/card_monitor.png) !important;
+}
+
+.T70104 {
+	background-image: url(../images/register.gif) !important;
+}
+
+.T70301 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70300 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70201 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70202 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70203 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70204 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70205 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70206 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70207 {
+	background-image: url(../images/database.gif) !important;
+}
+
+.T70200 {
+	background-image: url(../images/database.gif) !important;
+}

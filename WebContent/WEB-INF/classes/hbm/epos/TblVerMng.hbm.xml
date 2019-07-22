@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.epos">
+	<class
+		name="TblVerMng"
+		table="TBL_VER_MNG"
+	>
+		<meta attribute="sync-DAO">true</meta>
+		<composite-id name="Id" class="TblVerMngPK">
+			<key-property
+				name="BankId"
+				column="BANK_ID"
+				type="string"
+			/>
+			<key-property
+				name="VerId"
+				column="VER_ID"
+				type="string"
+			/>
+		</composite-id>
+
+		<property
+			name="Misc"
+			column="MISC"
+			type="string"
+			not-null="false"
+			length="255"
+		/>
+		<property
+			name="CrtDate"
+			column="CRT_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="UpdDate"
+			column="UPD_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblDivMchnt"
+		table="tbl_div_mcht"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblDivMchntPK">
+			<key-property
+				name="mchtId"
+				column="MCHT_ID"
+				type="string"
+			/>
+			<key-property
+				name="divNo"
+				column="DIV_NO"
+				type="string"
+			/>
+			<key-property
+				name="productCode"
+				column="PRODUCT_CODE"
+				type="string"
+			/>
+		</composite-id>
+
+		<property
+			name="InProductCode"
+			column="INPRODUCT_CODE"
+			type="string"
+			not-null="true"
+			length="32"
+		/>
+		<property
+			name="FeeCode"
+			column="FEE_CODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="Misc"
+			column="MISC"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="productDivName"
+			column="PRODUCT_DIV_NAME"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="FeeType"
+			column="FEE_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="FeeMixed"
+			column="FEE_MIXED"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="FeeMaxAm"
+			column="FEE_MAX_AM"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		
+		<property
+			name="initOprId"
+			column="init_opr_id"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="modiOprId"
+			column="modi_opr_id"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="initTime"
+			column="init_time"
+			type="string"
+			not-null="true"
+			length="14"
+		/>
+		<property
+			name="modiTime"
+			column="modi_time"
+			type="string"
+			not-null="true"
+			length="14"
+		/>
+		
+	</class>	
+</hibernate-mapping>

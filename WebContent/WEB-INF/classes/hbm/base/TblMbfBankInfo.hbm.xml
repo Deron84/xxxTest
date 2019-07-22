@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblMbfBankInfo"
+		table="TBL_MBF_BANK_INFO"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="cnapsbankno"
+		>
+			<generator class="assigned"/>
+		</id>
+		<property
+			name="elecbankno"
+			column="elecbankno"
+			type="string"
+			not-null="false"
+			length="6"
+		/>
+		<property
+			name="banktype"
+			column="banktype"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="bankname"
+			column="bankname"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="dpbankno"
+			column="dpbankno"
+			type="string"
+			not-null="false"
+			length="12"
+		/>
+		<property
+			name="ccpcno"
+			column="ccpcno"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="banktel"
+			column="banktel"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="bankper"
+			column="bankper"
+			type="string"
+			not-null="false"
+			length="16"
+		/>
+		<property
+			name="bankaddr"
+			column="bankaddr"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="bnkssname"
+			column="bnkssname"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+	</class>	
+</hibernate-mapping>

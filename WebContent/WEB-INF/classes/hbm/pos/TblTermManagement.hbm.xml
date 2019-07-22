@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class name="TblTermManagement" table="TBL_TERM_MANAGEMENT">
+		<meta attribute="sync-DAO">false</meta>
+
+		<id name="Id" type="string" column="TERM_NO">
+			<generator class="assigned" />
+		</id>
+
+		<property name="MechNo" column="MECH_NO" type="string"
+			not-null="false" length="15" />
+		<property name="TermType" column="TERM_TYPE" type="string"
+			not-null="true" length="1" />
+		<property name="State" column="STATE" type="string" not-null="true"
+			length="1" />
+		<property name="Manufacturer" column="MANUFATURER" type="string"
+			not-null="true" length="30" />
+		<property name="ProductCd" column="PRODUCT_CD" type="string"
+			not-null="true" length="40" />
+		<property name="TerminalType" column="TERMINAL_TYPE" type="string"
+			not-null="true" length="20" />
+		<property name="BatchNo" column="BATCH_NO" type="string"
+			not-null="false" length="12" />
+		<property name="StorOprId" column="STOR_OPR_ID" type="string"
+			not-null="false" length="40" />
+		<property name="StorDate" column="STOR_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="ReciOprId" column="RECI_OPR_ID" type="string"
+			not-null="false" length="40" />
+		<property name="ReciDate" column="RECI_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="BackOprId" column="BACK_OPR_ID" type="string"
+			not-null="false" length="40" />
+		<property name="BankDate" column="BANK_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="InvalidOprId" column="INVALID_OPR_ID" type="string"
+			not-null="false" length="40" />
+		<property name="InvalidDate" column="INVALID_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="SignOprId" column="SIGN_OPR_ID" type="string"
+			not-null="false" length="40" />
+		<property name="SignDate" column="SIGN_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="PinPad" column="PIN_PAD" type="string"
+			not-null="false" length="40" />
+		<property name="Misc" column="MISC" type="string" not-null="false"
+			length="40" />
+		<property name="LastUpdOprId" column="LAST_UPD_OPR_ID" type="string"
+			not-null="false" length="40" />
+		<property name="LastUpdTs" column="LAST_UPD_TS" type="java.sql.Timestamp"
+			not-null="false" length="11" />
+
+		<property name="brhId" column="BRH_ID" type="string"
+			not-null="false" length="10" />
+		<property name="outStoreDate" column="OUT_STORE_DATE" type="string"
+			not-null="false" length="8" />
+
+	</class>
+</hibernate-mapping>

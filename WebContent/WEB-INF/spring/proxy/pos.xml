@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="TblTermRefuseDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <value>com.huateng.dao.iface.term.TblTermRefuseDAO</value>
+        </property>
+        <property name="interceptorNames">
+            <value>tblTermRefuseDAOTarget</value>
+        </property>
+    </bean>
+    <bean id="tblTermRefuseDAOTarget" class="com.huateng.dao.impl.term.TblTermRefuseDAO">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+    </bean>
+	<bean id="TblTermTpDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.term.TblTermTpDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>termTpDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="termTpDAOTarget" class="com.huateng.dao.impl.term.TblTermTpDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TblTermInfTmpDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.term.TblTermInfTmpDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>termInfTmpDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="termInfTmpDAOTarget" class="com.huateng.dao.impl.term.TblTermInfTmpDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+    <bean id="TblTermTmkLogDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <value>com.huateng.dao.iface.term.TblTermTmkLogDAO</value>
+        </property>
+        <property name="interceptorNames">
+            <value>tblTermTmkLogDAOTarget</value>
+        </property>
+    </bean>
+    <bean id="tblTermTmkLogDAOTarget" class="com.huateng.dao.impl.term.TblTermTmkLogDAO">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+    </bean>
+	<bean id="TblTermInfDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.term.TblTermInfDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>tblTermInfDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="tblTermInfDAOTarget" class="com.huateng.dao.impl.term.TblTermInfDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+    <!-- start 终端维护 -->
+    <bean id="t3010BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <value>com.huateng.bo.term.T3010BO</value>
+        </property>
+        <property name="interceptorNames">
+            <value>t3010BOTarget</value>
+        </property>
+    </bean>
+    <bean id="t3010BOTarget" class="com.huateng.bo.impl.term.T3010BOTarget">
+        <property name="tblTermInfTmpDAO">
+            <ref bean="TblTermInfTmpDAO" />
+        </property>
+        <property name="commQueryDAO">
+            <ref bean="CommQueryDAO"/>
+        </property>  
+        <property name="tblTermRefuseDAO">
+            <ref bean="TblTermRefuseDAO"/>
+        </property> 
+        <property name="tblTermInfDAO">
+            <ref bean="TblTermInfDAO"/>
+        </property>
+        <property name="tblTermTmkLogDAO">
+            <ref bean="TblTermTmkLogDAO"/>
+        </property> 
+    </bean>                       
+    <bean id="t30101Action" class="com.huateng.struts.pos.action.T30101Action" singleton="false">
+        <property name="dao">
+            <ref bean="hqlDao"/>
+        </property>
+    </bean>
+    <bean id="t3010102Action" class="com.huateng.struts.pos.action.T3010102Action" singleton="false">
+        <property name="dao">
+            <ref bean="hqlDao"/>
+        </property>
+    </bean>
+    <bean id="t3010103Action" class="com.huateng.struts.pos.action.T3010103Action" singleton="false">
+        <property name="t3010BO">
+            <ref bean="t3010BO"/>
+        </property>
+    </bean>
+     <bean id="t3010104Action" class="com.huateng.struts.pos.action.T3010104Action" singleton="false">
+        <property name="dao">
+            <ref bean="hqlDao"/>
+        </property>
+        <property name="service">
+            <ref bean="termService"/>
+        </property>
+    </bean>
+    <bean id="t30102Action" class="com.huateng.struts.pos.action.T30102Action" singleton="false">
+        <property name="dao">
+            <ref bean="hqlDao"/>
+        </property>
+        <property name="service">
+            <ref bean="termService"/>
+        </property>
+    </bean>
+    <bean id="t30103Action" class="com.huateng.struts.pos.action.T30103Action" singleton="false">
+        <property name="t3010BO">
+            <ref bean="t3010BO"/>
+        </property>
+    </bean>
+    <!-- end 终端维护-->
+    <!-- start 终端审核 -->
+    <bean id="t30201Action" class="com.huateng.struts.pos.action.T30201Action" singleton="false">
+        <property name="service">
+            <ref bean="termService"/>
+        </property>
+    </bean>
+    <bean id="t30202Action" class="com.huateng.struts.pos.action.T30202Action" singleton="false">
+        <property name="t3010BO">
+            <ref bean="t3010BO"/>
+        </property>
+    </bean>
+    <bean id="t3020303Action" class="com.huateng.struts.pos.action.T3020303Action" singleton="false">
+        <property name="commQueryDAO">
+            <ref bean="CommQueryDAO"/>
+        </property>
+    </bean>
+    <bean id="t30203Action" class="com.huateng.struts.pos.action.T30203Action" singleton="false">
+        <property name="t3010BO">
+            <ref bean="t3010BO"/>
+        </property>
+    </bean>
+    <!-- end 终端审核-->
+    <!--start 终端库存-->
+    <bean id="tblTermManagementDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <value>com.huateng.dao.iface.term.TblTermManagementDAO</value>
+        </property>
+        <property name="interceptorNames">
+            <value>tblTermManagementDAOTarget</value>
+        </property>
+    </bean>
+    <bean id="tblTermManagementDAOTarget" class="com.huateng.dao.impl.term.TblTermManagementDAO">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+    </bean>
+    <bean id="t3030BO" class="com.huateng.bo.impl.term.TermManagementBOImpl">
+        <property name="tblTermManagementDAO">
+            <ref bean="tblTermManagementDAO"/>
+        </property>
+         <property name="tblTermInfDAO">
+            <ref bean="TblTermInfDAO"/>
+        </property> 
+        <property name="tblTermInfTmpDAO">
+            <ref bean="TblTermInfTmpDAO" />
+        </property>
+        <property name="commQueryDAO">
+            <ref bean="CommQueryDAO"/>
+        </property>       
+    </bean>
+    <bean id="t30301Action" class="com.huateng.struts.pos.action.T30301Action" singleton="false">
+        <property name="t3030BO">
+            <ref bean="t3030BO"/>
+        </property>
+        <property name="methods">
+            <map>
+                <!-- 入库 -->
+                <entry key="add" value="storeTerminal"/>
+                <!-- 批量入库 -->
+                <entry key="adds" value="storeTerminals"/>
+                <!-- 作废-->
+                <entry key="invalid" value="invalidTerminal"/>
+            </map>
+          </property>
+    </bean>
+    <bean id="t30302Action" class="com.huateng.struts.pos.action.T30302Action" singleton="false">
+        <property name="t3030BO">
+            <ref bean="t3030BO"/>
+        </property>
+    </bean>
+    <bean id="t30303Action" class="com.huateng.struts.pos.action.T30303Action" singleton="false">
+        <property name="t3030BO">
+            <ref bean="t3030BO"/>
+        </property>
+        <property name="methods">
+            <map>
+                <!-- 通过 -->
+                <entry key="00" value="reciTerminal"/>
+                <!-- 批次通过-->
+                <entry key="01" value="reciTerminals"/>
+                <!-- 拒绝 -->
+                <entry key="10" value="refuseTerminal"/>
+                <!-- 批次拒绝 -->
+                <entry key="11" value="refuseTerminals"/>
+           </map>
+        </property>
+    </bean>
+    <bean id="t30304Action" class="com.huateng.struts.pos.action.T30304Action" singleton="false">
+        <property name="t3030BO">
+            <ref bean="t3030BO"/>
+        </property>
+    </bean>
+    <bean id="t30305Action" class="com.huateng.struts.pos.action.T30305Action" singleton="false">
+        <property name="t3030BO">
+            <ref bean="t3030BO"/>
+        </property>
+        <property name="t3010BO">
+            <ref bean="t3010BO"/>
+        </property>
+    </bean>
+    <bean id="t30306Action" class="com.huateng.struts.pos.action.T30306Action" singleton="false">
+        <property name="t3030BO">
+            <ref bean="t3030BO"/>
+        </property>
+        <property name="methods">
+            <map>
+                <!-- 通过 -->
+                <entry key="0" value="signTerminal"/>
+                <!-- 批次通过-->
+                <entry key="1" value="signTerminals"/>
+           </map>
+        </property>
+    </bean>
+    <!-- end 终端库存-->
+    <bean id="termService" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.term.TermService</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<value>termServiceImpl</value>
+			</list>
+		</property>
+	</bean>
+    <bean id="termServiceImpl" class="com.huateng.bo.impl.term.TermServiceImpl">
+    	<property name="dao" ref="hqlDao"/>
+    	<property name="sqlDao" ref="sqlDao"/>
+    </bean>
+    <!-- 
+		菜品编码表
+			@auther hanyongqingg
+	 -->
+	<bean id="T30500BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.sdses.bo.pos.T30500BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T30500BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T30500BOTarget" class="com.sdses.bo.impl.pos.T30500BOTarget">
+		<property name="vegeCodeInfoDao">
+			<ref bean="VegeCodeInfoDao" />
+		</property>
+		<property name="commQueryDAO">
+			<ref bean="CommQueryDAO" />
+		</property>
+	</bean>
+	
+	<!-- 
+		终端菜品映射表
+			@auther hanyongqingg
+	 -->
+	<bean id="T30501BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.sdses.bo.pos.T30501BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T30501BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T30501BOTarget" class="com.sdses.bo.impl.pos.T30501BOTarget">
+		<property name="vegeMappingInfoDao">
+			<ref bean="VegeMappingInfoDao" />
+		</property>
+		<property name="commQueryDAO">
+			<ref bean="CommQueryDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TblTermTpPoDAO" class="com.sdses.dao.impl.pos.TblTermTpPoDAOImpl">
+		<property name="commQueryDAO">
+			<ref bean="CommQueryDAO" />
+		</property>
+	</bean>
+</beans>

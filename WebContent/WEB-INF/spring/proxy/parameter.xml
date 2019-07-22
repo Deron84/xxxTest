@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 施工单位页面 -->
+	<bean id="T140100BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.parameter.T140100BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T140100BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T140100BOTarget" class="com.rail.bo.impl.parameter.T140100BOTarget">
+		<property name="railConstOrgDao">
+			<ref bean="RailConstOrgDao" />
+		</property>
+	</bean>
+	<!-- 施工单位DAO层 -->
+	<bean id="RailConstOrgDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.parameter.RailConstOrgDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailConstOrgDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailConstOrgDaoTarget" class="com.rail.dao.impl.parameter.RailConstOrgDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 供应商页面 -->
+	<bean id="T140101BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.parameter.T140101BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T140101BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T140101BOTarget" class="com.rail.bo.impl.parameter.T140101BOTarget">
+		<property name="railMfrsOrgDao">
+			<ref bean="RailMfrsOrgDao" />
+		</property>
+	</bean>
+	<!-- 供应商DAO层 -->
+	<bean id="RailMfrsOrgDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.parameter.RailMfrsOrgDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailMfrsOrgDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailMfrsOrgDaoTarget" class="com.rail.dao.impl.parameter.RailMfrsOrgDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 仓库区页面 -->
+	<bean id="T140102BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.parameter.T140102BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T140102BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T140102BOTarget" class="com.rail.bo.impl.parameter.T140102BOTarget">
+		<property name="railAreaDao">
+			<ref bean="RailAreaDao" />
+		</property>
+	</bean>
+	<!-- 仓库区DAO层 -->
+	<bean id="RailAreaDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.parameter.RailAreaDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailAreaDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailAreaDaoTarget" class="com.rail.dao.impl.parameter.RailAreaDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 工具名称页面 -->
+	<bean id="T140103BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.parameter.T140103BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T140103BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T140103BOTarget" class="com.rail.bo.impl.parameter.T140103BOTarget">
+		<property name="railToolNameDao">
+			<ref bean="RailToolNameDao" />
+		</property>
+	</bean>
+	<!-- 工具名称DAO层 -->
+	<bean id="RailToolNameDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.parameter.RailToolNameDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailToolNameDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailToolNameDaoTarget" class="com.rail.dao.impl.parameter.RailToolNameDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 工具分类页面 -->
+	<bean id="T140104BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.parameter.T140104BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T140104BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T140104BOTarget" class="com.rail.bo.impl.parameter.T140104BOTarget">
+		<property name="railToolTypeDao">
+			<ref bean="RailToolTypeDao" />
+		</property>
+	</bean>
+	<!-- 工具分类DAO层 -->
+	<bean id="RailToolTypeDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.parameter.RailToolTypeDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailToolTypeDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailToolTypeDaoTarget" class="com.rail.dao.impl.parameter.RailToolTypeDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 工具单位页面 -->
+	<bean id="T140105BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.parameter.T140105BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T140105BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T140105BOTarget" class="com.rail.bo.impl.parameter.T140105BOTarget">
+		<property name="railToolUnitDao">
+			<ref bean="RailToolUnitDao" />
+		</property>
+	</bean>
+	<!-- 工具单位DAO层 -->
+	<bean id="RailToolUnitDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.parameter.RailToolUnitDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailToolUnitDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailToolUnitDaoTarget" class="com.rail.dao.impl.parameter.RailToolUnitDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 工具型号页面 -->
+	<bean id="T140106BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.parameter.T140106BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T140106BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T140106BOTarget" class="com.rail.bo.impl.parameter.T140106BOTarget">
+		<property name="railToolModelDao">
+			<ref bean="RailToolModelDao" />
+		</property>
+	</bean>
+	<!-- 工具型号DAO层 -->
+	<bean id="RailToolModelDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.parameter.RailToolModelDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailToolModelDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailToolModelDaoTarget" class="com.rail.dao.impl.parameter.RailToolModelDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 门禁终端类型页面 -->
+	<bean id="T140107BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.parameter.T140107BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T140107BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T140107BOTarget" class="com.rail.bo.impl.parameter.T140107BOTarget">
+		<property name="railAccessEquipTypeDao">
+			<ref bean="RailAccessEquipTypeDao" />
+		</property>
+	</bean>
+	<!-- 门禁终端类型DAO层 -->
+	<bean id="RailAccessEquipTypeDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.parameter.RailAccessEquipTypeDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailAccessEquipTypeDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailAccessEquipTypeDaoTarget" class="com.rail.dao.impl.parameter.RailAccessEquipTypeDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

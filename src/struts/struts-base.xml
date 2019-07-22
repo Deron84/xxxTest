@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="base" extends="json-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		
+		<!-- 机构信息维护 -->
+		<action name="T10101Action_getData" class="com.huateng.struts.base.action.T10101Action" method="getData"/>
+		
+		<!-- 机构信息维护 -->
+		<action name="T10101Action" class="com.huateng.struts.base.action.T10101Action" />
+		<!-- 清算凭证 -->
+		<action name="T10102Action" class="com.huateng.struts.base.action.T10102Action" />
+		<!-- 地区码信息维护 -->
+		<action name="T10201Action" class="com.huateng.struts.base.action.T10201Action" />
+		<!-- 系统参数信息维护 -->
+		<action name="T10204Action" class="com.huateng.struts.base.action.T10204Action" />		
+		<!-- 角色信息维护 -->
+		<action name="T10301Action" class="com.huateng.struts.base.action.T10301Action" />
+		<!-- 交易授权配置 -->
+		<action name="T10302Action" class="com.huateng.struts.base.action.T10302Action" />
+		<!-- 操作员信息维护 -->
+		<action name="T10401Action" class="com.huateng.struts.base.action.T10401Action" />
+		<!-- 财务POS账户 -->
+		<action name="T10501Action" class="com.huateng.struts.base.action.T10501Action" />
+		<action name="T10502Action" class="com.huateng.struts.base.action.T10502Action" />
+		<!-- 云SHOP -->
+		<action name="T10601Action" class="com.huateng.struts.base.action.T10601Action" />
+		<!-- 分期 -->
+		<action name="T10701Action" class="com.huateng.struts.base.action.T10701Action" />
+		<!-- 银联卡表维护-->
+		<action name="T10205Action" class="com.huateng.struts.base.action.T10205Action" />
+		<!-- CA银联公钥维护-->
+		<action name="T10206Action" class="com.huateng.struts.base.action.T10206Action" />
+		<!-- IC卡其他参数维护-->
+		<action name="T10208Action" class="com.huateng.struts.base.action.T10208Action" />
+		<!-- 虚拟柜员表维护-->
+		<action name="T10207Action" class="com.huateng.struts.base.action.T10207Action" />
+		<!-- 地区码 -->
+		<action name="T10209Action" class="com.huateng.struts.base.action.T10209Action"/>
+		
+		<action name="T10210Action" class="com.huateng.struts.base.action.T10210Action"/>
+			
+		<action name="T10211Action" class="com.huateng.struts.base.action.T10211Action"/>
+		<!-- 终端类型 -->
+		<action name="T10212Action" class="com.huateng.struts.base.action.T10212Action" />
+		<!-- 国密终端密钥 -->
+		<action name="T10213Action" class="com.huateng.struts.base.action.T10213Action" />
+		<!-- 支付宝分润参数信息维护 -->
+		<action name="T10214Action" class="com.huateng.struts.base.action.T10214Action" />
+	</package>
+</struts>

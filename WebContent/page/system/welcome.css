@@ -1,0 +1,25 @@
+.welcome_container{
+    margin-left: 50px;
+    margin-right: 50px
+}
+.welcome_img{
+    width: 100px;
+    float: left;
+    margin: 40px 0px 0px 60px;
+    text-align:center;
+}
+.welcome_des{
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.welcome_redirect {
+    width: 110px;
+    display:list-item;
+    list-style-type:disc;
+    margin-left:20px;
+    margin-top: 10px;
+    font-size: 13px;
+    cursor:pointer;
+    text-align:left;
+}

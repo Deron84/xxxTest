@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="songtiFamily" class="net.sf.jasperreports.engine.fonts.SimpleFontFamily">
+		<property name="name" value="STSong-Light"/>
+		<property name="normal" value="fontConfig/SIMKAI.TTF"/>
+		<property name="pdfEncoding" value="UniGB-UCS2-H (Chinese Simplified)"/>
+		<property name="pdfEmbedded" value="true"/>
+		<property name="exportFonts">
+			<map>
+				<entry key="net.sf.jasperreports.html">
+					<value>宋体, 'Times New Roman', Times, serif</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

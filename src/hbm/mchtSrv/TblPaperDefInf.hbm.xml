@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchtSrv">
+	<class name="TblPaperDefInf" table="TBL_PAPER_DEF_INF">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="TblPaperDefInfPK">
+			<key-property name="quesId" column="QUES_ID" type="string" />
+			<key-property name="paperId" column="PAPER_ID" type="string" />
+		</composite-id>
+
+		<property name="quesIndex" column="QUES_INDEX" type="integer"
+			not-null="false" length="22" />
+		<property name="question" column="QUESTION" type="string"
+			not-null="false" length="180" />
+		<property name="options" column="OPTIONS" type="string"
+			not-null="false" length="480" />
+		<property name="remarks" column="REMARKS" type="string"
+			not-null="false" length="240" />
+		<property name="reserve1" column="RESERVE1" type="string"
+			not-null="false" length="60" />
+		<property name="reserve2" column="RESERVE2" type="string"
+			not-null="false" length="60" />
+		<property name="crtUser" column="CRT_USER" type="string"
+			not-null="false" length="12" />
+		<property name="crtTime" column="CRT_TIME" type="string"
+			not-null="false" length="12" />
+		<property name="updUser" column="UPD_USER" type="string"
+			not-null="false" length="14" />
+		<property name="updTime" column="UPD_TIME" type="string"
+			not-null="false" length="14" />
+
+
+	</class>
+</hibernate-mapping>

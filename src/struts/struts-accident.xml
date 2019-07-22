@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="accident" extends="struts-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		
+		<!-- 手工退货 -->
+		<action name="T90101Action" class="com.huateng.struts.accident.action.T90101Action" />	
+		
+		<!-- 手工退货审核 -->
+		<action name="T90102Action" class="com.huateng.struts.accident.action.T90102Action" />
+		
+		<!-- 托收类交易 -->
+		<action name="T90201Action" class="com.huateng.struts.accident.action.T90201Action" />
+		
+		<!-- 费用收取 -->
+		<action name="T90401Action" class="com.huateng.struts.accident.action.T90401Action" />
+		
+		<!-- 差错处理 -->
+		<action name="T90301Action" class="com.huateng.struts.accident.action.T90301Action" />
+	</package>
+</struts>

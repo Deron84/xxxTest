@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 分行内部账户号维护 -->
+	<bean id="T80208BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.settle.T80208BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T80208BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T80208BOTarget" class="com.huateng.bo.impl.settle.T80208BOTarget">
+		<property name="tblBrhAcctDAO">
+			<ref bean="TblBrhAcctDAO" />
+		</property>
+	</bean>
+
+	<bean id="TblBrhAcctDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.dao.iface.settle.TblBrhAcctDAO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>TblBrhAcctDAOTarget</value>
+		</property>
+	</bean>
+	<bean id="TblBrhAcctDAOTarget" class="com.huateng.dao.impl.settle.TblBrhAcctDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!--批量处理 <bean id="qryBatMainAction" class="com.huateng.struts.settle.action.QryBatMainAction" 
+		singleton="false"> <property name="batMainBO"> <ref bean="batMainBO"/> </property> 
+		</bean> -->
+
+	<!-- MCHNT ALL -->
+	<bean id="TblSettleService" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.impl.settle.TblSettleService</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<value>TblSettleServiceTarget</value>
+			</list>
+		</property>
+	</bean>
+	<!-- MCHNT TARGET -->
+	<bean id="TblSettleServiceTarget" class="com.huateng.bo.impl.settle.TblSettleServiceImpl">
+		<property name="tblInfileOptDAO">
+			<ref bean="tblInfileOptDAO" />
+		</property>
+	</bean>
+	<!-- MCHNT DAO -->
+	<bean id="tblInfileOptDAO" class="com.huateng.dao.TblInfileOptDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

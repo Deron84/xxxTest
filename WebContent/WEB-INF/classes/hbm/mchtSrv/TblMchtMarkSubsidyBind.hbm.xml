@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TblMchtMarkSubsidyBind" table="TBL_MCHT_MARKSUBSIDY_BIND">
+		<meta attribute="sync-DAO">false</meta>
+		<meta attribute="sync-VO">false</meta>
+		<id name="recordID" column="RECORD_ID" type="string">
+	<!--  		<generator class="assigned" />   -->
+		</id>
+		<property name="ruleID" column="RULE_ID" type="string"
+			not-null="false" length="20" />
+		<property name="mchntNO" column="MCHNT_NO" type="string"
+			not-null="false" length="15" />
+		<property name="termNO" column="TERM_NO" type="string"
+			not-null="false" length="8" />
+		<property name="openFlag" column="OPEN_FLAG" type="string"
+			not-null="false" length="1" />
+		<property name="bindTime" column="BIND_TIME" type="string"
+			not-null="false" length="14" />
+		<property name="modifyTime" column="MODIFY_TIME" type="string"
+			not-null="false" length="14" />
+		<property name="remark" column="REMARK" type="string"
+			not-null="false" length="100" />
+	</class>
+</hibernate-mapping>

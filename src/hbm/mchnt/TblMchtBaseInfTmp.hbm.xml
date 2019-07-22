@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class name="TblMchtBaseInfTmp" table="tbl_mcht_base_inf_tmp">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="MchtNo" type="string" column="MCHT_NO">
+			<generator class="assigned" />
+		</id>
+		<property name="MchtNm" column="MCHT_NM" type="string"
+			not-null="true" length="60" />
+		<property name="RislLvl" column="RISL_LVL" type="string"
+			not-null="false" length="1" />
+		<property name="MchtLvl" column="MCHT_LVL" type="string"
+			not-null="false" length="4" />
+		<property name="MchtStatus" column="MCHT_STATUS" type="string"
+			not-null="false" length="1" />
+		<property name="ManuAuthFlag" column="MANU_AUTH_FLAG" type="string"
+			not-null="false" length="1" />
+		<property name="PartNum" column="PART_NUM" type="string"
+			not-null="false" length="120" />
+		<property name="DiscConsFlg" column="DISC_CONS_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="DiscConsRebate" column="DISC_CONS_REBATE"
+			type="string" not-null="false" length="8" />
+		<property name="PassFlag" column="PASS_FLAG" type="string"
+			not-null="false" length="1" />
+		<property name="OpenDays" column="OPEN_DAYS" type="string"
+			not-null="false" length="6" />
+		<property name="SleepDays" column="SLEEP_DAYS" type="string"
+			not-null="false" length="6" />
+		<property name="MchtCnAbbr" column="MCHT_CN_ABBR" type="string"
+			not-null="false" length="40" />
+		<property name="SpellName" column="SPELL_NAME" type="string"
+			not-null="false" length="30" />
+		<property name="EngName" column="ENG_NAME" type="string"
+			not-null="false" length="60" />
+		<property name="MchtEnAbbr" column="MCHT_EN_ABBR" type="string"
+			not-null="false" length="20" />
+		<property name="AreaNo" column="AREA_NO" type="string"
+			not-null="false" length="4" />
+		<property name="SettleAreaNo" column="SETTLE_AREA_NO" type="string"
+			not-null="false" length="4" />
+		<property name="Addr" column="ADDR" type="string" not-null="true"
+			length="60" />
+		<property name="HomePage" column="HOME_PAGE" type="string"
+			not-null="false" length="60" />
+		<property name="Mcc" column="MCC" type="string" not-null="true"
+			length="4" />
+		<property name="Tcc" column="TCC" type="string" not-null="false"
+			length="1" />
+		<property name="EtpsAttr" column="ETPS_ATTR" type="string"
+			not-null="false" length="4" />
+		<property name="MngMchtId" column="MNG_MCHT_ID" type="string"
+			not-null="false" length="15" />
+		<property name="MchtGrp" column="MCHT_GRP" type="string"
+			not-null="false" length="4" />
+		<property name="MchtAttr" column="MCHT_ATTR" type="string"
+			not-null="false" length="20" />
+		<property name="MchtGroupFlag" column="MCHT_GROUP_FLAG" type="string"
+			not-null="false" length="1" />
+		<property name="MchtGroupId" column="MCHT_GROUP_ID" type="string"
+			not-null="false" length="8" />
+		<property name="MchtEngNm" column="MCHT_ENG_NM" type="string"
+			not-null="false" length="60" />
+		<property name="MchtEngAddr" column="MCHT_ENG_ADDR" type="string"
+			not-null="false" length="60" />
+		<property name="MchtEngCityName" column="MCHT_ENG_CITY_NAME"
+			type="string" not-null="false" length="60" />
+		<property name="SaLimitAmt" column="SA_LIMIT_AMT" type="string"
+			not-null="false" length="12" />
+		<property name="SaAction" column="SA_ACTION" type="string"
+			not-null="false" length="1" />
+		<property name="PsamNum" column="PSAM_NUM" type="string"
+			not-null="false" length="3" />
+		<property name="CdMacNum" column="CD_MAC_NUM" type="string"
+			not-null="false" length="3" />
+		<property name="PosNum" column="POS_NUM" type="string"
+			not-null="false" length="3" />
+		<property name="ConnType" column="CONN_TYPE" type="string"
+			not-null="false" length="1" />
+		<property name="MchtMngMode" column="MCHT_MNG_MODE" type="string"
+			not-null="false" length="1" />
+		<property name="MchtFunction" column="MCHT_FUNCTION" type="string"
+			not-null="false" length="20" />
+		<property name="LicenceNo" column="LICENCE_NO" type="string"
+			not-null="true" length="20" />
+
+		<property name="BusType" column="BUS_TYPE" type="string"
+			not-null="false" length="4" />
+		<property name="Contact" column="CONTACT" type="string"
+			not-null="true" length="30" />
+		<property name="CommEmail" column="COMM_EMAIL" type="string"
+			not-null="false" length="40" />
+		<property name="CommMobil" column="COMM_MOBIL" type="string"
+			not-null="false" length="18" />
+		<property name="CommTel" column="COMM_TEL" type="string"
+			not-null="false" length="18" />
+		<property name="ApplyDate" column="APPLY_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="EnableDate" column="ENABLE_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="PreAudNm" column="PRE_AUD_NM" type="string"
+			not-null="false" length="40" />
+		<property name="ConfirmNm" column="CONFIRM_NM" type="string"
+			not-null="false" length="40" />
+		<property name="ProtocalId" column="PROTOCAL_ID" type="string"
+			not-null="false" length="20" />
+		<property name="SignInstId" column="SIGN_INST_ID" type="string"
+			not-null="false" length="13" />
+		<property name="NetNm" column="NET_NM" type="string"
+			not-null="false" length="30" />
+		<property name="AgrBr" column="AGR_BR" type="string"
+			not-null="false" length="6" />
+		<property name="NetTel" column="NET_TEL" type="string"
+			not-null="false" length="18" />
+		<property name="ProlDate" column="PROL_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="ProlTlr" column="PROL_TLR" type="string"
+			not-null="false" length="7" />
+		<property name="CloseDate" column="CLOSE_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="CloseTlr" column="CLOSE_TLR" type="string"
+			not-null="false" length="7" />
+		<property name="MainTlr" column="MAIN_TLR" type="string"
+			not-null="false" length="7" />
+		<property name="CheckTlr" column="CHECK_TLR" type="string"
+			not-null="false" length="7" />
+		<property name="OperNo" column="OPER_NO" type="string"
+			not-null="false" length="8" />
+		<property name="OperNm" column="OPER_NM" type="string"
+			not-null="false" length="10" />
+		<property name="ProcFlag" column="PROC_FLAG" type="string"
+			not-null="false" length="10" />
+		<property name="SetCur" column="SET_CUR" type="string"
+			not-null="false" length="4" />
+		<property name="PrintInstId" column="PRINT_INST_ID" type="string"
+			not-null="false" length="13" />
+		<property name="AcqInstId" column="ACQ_INST_ID" type="string"
+			not-null="false" length="13" />
+		<property name="AcqBkName" column="ACQ_BK_NAME" type="string"
+			not-null="false" length="30" />
+		<property name="BankNo" column="BANK_NO" type="string"
+			not-null="false" length="6" />
+		<property name="OrgnNo" column="ORGN_NO" type="string"
+			not-null="false" length="3" />
+		<property name="SubbrhNo" column="SUBBRH_NO" type="string"
+			not-null="false" length="6" />
+		<property name="SubbrhNm" column="SUBBRH_NM" type="string"
+			not-null="false" length="30" />
+		<property name="OpenTime" column="OPEN_TIME" type="string"
+			not-null="false" length="6" />
+		<property name="CloseTime" column="CLOSE_TIME" type="string"
+			not-null="false" length="6" />
+		<property name="VisActFlg" column="VIS_ACT_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="VisMchtId" column="VIS_MCHT_ID" type="string"
+			not-null="false" length="15" />
+		<property name="MstActFlg" column="MST_ACT_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="MstMchtId" column="MST_MCHT_ID" type="string"
+			not-null="false" length="15" />
+		<property name="AmxActFlg" column="AMX_ACT_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="AmxMchtId" column="AMX_MCHT_ID" type="string"
+			not-null="false" length="15" />
+		<property name="DnrActFlg" column="DNR_ACT_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="DnrMchtId" column="DNR_MCHT_ID" type="string"
+			not-null="false" length="15" />
+		<property name="JcbActFlg" column="JCB_ACT_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="JcbMchtId" column="JCB_MCHT_ID" type="string"
+			not-null="false" length="15" />
+		<property name="CupMchtFlg" column="CUP_MCHT_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="DebMchtFlg" column="DEB_MCHT_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="CreMchtFlg" column="CRE_MCHT_FLG" type="string"
+			not-null="false" length="1" />
+		<property name="CdcMchtFlg" column="CDC_MCHT_FLG" type="string"
+			not-null="false" length="1" />
+
+		<property name="Reserved" column="RESERVED" type="string"
+			not-null="false" length="60" />
+		<property name="UpdOprId" column="UPD_OPR_ID" type="string"
+			length="40" />
+		<property name="CrtOprId" column="CRT_OPR_ID" type="string"
+			length="40" />
+		<property name="RecUpdTs" column="REC_UPD_TS" type="string"
+			not-null="true" length="14" />
+		<property name="RecCrtTs" column="REC_CRT_TS" type="string"
+			not-null="true" length="14" />
+
+		<property name="OtscName" column="OTSC_NAME" type="string"
+			not-null="false" length="60" />
+		<property name="OtscAddr" column="OTSC_ADDR" type="string"
+			not-null="false" length="60" />
+		<property name="OtscPhone" column="OTSC_PHONE" type="string"
+			not-null="false" length="20" />
+		<property name="OtscDivRate" column="OTSC_DIV_RATE" type="string"
+			not-null="false" length="8" />
+		<property name="MarketerName" column="MARKETER_NAME" type="string"
+			not-null="false" length="30" />
+		<property name="MarketerContact" column="MARKETER_CONTACT"
+			type="string" not-null="false" length="20" />
+		<!-- <property name="CheckFlag" column="CHECK_FLAG" type="string" not-null="false" 
+			length="1" /> -->
+		<property name="CheckFrqc" column="CHECK_FRQC" type="string"
+			not-null="false" length="3" />
+
+		<property name="RctCheckDate" column="RCT_CHECK_DATE" type="string"
+			not-null="false" length="8" />
+
+		<property name="ContactSnd" column="CONTACT_SND" type="string"
+			not-null="false" length="30" />
+		<property name="CommEmailSnd" column="COMM_EMAIL_SND" type="string"
+			not-null="false" length="40" />
+		<property name="CommMobilSnd" column="COMM_MOBIL_SND" type="string"
+			not-null="false" length="18" />
+		<property name="CommTelSnd" column="COMM_TEL_SND" type="string"
+			not-null="false" length="18" />
+		<property name="MchtPostEmail" column="MCHT_POST_EMAIL" type="string"
+			not-null="false" length="40" />
+		<property name="IdentityNo" column="IDENTITY_NO" type="string"
+			not-null="false" length="20" />
+		<property name="ManagerTel" column="MANAGER_TEL" type="string"
+			not-null="false" length="12" />
+		<property name="Manager" column="MANAGER" type="string"
+			not-null="false" length="10" />
+		<!-- 计划巡检日期 -->
+		<property name="planCheckDate" column="PLAN_CHECK_DATE" type="string"
+			not-null="false" length="8" />
+		<!-- 商户性质1 -->
+		<property name="mchtFlag1" column="MCHT_FLAG1" type="string"
+			not-null="false" length="1" />
+		<!-- 商户性质2 -->
+		<property name="mchtFlag2" column="MCHT_FLAG2" type="string"
+			not-null="false" length="1" />
+		<property name="ArtifCertifTp" column="ARTIF_CERTIF_TP" type="string"
+			not-null="false" length="2" />
+		<property name="PostCode" column="POST_CODE" type="string"
+			not-null="false" length="6" />
+		<!-- <property name="LicenceEndDate" column="LICENCE_END_DATE" type="string" 
+			not-null="true" length="8" /> <property name="BankLicenceNo" column="BANK_LICENCE_NO" 
+			type="string" not-null="false" length="20" /> <property name="FaxNo" column="FAX_NO" 
+			type="string" not-null="true" length="20" /> <property name="BusAmt" column="BUS_AMT" 
+			type="string" not-null="false" length="12" /> <property name="MchtCreLvl" 
+			column="MCHT_CRE_LVL" type="string" not-null="false" length="4" /> <property 
+			name="Fax" column="FAX" type="string" not-null="false" length="20" /> <property 
+			name="Electrofax" column="ELECTROFAX" type="string" not-null="false" length="15" 
+			/> <property name="RegAddr" column="REG_ADDR" type="string" not-null="false" 
+			length="60" /> -->
+		<!-- 00一卡通，01银联 -->
+		<property name="mappingMchntTypeOne" column="MAPPING_MCHNTTYPEONE"
+			type="string" not-null="false" length="2" />
+
+		<property name="mappingMchntcdOne" column="MAPPING_MCHNTCDONE"
+			type="string" not-null="false" length="50" />
+		<property name="mappingMchntTypeTwo" column="MAPPING_MCHNTTYPETWO"
+			type="string" not-null="false" length="2" />
+		<property name="mappingMchntcdTwo" column="MAPPING_MCHNTCDTWO"
+			type="string" not-null="false" length="50" />
+		<property name="routingFlag" column="TransLineID" type="string"
+			not-null="false" length="4" />
+	</class>
+</hibernate-mapping>

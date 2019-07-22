@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class name="TblTermInfTmp" table="TBL_TERM_INF_TMP">
+		<meta attribute="sync-DAO">false</meta>
+
+		<composite-id name="id" class="TblTermInfTmpPK">
+			<key-property name="mchtCd" column="MCHT_CD" type="string" />
+			<key-property name="termId" column="TERM_ID" type="string" />
+
+		</composite-id>
+		<property name="RecCrtTs" column="REC_CRT_TS" type="string"
+			not-null="false" length="8" />
+
+		<property name="termIdId" column="TERM_ID_ID" type="string"
+			not-null="false" length="15" />
+		<property name="RecordSta" column="RECORD_STA" type="string"
+			not-null="false" length="1" />
+		<property name="TermSta" column="TERM_STA" type="string"
+			not-null="true" length="1" />
+		<property name="TermSignSta" column="TERM_SIGN_STA" type="string"
+			not-null="false" length="1" />
+		<property name="ChkSta" column="CHK_STA" type="string"
+			not-null="false" length="1" />
+		<property name="TermSendFlag" column="TERM_SEND_FLAG" type="string"
+			not-null="false" length="1" />
+		<property name="TermICardFlag" column="TERM_I_CARD_FLAG"
+			type="string" not-null="false" length="1" />
+		<property name="ReserveFlag1" column="RESERVE_FLAG1" type="string"
+			not-null="false" length="1" />
+		<property name="ReserveFlag2" column="RESERVE_FLAG2" type="string"
+			not-null="false" length="1" />
+		<property name="ReserveFlag3" column="RESERVE_FLAG3" type="string"
+			not-null="false" length="1" />
+		<property name="ReserveFlag4" column="RESERVE_FLAG4" type="string"
+			not-null="false" length="1" />
+		<property name="TermSetCur" column="TERM_SET_CUR" type="string"
+			not-null="false" length="1" />
+		<property name="TermMcc" column="TERM_MCC" type="string"
+			not-null="true" length="4" />
+		<property name="TermFactory" column="TERM_FACTORY" type="string"
+			not-null="false" length="30" />
+		<property name="TermMachTp" column="TERM_MACH_TP" type="string"
+			not-null="false" length="10" />
+		<property name="TermVer" column="TERM_VER" type="string"
+			not-null="false" length="2" />
+		<property name="TermSingleLimit" column="TERM_SINGLE_LIMIT"
+			type="string" not-null="false" length="12" />
+		<property name="PayStageNum" column="PAY_STAGE_NUM" type="integer"
+			not-null="false" length="22" />
+		<property name="PayStageLimit" column="PAY_STAGE_LIMIT" type="big_decimal"
+			not-null="false" length="13" />
+		<property name="FinanceCard1" column="FINANCE_CARD1" type="string"
+			not-null="false" length="16" />
+		<property name="FinanceCard2" column="FINANCE_CARD2" type="string"
+			not-null="false" length="16" />
+		<property name="FinanceCard3" column="FINANCE_CARD3"
+			type="com.huateng.hibernate.dataType.TrimString" not-null="false"
+			length="20" />
+		<property name="ReserveAmount1" column="RESERVE_AMOUNT1"
+			type="big_decimal" not-null="false" length="13" />
+		<property name="ReserveAmount2" column="RESERVE_AMOUNT2"
+			type="big_decimal" not-null="false" length="13" />
+		<property name="TermTp" column="TERM_TP"
+			type="com.huateng.hibernate.dataType.TrimString" not-null="true"
+			length="2" />
+		<property name="ParamDownSign" column="PARAM_DOWN_SIGN" type="string"
+			not-null="false" length="1" />
+		<property name="Param1DownSign" column="PARAM1_DOWN_SIGN"
+			type="string" not-null="false" length="1" />
+		<property name="IcDownSign" column="IC_DOWN_SIGN" type="string"
+			not-null="false" length="1" />
+		<property name="KeyDownSign" column="KEY_DOWN_SIGN" type="string"
+			not-null="false" length="1" />
+		<property name="PropTp" column="PROP_TP" type="string"
+			not-null="false" length="1" />
+		<property name="PropInsNm" column="PROP_INS_NM" type="string"
+			not-null="false" length="80" />
+		<property name="FCardSupFlag" column="F_CARD_SUP_FLAG" type="string"
+			not-null="false" length="1" />
+		<property name="FCardCompany" column="F_CARD_COMPANY" type="string"
+			not-null="false" length="15" />
+		<property name="SupportIc" column="SUPPORT_IC" type="string"
+			not-null="false" length="1" />
+		<property name="PsamId" column="PSAM_ID" type="string"
+			not-null="false" length="8" />
+		<property name="TermPlace" column="TERM_PLACE" type="string"
+			not-null="false" length="1" />
+		<property name="ConnectMode" column="CONNECT_MODE" type="string"
+			not-null="false" length="1" />
+		<property name="DialTp" column="DIAL_TP" type="string"
+			not-null="false" length="1" />
+		<property name="TermBranch" column="TERM_BRANCH" type="string"
+			not-null="false" length="9" />
+		<property name="TermBank" column="TERM_BANK" type="string"
+			not-null="false" length="4" />
+		<property name="TermIns" column="TERM_INS" type="string"
+			not-null="false" length="11" />
+		<property name="TermVerTp" column="TERM_VER_TP" type="string"
+			not-null="false" length="2" />
+		<property name="TermBatchNm" column="TERM_BATCH_NM" type="string"
+			not-null="false" length="6" />
+		<property name="TermStlmDt" column="TERM_STLM_DT" type="string"
+			not-null="false" length="8" />
+		<property name="TermTxnSup" column="TERM_TXN_SUP" type="string"
+			not-null="false" length="6" />
+		<property name="TermPara" column="TERM_PARA"
+			type="com.huateng.hibernate.dataType.TrimString" not-null="false"
+			length="512" />
+		<property name="TermPara1" column="TERM_PARA_1" type="string"
+			not-null="false" length="256" />
+		<property name="TermPara2" column="TERM_PARA_2" type="string"
+			not-null="false" length="256" />
+		<property name="BindTel1" column="BIND_TEL1"
+			type="com.huateng.hibernate.dataType.TrimString" not-null="false"
+			length="15" />
+		<property name="BindTel2" column="BIND_TEL2"
+			type="com.huateng.hibernate.dataType.TrimString" not-null="false"
+			length="15" />
+		<property name="BindTel3" column="BIND_TEL3"
+			type="com.huateng.hibernate.dataType.TrimString" not-null="false"
+			length="15" />
+		<property name="ZoneNum" column="ZONE_NUM" type="string"
+			not-null="false" length="6" />
+		<property name="TermAddr" column="TERM_ADDR"
+			type="com.huateng.hibernate.dataType.TrimString" not-null="false"
+			length="350" />
+		<property name="OprNm" column="OPR_NM" type="string"
+			not-null="false" length="20" />
+		<property name="ContTel" column="CONT_TEL"
+			type="com.huateng.hibernate.dataType.TrimString" not-null="false"
+			length="20" />
+		<property name="EquipInvId" column="EQUIP_INV_ID" type="string"
+			not-null="false" length="13" />
+		<property name="EquipInvNm" column="EQUIP_INV_NM" type="string"
+			not-null="false" length="50" />
+		<property name="DepositFlag" column="DEPOSIT_FLAG" type="string"
+			not-null="false" length="1" />
+		<!-- <property name="Deposit" column="DEPOSIT" type="big_decimal" not-null="false" 
+			length="13" /> -->
+		<property name="RunMainId1" column="RUN_MAIN_ID_1" type="string"
+			not-null="false" length="13" />
+		<property name="RunMainNm1" column="RUN_MAIN_NM_1" type="string"
+			not-null="false" length="50" />
+		<property name="RunMainId2" column="RUN_MAIN_ID_2" type="string"
+			not-null="false" length="13" />
+		<property name="RunMainNm2" column="RUN_MAIN_NM_2" type="string"
+			not-null="false" length="50" />
+		<property name="OthSvrId" column="OTH_SVR_ID" type="string"
+			not-null="false" length="13" />
+		<property name="OthSvrNm" column="OTH_SVR_NM" type="string"
+			not-null="false" length="50" />
+		<property name="RecOprId" column="REC_OPR_ID" type="string"
+			not-null="false" length="1" />
+		<property name="RecUpdOpr" column="REC_UPD_OPR" type="string"
+			not-null="false" length="8" />
+		<property name="RecCrtOpr" column="REC_CRT_OPR" type="string"
+			not-null="false" length="8" />
+		<property name="RecCheOpr" column="REC_CHE_OPR" type="string"
+			not-null="false" length="8" />
+		<property name="ReserveDate" column="RESERVE_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="RecUpdTs" column="REC_UPD_TS" type="string"
+			not-null="false" length="8" />
+		<property name="RecDelTs" column="REC_DEL_TS" type="string"
+			not-null="false" length="8" />
+		<property name="Misc1" column="MISC_1" type="string"
+			not-null="false" length="20" />
+		<property name="Misc2" column="MISC_2" type="string"
+			not-null="false" length="40" />
+		<property name="Misc3" column="MISC_3" type="string"
+			not-null="false" length="80" />
+		<!-- <property name="ProductCd" column="PRODUCT_CD" type="string" not-null="false" 
+			length="40" /> <property name="LicenceNo" column="LICENCE_NO" type="string" 
+			not-null="true" length="20" /> <property name="BusType" column="BUS_TYPE" 
+			type="string" not-null="true" length="4" /> <property name="CardType" column="CARD_TYPE" 
+			type="string" not-null="true" length="2" /> -->
+		<property name="LeaseFee" column="LEASE_FEE" type="big_decimal"
+			not-null="false" length="13" />
+		<property name="CheckCardNo" column="CHECK_CARD_NO" type="string"
+			not-null="false" length="20" />
+		<property name="DepositState" column="DEPOSIT_STATE" type="string"
+			not-null="false" length="1" />
+		<property name="DepositAmt" column="DEPOSIT_AMT" type="big_decimal"
+			not-null="false" length="1" />
+		<!-- 第三方服务机构分润比例 -->
+		<property name="propInsRate" column="prop_ins_rate" type="string"
+			not-null="false" length="2" />
+		<property name="rentFee" column="RENT_FEE" type="big_decimal"
+			not-null="false" length="13" />
+		<property name="termName" column="TERM_NAME" type="string"
+			not-null="false" length="100" />
+
+		<!-- 00一卡通，01银联 -->
+		<property name="mappingMchntTypeOne" column="MAPPING_MCHNTTYPEONE"
+			type="string" not-null="false" length="2" />
+
+		<property name="mappingMchntcdOne" column="MAPPING_MCHNTCDONE"
+			type="string" not-null="false" length="50" />
+		<property name="mappingMchntTypeTwo" column="MAPPING_MCHNTTYPETWO"
+			type="string" not-null="false" length="2" />
+		<property name="mappingMchntcdTwo" column="MAPPING_MCHNTCDTWO"
+			type="string" not-null="false" length="50" />
+		<property name="mappingTermidOne" column="MAPPING_TERMIDONE"
+			type="string" not-null="false" length="50" />
+		<property name="mappingTermidTwo" column="MAPPING_TERMIDTWO"
+			type="string" not-null="false" length="50" />
+	</class>
+</hibernate-mapping>

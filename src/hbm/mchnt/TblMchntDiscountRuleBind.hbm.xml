@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblMchntDiscountRuleBind"
+		table="TBL_MCHNT_DISCOUNTRULE_BIND"
+	>
+<!--		<meta attribute="sync-DAO">true</meta>-->
+		<composite-id name="id" class="TblMchntDiscountRuleBindPK">
+			<key-property
+				name="bindId"
+				column="BIND_ID"
+				type="com.huateng.hibernate.dataType.TrimString"
+			/>			
+		</composite-id>
+		<property
+			name="mchntId"
+				column="MCHNT_ID"
+				type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		
+		<property
+			name="equipmentId"
+				column="EQUIPMENT_ID"
+				type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="acquirersId"
+				column="ACQUIRERS_ID"
+				type="com.huateng.hibernate.dataType.TrimString"
+		/>		
+		<property
+			name="discountId"
+			column="DISCOUNT_ID"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		
+		<property
+			name="createTime"
+			column="CREATE_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="mchntName"
+			column="MCHNT_NAME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="discountValueInfo"
+			column="DISCOUNT_VALUE_INFO"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+			
+		<property
+			name="activityId"
+			column="ACTIVITY_ID"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="activityDesc"
+			column="ACTIVITY_DESC"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="startTime"
+			column="START_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="endTime"
+			column="END_TIME"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="isOpen"
+			column="IS_OPEN"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="createPerson"
+			column="CREATE_PERSON"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="acquirersType"
+			column="ACQUIRERS_TYPE"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		<property
+			name="discountValue"
+			column="DISCOUNT_VALUE"
+			type="com.huateng.hibernate.dataType.TrimString"
+		/>
+		
+	</class>	
+</hibernate-mapping>

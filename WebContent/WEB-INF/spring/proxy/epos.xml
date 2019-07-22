@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- EPOS -->
+	<bean id="tblEposService" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.huateng.bo.impl.epos.TblEposService</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<value>tblEposServiceTarget</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- TARGETS -->
+	<bean id="tblEposServiceTarget" class="com.huateng.bo.impl.epos.TblEposServiceImpl">
+		<property name="tblFirstPageDAO">
+			<ref bean="tblFirstPageDAO" />
+		</property>
+		<property name="tblPrtMsgDAO">
+			<ref bean="tblPrtMsgDAO" />
+		</property>
+		<property name="tblRspMsgDAO">
+			<ref bean="tblRspMsgDAO" />
+		</property>
+		<property name="tblMenuMsgDAO">
+			<ref bean="tblMenuMsgDAO" />
+		</property>
+		<property name="tblPptMsgDAO">
+			<ref bean="tblPptMsgDAO" />
+		</property>
+		<property name="tblTermTxnDAO">
+			<ref bean="tblTermTxnDAO" />
+		</property>
+		<property name="tblVerMngDAO">
+			<ref bean="tblVerMngDAO" />
+		</property>
+		<property name="commQueryDAO">
+			<ref bean="CommQueryDAO" />
+		</property>
+		<property name="tblCupBcMapDAO">
+			<ref bean="tblCupBcMapDAO" />
+		</property>
+	</bean>
+
+	<!-- Action -->
+	<bean id="t10800Action" class="com.huateng.struts.epos.action.T10800Action"
+		singleton="false">
+		<property name="tblEposService">
+			<ref bean="tblEposService" />
+		</property>
+	</bean>
+	<bean id="t10801Action" class="com.huateng.struts.epos.action.T10801Action"
+		singleton="false">
+		<property name="service">
+			<ref bean="tblEposService" />
+		</property>
+	</bean>
+	<bean id="t10802Action" class="com.huateng.struts.epos.action.T10802Action"
+		singleton="false">
+		<property name="tblEposService">
+			<ref bean="tblEposService" />
+		</property>
+	</bean>
+	<bean id="t10803Action" class="com.huateng.struts.epos.action.T10803Action"
+		singleton="false">
+		<property name="tblEposService">
+			<ref bean="tblEposService" />
+		</property>
+	</bean>
+	<bean id="t10804Action" class="com.huateng.struts.epos.action.T10804Action"
+		singleton="false">
+		<property name="service">
+			<ref bean="tblEposService" />
+		</property>
+	</bean>
+	<bean id="t10805Action" class="com.huateng.struts.epos.action.T10805Action"
+		singleton="false">
+		<property name="tblEposService">
+			<ref bean="tblEposService" />
+		</property>
+	</bean>
+	<bean id="t10807Action" class="com.huateng.struts.epos.action.T10807Action"
+		singleton="false">
+		<property name="service">
+			<ref bean="tblEposService" />
+		</property>
+	</bean>
+	<bean id="t10808Action" class="com.huateng.struts.epos.action.T10808Action"
+		singleton="false">
+		<property name="tblEposService">
+			<ref bean="tblEposService" />
+		</property>
+	</bean>
+	<!-- DAOS -->
+	<bean id="tblFirstPageDAO" class="com.huateng.dao.impl.epos.TblFirstPageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblPrtMsgDAO" class="com.huateng.dao.impl.epos.TblPrtMsgDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblRspMsgDAO" class="com.huateng.dao.impl.epos.TblRspMsgDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblMenuMsgDAO" class="com.huateng.dao.impl.epos.TblMenuMsgDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblPptMsgDAO" class="com.huateng.dao.impl.epos.TblPptMsgDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblTermTxnDAO" class="com.huateng.dao.impl.epos.TblTermTxnDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblVerMngDAO" class="com.huateng.dao.impl.epos.TblVerMngDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tblCupBcMapDAO" class="com.huateng.dao.impl.epos.TblCupBcMapDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

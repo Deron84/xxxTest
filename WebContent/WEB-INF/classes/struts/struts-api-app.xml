@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="apiApp" extends="struts-default,json-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		
+		<!-- 获取工具所有图片 -->
+		<action name="apiAppActionAllToolsImgList" class="com.rail.struts.api.app.action.ApiAppAction" method="apiAppActionAllToolsImgList">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!--获取人员的所有图片  -->
+		<action name="apiAppActionAllEmplayeeImgList" class="com.rail.struts.api.app.action.ApiAppAction" method="apiAppActionAllEmplayeeImgList">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获取所有工单  -->
+		<action name="apiAppActionAllWorkInfoList" class="com.rail.struts.api.app.action.ApiAppAction" method="apiAppActionAllWorkInfoList">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 人员开门  -->
+		<action name="openAccess" class="com.rail.struts.api.app.action.ApiAppAction" method="openAccess">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 人员出入库房  -->
+		<action name="addRailWhseEmployee" class="com.rail.struts.api.app.action.ApiAppAction" method="addRailWhseEmployee">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 工具出入库房  -->
+		<action name="addRailWhseTool" class="com.rail.struts.api.app.action.ApiAppAction" method="addRailWhseTool">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 工具出库房  -->
+		<action name="addRailWhseSingle" class="com.rail.struts.api.app.action.ApiAppAction" method="addRailWhseSingle">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="addRailWhseOut" class="com.rail.struts.api.app.action.ApiAppAction" method="addRailWhseOut">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 结束出入库操作人员 工具  -->
+		<action name="addRailAccesssWhseEnd" class="com.rail.struts.api.app.action.ApiAppAction" method="addRailAccesssWhseEnd">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<!-- 工具员工出入网  -->
+		<action name="addRailAccesss" class="com.rail.struts.api.app.action.ApiAppAction" method="addRailAccesss">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 工具员工出入网  -->
+		<action name="addRailAccesssInRecord" class="com.rail.struts.api.app.action.ApiAppAction" method="addRailAccesssInRecord">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="addRailAccesssOutRecord" class="com.rail.struts.api.app.action.ApiAppAction" method="addRailAccesssOutRecord">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获取单个对象  员工 工具或者工单  -->
+		<action name="getPresentBean" class="com.rail.struts.api.app.action.ApiAppAction" method="getPresentBean">
+			<result name='success' type='json'>
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		
+		
+	</package>
+</struts>

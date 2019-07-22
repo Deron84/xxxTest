@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TblVegeMappingInfo" table="VEGE_CODE_FOR_MCHT">
+		<meta attribute="sync-DAO">false</meta>
+			
+		<composite-id name="tblVegeMappingInfoPK" class="TblVegeMappingInfoPK">
+			<key-property name="mchntNo" column="MCHNT_NO" type="string" />
+			<key-property name="termNo" column="TERM_NO" type="string" />
+			<key-property name="keyCode" column="KEY_CODE" type="string" />
+		</composite-id>
+		
+		<property name="vegeCode" column="VEGE_CODE" type="string"
+			not-null="true" length="32" />
+	</class>
+</hibernate-mapping>

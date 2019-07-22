@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TcMchntMap" table="T_CMCHNT_MAP">
+		<meta attribute="sync-DAO">false</meta>
+		
+		<composite-id name="tcMchntMapPK" class="TcMchntMapPK">
+			<key-property name="ylMchntNo" column="YL_MCHNT_NO" type="string" />
+			<key-property name="ylTermNo" column="YL_TERM_NO" type="string" />
+			<key-property name="termFixNo" column="TERM_FIX_NO" type="string" />
+			<key-property name="scanFlag" column="SCANCODEFLAG" type="string" />
+			<key-property name="brhFlag" column="C_MCHNT_BRH" type="string" />
+		</composite-id>
+		
+		<property name="cMchntNo" column="C_MCHNT_NO" type="string"
+			not-null="true" length="21" />
+		<property name="cKey" column="C_KEY" type="string"
+			not-null="false" length="500" />
+		<property name="bussId" column="BUSS_ID" type="string"
+			not-null="false" length="6"/>
+		<property name="enableFlag" column="FLAG" type="string"
+		not-null="true" length="1" />
+		<property name="startDate" column="VALID_START_DATE" type="string"
+		not-null="true" length="8" />
+		<property name="endDate" column="VALID_END_DATE" type="string"
+		not-null="true" length="8" />
+		<property name="resv1" column="RESV1" type="string"
+		not-null="false" length="128" />
+		<property name="certpath" column="CERTPATH" type="string"
+		not-null="false" length="50" />
+		<property name="branchCode" column="BRANCHCODE" type="string"
+		not-null="false" length="20" />
+		<property name="cipher" column="CIPHER" type="string"
+		not-null="false" length="20" />
+		<property name="mergeFlag" column="MERGEFLAG" type="string"
+		not-null="true" length="1" />
+		<property name="id" column="ID" type="string"
+		not-null="false" length="32" />
+	</class>
+</hibernate-mapping>

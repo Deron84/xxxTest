@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchtSrv">
+	<class name="TblPaperSelInf" table="TBL_PAPER_SEL_INF">
+
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="TblPaperSelInfPK">
+			<key-property name="paperId" column="PAPER_ID" type="string" />
+			<key-property name="quesId" column="QUES_ID" type="string" />
+			<key-property name="selOptId" column="SEL_OPT_ID" type="string" />
+			<key-property name="selMchtId" column="SEL_MCHT_ID"
+				type="string" />
+		</composite-id>
+		<property name="reserve" column="RESERVE" type="string"
+			not-null="false" length="60" />
+
+
+	</class>
+</hibernate-mapping>

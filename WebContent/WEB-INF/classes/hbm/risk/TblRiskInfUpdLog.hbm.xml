@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblRiskInfUpdLog"
+		table="tbl_risk_inf_upd_log"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="id"
+			length="32"
+		>
+			<generator class="uuid"/>
+		</id><!-- 主键 -->
+		<property
+			name="SaModelKind"
+			column="sa_model_kind"
+			type="string"
+			not-null="true"
+			length="2"
+		/><!-- 模型 -->
+		<property
+			name="SaFieldName"
+			column="sa_field_name"
+			type="string"
+			not-null="true"
+			length="50"
+		/><!-- 修改字段 -->
+		<property
+			name="SaFieldValueBF"
+			column="sa_field_value_bf"
+			type="string"
+			not-null="true"
+			length="50"
+		/><!-- 原值 -->
+		<property
+			name="SaFieldValue"
+			column="sa_field_value"
+			type="string"
+			not-null="true"
+			length="50"
+		/><!-- 修改值 -->
+		<property
+			name="ModiZoneNo"
+			column="modi_zone_no"
+			type="string"
+			not-null="true"
+			length="10"
+		/><!-- 修改分行 -->
+		<property
+			name="ModiOprId"
+			column="modi_opr_id"
+			type="string"
+			not-null="true"
+			length="40"
+		/><!-- 修改人ID-->
+		<property
+			name="ModiTime"
+			column="modi_time"
+			type="string"
+			not-null="true"
+			length="14"
+		/><!-- 修改时间 -->
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="query" extends="json-default">
+		
+		<!-- 系统拦截器 -->
+		<interceptors>
+			<interceptor name="logInter" class="com.huateng.interceptor.LogInter"></interceptor>
+			<interceptor-stack name="SystemInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="logInter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		
+		<!--
+			交易查询(十日内)导出EXCEL，非模板形式
+			@auther hanyongqing 
+		 -->
+		<action name="T50101Action_download2" 
+			class="com.sdses.struts.query.action.T50101Action" method="download2">
+		</action>  
+		<!--
+			交易查询(十日前)导出EXCEL，非模板形式
+			@auther hanyongqing 
+		 -->
+		<action name="T50103Action_download2" 
+			class="com.sdses.struts.query.action.T50103Action" method="download2">
+		</action>  
+		 <!--
+			交易统计详情导出EXCEL，非模板形式
+			@auther hanyongqing 
+		 -->
+		<action name="T51002Action_download2" 
+			class="com.sdses.struts.query.action.T51002Action" method="download2">
+		</action>  
+		 <!--
+			交易查询报表导出EXCEL，非模板形式
+			@auther hanyongqing 
+		 -->
+		<action name="T50105Action_download2" 
+			class="com.huateng.struts.query.action.T50105Action" method="download2">
+		</action>  
+		<!--
+			交易统计报表导出EXCEL，非模板形式
+			@auther hanyongqing 
+		  -->
+		<action name="T51003Action_download2" 
+			class="com.huateng.struts.query.action.T51003Action" method="download2">
+		</action>
+		<!--
+			交易统计(商户)导出EXCEL，非模板形式
+			@auther lixiaomin
+		 -->
+		<action name="T51004Action_download2" 
+			class="com.sdses.struts.query.action.T51004Action" method="download2">
+		</action> 
+		<!--
+			交易统计(终端)导出EXCEL，非模板形式
+			@auther lixiaomin
+		 -->
+		<action name="T51005Action_download2" 
+			class="com.sdses.struts.query.action.T51005Action" method="download2">
+		</action> 
+		<!--
+			支付宝对账导出EXCEL，非模板形式
+			@auther lixiaomin
+		 -->
+		<action name="T51006Action_download2" 
+			class="com.sdses.struts.query.action.T51006Action" method="download2">
+		</action> 
+		<!--
+			微信对账导出EXCEL，非模板形式
+			@auther lixiaomin
+		 -->
+		<action name="T51007Action_download2" 
+			class="com.sdses.struts.query.action.T51007Action" method="download2">
+		</action> 
+		<!--
+			菜单明细查询导出EXCEL，非模板形式
+			@auther hanyongqing 
+		  -->
+		<action name="T50106Action_download2" 
+			class="com.huateng.struts.query.action.T50106Action" method="download2">
+		</action>
+		<!--
+			商户达标信息查询
+			@auther hanyongqing 
+		  -->
+		<action name="T50120Action_download2" 
+			class="com.sdses.struts.query.action.T50120Action" method="download2">
+		</action>
+		
+		<action name="T5*_*" 
+			class="com.huateng.struts.query.action.T5{1}" method="{2}">
+			<interceptor-ref name="SystemInterceptor"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+			<result name="error" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+		
+		
+		
+		<action name="TF*_*" 
+			class="com.huateng.struts.settle.action.TF{1}" method="{2}">
+			<interceptor-ref name="SystemInterceptor"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+			<result name="error" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+		<action name="T30104*_*" 
+			class="com.huateng.struts.query.action.T30104{1}" method="{2}">
+			<interceptor-ref name="SystemInterceptor"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+			<result name="error" type="json">
+				<param name="includeProperties">success,msg</param>
+			</result>
+		</action>
+		<!-- 交易信息统计表 -->
+		<action name="T50101Action" 
+			class="com.huateng.struts.query.action.T50101Action" />
+		<action name="T50102Action" 
+			class="com.huateng.struts.query.action.T50102Action" />
+		
+		<!-- 商户信息统计表 -->
+		<action name="T50200Action" 
+		class="com.huateng.struts.query.action.T50200Action" />
+		<!-- 终端信息统计表 -->
+		<action name="T50201Action" 
+		class="com.huateng.struts.query.action.T50201Action" />
+		
+		<!-- 商户及终端统计表 -->
+		<action name="T50202Action" 
+		class="com.huateng.struts.query.action.T50202Action" />
+		<!-- 商户及终端情况月表 -->
+		<action name="T50205Action" 
+		class="com.huateng.struts.query.action.T50205Action" />
+		<!-- 商户交易信息统计表 -->
+		<action name="T50206Action" 
+		class="com.huateng.struts.query.action.T50206Action" />
+		<!-- 商户对账单（日表） -->
+		<action name="T50301Action" 
+		class="com.huateng.struts.query.action.T50301Action" />
+		
+		<!-- 商户对账单（月表） -->
+		<action name="T50302Action" 
+		class="com.huateng.struts.query.action.T50302Action" />
+		
+		<!-- 间联POS待清算交易汇总（日表） -->
+		<action name="T50303Action" 
+		class="com.huateng.struts.query.action.T50303Action" />
+		
+		<!-- 间联POS实时清算汇总（日表） -->
+		<action name="T50304Action" 
+		class="com.huateng.struts.query.action.T50304Action" />
+		
+		<!-- 商户对账单（月表） -->
+		<action name="T50305Action" 
+		class="com.huateng.struts.query.action.T50305Action" />
+		
+		<!-- 商户对账单（日表） -->
+		<action name="T50306Action" 
+		class="com.huateng.struts.query.action.T50306Action" />
+
+		<!-- 新商户交易监测报表 -->
+		<action name="T50307Action" 
+		class="com.huateng.struts.query.action.T50307Action" />
+				
+		<!-- 移机监测报表 -->
+		<action name="T50401Action" 
+		class="com.huateng.struts.query.action.T50401Action" />
+		
+		<!-- 异常交易监控报表 -->
+		<action name="T50403Action" 
+		class="com.huateng.struts.query.action.T50403Action" />
+			
+		<!-- 疑似套现监测报表 -->
+		<action name="T50402Action" 
+			class="com.huateng.struts.query.action.T50402Action" />
+		<!-- 商户营销活动报表 -->
+		<action name="T50501Action" 
+			class="com.huateng.struts.query.action.T50501Action" />
+		<!-- 专业服务机构分润报表 -->
+		<action name="T50502Action" 
+			class="com.huateng.struts.query.action.T50502Action" />
+		<!-- 手工代发pdf -->
+		<action name="T80205S1Action" 
+			class="com.huateng.struts.settle.action.T80205S1Action" />
+		<!--间联清算明细 -->
+		<action name="T50601Action" 
+			class="com.huateng.struts.query.action.T50601Action" />
+		<!--间联清算汇总 -->
+		<action name="T50602Action" 
+			class="com.huateng.struts.query.action.T50602Action" />
+		<!--直联清算明细 -->
+		<action name="T80303Action" 
+			class="com.huateng.struts.query.action.T80303Action" />
+		<!--直联清算汇总 -->
+		<action name="T80304Action" 
+			class="com.huateng.struts.query.action.T80304Action" />
+		<action name="T51001Action" 
+			class="com.huateng.struts.query.action.T51001Action" />
+		<action name="T50120Action" 
+			class="com.huateng.struts.query.action.T50120Action" />
+			
+		 <!--
+			支付宝分润统计明细导出EXCEL，非模板形式
+		 -->
+		<action name="T51008Action_download2" 
+			class="com.huateng.struts.query.action.T51008Action" method="download2">
+		</action>
+		<!--
+			支付宝分润统计汇总导出EXCEL，非模板形式
+		 -->
+		<action name="T51008Action2_download2" 
+			class="com.huateng.struts.query.action.T51008Action2" method="download2">
+		</action>
+	</package>
+</struts>

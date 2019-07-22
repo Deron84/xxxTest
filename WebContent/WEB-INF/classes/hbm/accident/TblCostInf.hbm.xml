@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.accident">
+	<class
+		name="TblCostInf"
+		table="TBL_COST_INF"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="NO"
+		>
+			<generator class="assigned"/>
+		</id>
+
+		<property
+			name="State"
+			column="STATE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="Amount"
+			column="AMOUNT"
+			type="string"
+			not-null="false"
+			length="15"
+		/>
+		<property
+			name="CardId"
+			column="CARD_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="MchtNo"
+			column="MCHT_NO"
+			type="string"
+			not-null="false"
+			length="15"
+		/>
+		<property
+			name="RemarkInf"
+			column="REMARK_INF"
+			type="string"
+			not-null="false"
+			length="512"
+		/>
+		<property
+			name="CrtOprId"
+			column="CRT_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="UpdOprId"
+			column="UPD_OPR_ID"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="RecCrtTs"
+			column="REC_CRT_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="RecUpdTs"
+			column="REC_UPD_TS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="Reserve1"
+			column="RESERVE1"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

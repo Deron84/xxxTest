@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class name="TblOprInfo" table="tbl_opr_info">
+		<meta attribute="sync-DAO">false</meta>
+
+		<id name="Id" type="string" column="OPR_ID">
+			<generator class="assigned" />
+		</id>
+		<property name="BrhId" column="BRH_ID" type="string"
+			not-null="true" length="10" />
+		<property name="OprDegree" column="OPR_DEGREE" type="string"
+			not-null="true" length="2" />
+		<property name="OprName" column="OPR_NAME" type="string"
+			not-null="true" length="40" />
+		<property name="OprGender" column="OPR_GENDER" type="string"
+			not-null="true" length="1" />
+		<property name="RegisterDt" column="REGISTER_DT" type="string"
+			not-null="true" length="8" />
+		<property name="OprPwd" column="OPR_PWD" type="string"
+			not-null="true" length="16" />
+		<property name="OprTel" column="OPR_TEL" type="string"
+			not-null="false" length="20" />
+		<property name="OprMobile" column="OPR_MOBILE" type="string"
+			not-null="false" length="20" />
+		<property name="PwdWrTm" column="PWD_WR_TM" type="string"
+			not-null="false" length="1" />
+		<property name="PwdWrTmTotal" column="PWD_WR_TM_TOTAL" type="string"
+			not-null="false" length="1" />
+		<property name="PwdWrLastDt" column="PWD_WR_LAST_DT" type="string"
+			not-null="false" length="8" />
+		<property name="PwdOutDate" column="PWD_OUT_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="OprSta" column="OPR_STA" type="string"
+			not-null="false" length="1" />
+		<property name="LastUpdOprId" column="LAST_UPD_OPR_ID" type="string"
+			not-null="true" length="40" />
+		<property name="LastUpdTxnId" column="LAST_UPD_TXN_ID" type="string"
+			not-null="true" length="10" />
+		<property name="LastUpdTs" column="LAST_UPD_TS" type="string"
+			not-null="true" length="14" />
+		<property name="OprEmail" column="OPR_EMAIL" type="string"
+			not-null="false" length="40" />
+		<property name="OprDegreeRsc" column="OPR_DEGREE_RSC" type="string"
+			not-null="true" length="10" />
+		<property name="OprLogSta" column="OPR_LOG_STA" type="string"
+			not-null="true" length="1" />
+		<property name="SetOprId" column="SET_OPR_ID" type="string"
+			not-null="true" length="40" />
+	</class>
+</hibernate-mapping>

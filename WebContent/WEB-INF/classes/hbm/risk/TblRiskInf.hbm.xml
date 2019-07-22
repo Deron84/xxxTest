@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblRiskInf"
+		table="tbl_risk_inf"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="sa_model_kind"
+			length="2"
+		>
+			<generator class="assigned"/>
+		</id><!-- 模型 -->
+		<property
+			name="SaBeUse"
+			column="sa_be_use"
+			type="string"
+			not-null="true"
+			length="1"
+		/><!-- 是否启用 -->
+		<property
+			name="SaAction"
+			column="sa_action"
+			type="string"
+			not-null="true"
+			length="1"
+		/><!-- 风险处理动作 -->
+		<property
+			name="SaLimitNum"
+			column="sa_limit_num"
+			type="string"
+			not-null="true"
+			length="8"
+		/><!-- 受控笔数 -->
+		<property
+			name="SaLimitAmountSingle"
+			column="sa_limit_amount_single"
+			type="string"
+			not-null="true"
+			length="12"
+		/><!-- 受控金额-单笔-->
+		<property
+			name="SaLimitAmountTotle"
+			column="sa_limit_amount_totle"
+			type="string"
+			not-null="true"
+			length="12"
+		/><!-- 受控金额-总额 -->
+		<property
+			name="ModiZoneNo"
+			column="modi_zone_no"
+			type="string"
+			not-null="true"
+			length="10"
+		/><!-- 修改分行 -->
+		<property
+			name="ModiOprId"
+			column="modi_opr_id"
+			type="string"
+			not-null="true"
+			length="40"
+		/><!-- 修改人ID -->
+		<property
+			name="ModiTime"
+			column="modi_time"
+			type="string"
+			not-null="true"
+			length="14"
+		/><!-- 修改时间 -->
+		<property
+			name="SaBranchCode"
+			column="sa_branch_code"
+			type="string"
+			not-null="true"
+			length="10"
+		/><!-- 分行号 -->
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po">
+	<class
+		name="TblMchntRefuse"
+		table="tbl_mchnt_refuse"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblMchntRefusePK">
+			<key-property
+				name="MchntId"
+				column="mchnt_id"
+				type="string"
+			/>
+			<key-property
+				name="TxnTime"
+				column="txn_time"
+				type="string"
+			/>
+		</composite-id>
+
+		<property
+			name="BrhId"
+			column="brh_id"
+			type="string"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="OprId"
+			column="opr_id"
+			type="string"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="RefuseType"
+			column="refuse_type"
+			type="string"
+			not-null="true"
+			length="20"
+		/>
+		<property
+			name="RefuseInfo"
+			column="refuse_info"
+			type="string"
+			not-null="true"
+			length="60"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.objectFactory" value="spring" />
+	<package name="pos" extends="struts-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		<!--start 终端维护 -->
+        <!-- 新增终端-->
+		<action name="T30101Action" class="t30101Action" />
+        <!-- 修改终端信息-->
+        <action name="T3010102Action" class="t3010102Action" />
+        <!-- 终端复制-->
+        <action name="T3010103Action" class="t3010103Action" />
+        <!-- 终端冻结-->
+        <action name="T3010104Action" class="t3010104Action" />
+        <!--end 终端维护-->
+        <!-- 终端停用-->
+        <action name="T30102Action" class="t30102Action" />
+        <!-- 终端恢复-->
+        <action name="T30103Action" class="t30103Action" />
+		<!-- start 终端审核 -->
+		<action name="T30201Action" class="t30201Action" />
+        <!--密钥下发申请-->
+        <action name="T30202Action" class="t30202Action" />
+        <!--密钥下发申请打印-->
+        <action name="T3020303Action" class="t3020303Action" />
+        <!--密钥下发审核-->
+        <action name="T30203Action" class="t30203Action" />
+        <!-- end 终端审核 -->
+        <!-- start 终端库存-->
+        <!-- 终端入库&作废-->
+        <action name="T30301Action" class="t30301Action"/>
+        <!-- 终端下发-->
+        <action name="T30302Action" class="t30302Action"/>
+        <!-- 终端审核-->
+        <action name="T30303Action" class="t30303Action"/>
+        <!-- 终端回退-->
+        <action name="T30304Action" class="t30304Action"/>
+        <!-- 终端出库-->
+        <action name="T30305Action" class="t30305Action"/>
+        <!-- 终端签收-->
+        <action name="T30306Action" class="t30306Action"/>
+        <!-- end 终端库存-->
+        
+        <!-- 菜品编码信息维护 -->
+		<action name="T30500Action" class="com.sdses.struts.pos.action.T30500Action" />
+		<!-- 终端菜品映射表 -->
+		<action name="T30501Action" class="com.sdses.struts.pos.action.T30501Action" />
+	</package>
+</struts>

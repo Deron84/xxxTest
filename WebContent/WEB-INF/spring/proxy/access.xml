@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 门禁信息新增-->
+	<bean id="T120101BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.access.T120101BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T120101BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T120101BOTarget" class="com.rail.bo.impl.access.T120101BOTarget">
+		<property name="railAccessInfoDao">
+			<ref bean="RailAccessInfoDao" />
+		</property>
+	</bean>
+	
+	<!-- 门禁信息维护 -->
+	<bean id="T120100BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.access.T120100BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T120100BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T120100BOTarget" class="com.rail.bo.impl.access.T120100BOTarget">
+		<property name="railAccessInfoDao">
+			<ref bean="RailAccessInfoDao" />
+		</property>
+		<property name="railAccessEquipInfoDao">
+			<ref bean="RailAccessEquipInfoDao" />
+		</property>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 终端设备管理-->
+	<bean id="T120103BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.access.T120103BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T120103BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T120103BOTarget" class="com.rail.bo.impl.access.T120103BOTarget">
+		<property name="railAccessEquipInfoDao">
+			<ref bean="RailAccessEquipInfoDao" />
+		</property>
+	</bean>
+	
+	<!-- 门禁预警信息维护 -->
+	<bean id="T120300BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.access.T120300BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T120300BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T120300BOTarget" class="com.rail.bo.impl.access.T120300BOTarget">
+		<property name="railAccessWarnDao">
+			<ref bean="RailAccessWarnDao" />
+		</property>
+	</bean>
+	
+	<!-- 门禁检修保养预警信息维护 -->
+	<bean id="T120401BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.access.T120401BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T120401BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T120401BOTarget" class="com.rail.bo.impl.access.T120401BOTarget">
+		<property name="railAccessMaintainWarnDao">
+			<ref bean="RailAccessMaintainWarnDao" />
+		</property>
+	</bean>
+	
+	<!-- 门禁检修保养信息维护 -->
+	<bean id="T120402BO" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.bo.access.T120402BO</value>
+		</property>
+		<property name="interceptorNames">
+			<value>T120402BOTarget</value>
+		</property>
+	</bean>
+	<bean id="T120402BOTarget" class="com.rail.bo.impl.access.T120402BOTarget">
+		<property name="railAccessMaintainDao">
+			<ref bean="RailAccessMaintainDao" />
+		</property>
+	</bean>
+	
+	
+	<bean id="RailAccessInfoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.access.RailAccessInfoDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailAccessInfoDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailAccessInfoDaoTarget" class="com.rail.dao.impl.access.RailAccessInfoDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="RailAccessEquipInfoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.access.RailAccessEquipInfoDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailAccessEquipInfoDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailAccessEquipInfoDaoTarget" class="com.rail.dao.impl.access.RailAccessEquipInfoDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="RailAccessWarnDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.access.RailAccessWarnDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailAccessWarnDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailAccessWarnDaoTarget" class="com.rail.dao.impl.access.RailAccessWarnDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="RailAccessMaintainWarnDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.access.RailAccessMaintainWarnDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailAccessMaintainWarnDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailAccessMaintainWarnDaoTarget" class="com.rail.dao.impl.access.RailAccessMaintainWarnDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	<bean id="RailAccessMaintainDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.rail.dao.iface.access.RailAccessMaintainDao</value>
+		</property>
+		<property name="interceptorNames">
+			<value>RailAccessMaintainDaoTarget</value>
+		</property>
+	</bean>
+	<bean id="RailAccessMaintainDaoTarget" class="com.rail.dao.impl.access.RailAccessMaintainDaoTarget">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	
+</beans>

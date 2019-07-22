@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sdses.po">
+	<class name="TblTxnInfo" table="TBL_TXN_INFO">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="Id" class="TblTxnInfoPK">
+			<key-property name="TxnSeqNo" column="TXN_SEQ_NO" type="string" />
+			<key-property name="AcctDate" column="ACCT_DATE" type="string" />
+		</composite-id>
+
+		<property name="TxnDate" column="TXN_DATE" type="string"
+			not-null="false" length="8" />
+		<property name="TxnTime" column="TXN_TIME" type="string"
+			not-null="false" length="6" />
+		<property name="TxnCode" column="TXN_CODE" type="string"
+			not-null="false" length="10" />
+		<property name="SubTxnCode" column="SUB_TXN_CODE" type="string"
+			not-null="false" length="6" />
+		<property name="OprId" column="OPR_ID" type="string"
+			not-null="false" length="11" />
+		<property name="OrgCode" column="ORG_CODE" type="string"
+			not-null="false" length="11" />
+		<property name="IpAddr" column="IP_ADDR" type="string"
+			not-null="false" length="20" />
+		<property name="TxnName" column="TXN_NAME" type="string"
+			not-null="false" length="60" />
+		<property name="TxnSta" column="TXN_STA" type="string"
+			not-null="false" length="1" />
+		<property name="ErrMsg" column="ERR_MSG" type="string"
+			not-null="false" length="1024" />
+	</class>
+</hibernate-mapping>

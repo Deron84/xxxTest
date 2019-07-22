@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.huateng.po.mchnt">
+	<class
+		name="TblInfMchntTpGrp"
+		table="TBL_INF_MCHNT_TP_GRP"
+	>
+        <composite-id name="Id" class="TblInfMchntTpGrpPK">
+	       <key-property
+				name="MchntTpGrp"
+				column="MCHNT_TP_GRP"
+				type="string"
+			/>
+			<key-property
+				name="FrnIn"
+				column="FRN_IN"
+				type="string"
+			/>
+	    </composite-id>
+		
+		<property
+			name="Descr"
+			column="DESCR"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="RecSt"
+			column="REC_ST"
+			type="string"
+			not-null="true"
+			length="1"
+		/>
+		<property
+			name="LastOperIn"
+			column="LAST_OPER_IN"
+			type="string"
+			not-null="true"
+			length="1"
+		/>
+		<property
+			name="RecUpdUsrId"
+			column="REC_UPD_USR_ID"
+			type="string"
+			not-null="true"
+			length="40"
+		/>
+		<property
+			name="RecUpdTs"
+			column="REC_UPD_TS"
+			type="string"
+			not-null="true"
+			length="14"
+		/>
+		<property
+			name="RecCrtTs"
+			column="REC_CRT_TS"
+			type="string"
+			not-null="true"
+			length="14"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

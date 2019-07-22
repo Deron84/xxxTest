@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="excel" extends="struts-default,json-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="contentType">text/html</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		<!--  excel导出 -->
+		<!-- 门禁模块  -->
+		<action name="exportExcelT120101" class="com.rail.struts.excel.action.T12000ExcelExportAction" method="exportExcelT120101" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT120103" class="com.rail.struts.excel.action.T12000ExcelExportAction" method="exportExcelT120103" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT1203" class="com.rail.struts.excel.action.T12000ExcelExportAction" method="exportExcelT1203" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT120401" class="com.rail.struts.excel.action.T12000ExcelExportAction" method="exportExcelT120401" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT120402" class="com.rail.struts.excel.action.T12000ExcelExportAction" method="exportExcelT120402" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT120501" class="com.rail.struts.excel.action.T12000ExcelExportAction" method="exportExcelT120501" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT120502" class="com.rail.struts.excel.action.T12000ExcelExportAction" method="exportExcelT120502" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		
+		
+		<!-- 系统管理 -->
+		<action name="exportExcelT140100" class="com.rail.struts.excel.action.T14000ExcelExportAction" method="exportExcelT140100" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT140101" class="com.rail.struts.excel.action.T14000ExcelExportAction" method="exportExcelT140101" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT140102" class="com.rail.struts.excel.action.T14000ExcelExportAction" method="exportExcelT140102" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT140103" class="com.rail.struts.excel.action.T14000ExcelExportAction" method="exportExcelT140103" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT140104" class="com.rail.struts.excel.action.T14000ExcelExportAction" method="exportExcelT140104" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT140105" class="com.rail.struts.excel.action.T14000ExcelExportAction" method="exportExcelT140105" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		
+		<action name="exportExcelT140107" class="com.rail.struts.excel.action.T14000ExcelExportAction" method="exportExcelT140107" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<!-- 仓库管理 -->
+		<action name="exportExcelT100101" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100101" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT100102" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100102" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT100103" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100103" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT100104" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100104" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT100105" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100105" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT100200" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100200" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT100201" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100201" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+
+		<action name="exportExcelT100301" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100301" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+
+			<action name="exportExcelT100300" class="com.rail.struts.excel.action.T10000ExcelExportAction" method="exportExcelT100300" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+
+		
+		<!-- 工单相关 -->
+		<action name="exportExcelT130101" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130101" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130102" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130102" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130103" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130103" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130104" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130104" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130105" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130105" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130200" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130200" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130201" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130201" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		
+		<action name="exportExcelT130300" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130300" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130301" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130301" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130401" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130401" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130402" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130402" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130403" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130403" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130404" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130404" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130405" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130405" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		<action name="exportExcelT130500" class="com.rail.struts.excel.action.T13000ExcelExportAction" method="exportExcelT130500" >
+			<result name='success' type='json'>
+					<param name="root">result</param>
+				</result>
+		</action>
+		
+		
+		
+	</package>
+</struts>

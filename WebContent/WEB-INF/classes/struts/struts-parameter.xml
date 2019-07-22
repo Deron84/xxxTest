@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="parameter" extends="json-default">
+		<!-- 公用返回类型 -->
+		<global-results>
+			<result type="plainText" >
+                <param name="charSet">UTF-8</param>
+                <param name="location">/page/system/emptyLocation.jsp</param>
+            </result>
+		</global-results>
+		<!-- 施工单位管理-->
+		<action name="T140100Action" class="com.rail.struts.parameter.action.T140100Action" />
+	    <action name="T140100Action_getData" class="com.rail.struts.parameter.action.T140100Action" method="getData"/>
+	    <!-- 供应商管理-->
+		<action name="T140101Action" class="com.rail.struts.parameter.action.T140101Action" />
+	    <action name="T140101Action_getData" class="com.rail.struts.parameter.action.T140101Action" method="getData"/>
+	    <!-- 仓库区管理-->
+		<action name="T140102Action" class="com.rail.struts.parameter.action.T140102Action" />
+	    <action name="T140102Action_getData" class="com.rail.struts.parameter.action.T140102Action" method="getData"/>
+	    <!-- 工具名称管理-->
+		<action name="T140103Action" class="com.rail.struts.parameter.action.T140103Action" />
+	    <action name="T140103Action_getData" class="com.rail.struts.parameter.action.T140103Action" method="getData"/>
+	    <!-- 工具分类管理-->
+		<action name="T140104Action" class="com.rail.struts.parameter.action.T140104Action" />
+	    <action name="T140104Action_getData" class="com.rail.struts.parameter.action.T140104Action" method="getData"/>
+	    <!-- 工具单位管理-->
+		<action name="T140105Action" class="com.rail.struts.parameter.action.T140105Action" />
+	    <action name="T140105Action_getData" class="com.rail.struts.parameter.action.T140105Action" method="getData"/>
+	    <!-- 工具型号管理-->
+		<action name="T140106Action" class="com.rail.struts.parameter.action.T140106Action" />
+	    <action name="T140106Action_getData" class="com.rail.struts.parameter.action.T140106Action" method="getData"/>
+	    <!-- 门禁终端类型管理-->
+		<action name="T140107Action" class="com.rail.struts.parameter.action.T140107Action" />
+	    <action name="T140107Action_getData" class="com.rail.struts.parameter.action.T140107Action" method="getData"/>
+	
+	</package>
+</struts>
